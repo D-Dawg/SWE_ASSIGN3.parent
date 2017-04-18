@@ -1,0 +1,77 @@
+grammar org.xtext.example.mydsl.SWEUIBK with org.eclipse.xtext.common.Terminals
+
+generate sWEUIBK "http://www.xtext.org/example/mydsl/SWEUIBK"
+
+Domainmodel:
+	elements+=ObjectDeclaration* actions+=ObjectAction*;
+
+
+ObjectDeclaration:
+    MonitorDeclaration | AnalyzerDeclaration | PageDeclaration | ModelDeclaration ;
+
+ModelDeclaration:
+    'Model' name=ID;
+
+
+MonitorDeclaration:
+    'Monitor' name=ID MonitorInitialization;
+
+MonitorInitialization:
+    STRING ;
+
+AnalyzerDeclaration:
+    'Analyzer' Analyzer;
+
+Analyzer: name=ID;
+
+PageDeclaration:
+    'Page' name=ID;
+
+ObjectAction:
+    MonitorObjectAction|AnalyzerObjectAction|PageObjectAction|ModelAction;
+
+
+ModelAction:
+    name=ID '.' 'loadStructure' '(' ModelStructure+ ')';
+
+ModelStructure:
+    STRING ;
+
+
+MonitorObjectAction:
+    (name=ID '.' (value=MonitorOperations) '(' method=MethodParameter? ')');
+
+AnalyzerObjectAction:
+	name=ID '.' (value=AnalyzerOperations) '(' method=MethodParameter? ')';
+
+PageObjectAction:
+	name=ID '.'(((value=PageOperations) '(' method=MethodParameter? ')')| GenerateHeader);
+
+GenerateHeader:
+    'generateHeaderList' '('  Header* ')';
+
+
+Header:
+    STRING '(' STRING ')';
+
+MethodParameter:
+	STRING  ;
+
+
+enum MonitorOperations :
+    ADD='AddAnalyzer' |
+    REMOVE='RemoveAnalyzer';
+
+enum AnalyzerOperations :
+    LOADPAGE='LoadPage' |
+    EXECUTE='Execute'|
+    REMOVE='RemovePage'|
+    LOADMODEL='LoadModel';
+
+enum PageOperations :
+    URL='url' |
+    CONNECTIONTYPE = 'connectType';
+
+enum ConnectionType:
+    POST='post'|
+    GET='get';

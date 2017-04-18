@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sWEUIBK" nsURI="http://www.xtext.org/example/mydsl/SWEUIBK"
+    nsPrefix="sWEUIBK">
+  <eClassifiers xsi:type="ecore:EClass" name="Domainmodel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//ObjectDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//ObjectAction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelDeclaration" eSuperTypes="#//ObjectDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MonitorDeclaration" eSuperTypes="#//ObjectDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalyzerDeclaration" eSuperTypes="#//ObjectDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Analyzer" eSuperTypes="#//AnalyzerDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PageDeclaration" eSuperTypes="#//ObjectDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelAction" eSuperTypes="#//ObjectAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MonitorObjectAction" eSuperTypes="#//ObjectAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//MonitorOperations"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalyzerObjectAction" eSuperTypes="#//ObjectAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//AnalyzerOperations"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PageObjectAction" eSuperTypes="#//ObjectAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//PageOperations"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MonitorOperations">
+    <eLiterals name="ADD" literal="AddAnalyzer"/>
+    <eLiterals name="REMOVE" value="1" literal="RemoveAnalyzer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AnalyzerOperations">
+    <eLiterals name="LOADPAGE" literal="LoadPage"/>
+    <eLiterals name="EXECUTE" value="1" literal="Execute"/>
+    <eLiterals name="REMOVE" value="2" literal="RemovePage"/>
+    <eLiterals name="LOADMODEL" value="3" literal="LoadModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PageOperations">
+    <eLiterals name="URL" literal="url"/>
+    <eLiterals name="CONNECTIONTYPE" value="1" literal="connectType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConnectionType">
+    <eLiterals name="POST" literal="post"/>
+    <eLiterals name="GET" value="1" literal="get"/>
+  </eClassifiers>
+</ecore:EPackage>
