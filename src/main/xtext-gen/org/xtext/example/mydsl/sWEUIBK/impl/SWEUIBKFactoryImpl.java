@@ -70,11 +70,13 @@ public class SWEUIBKFactoryImpl extends EFactoryImpl implements SWEUIBKFactory
       case SWEUIBKPackage.OBJECT_DECLARATION: return createObjectDeclaration();
       case SWEUIBKPackage.MODEL_DECLARATION: return createModelDeclaration();
       case SWEUIBKPackage.MONITOR_DECLARATION: return createMonitorDeclaration();
+      case SWEUIBKPackage.MONITOR_INITIALIZATION: return createMonitorInitialization();
       case SWEUIBKPackage.ANALYZER_DECLARATION: return createAnalyzerDeclaration();
       case SWEUIBKPackage.ANALYZER: return createAnalyzer();
       case SWEUIBKPackage.PAGE_DECLARATION: return createPageDeclaration();
       case SWEUIBKPackage.OBJECT_ACTION: return createObjectAction();
       case SWEUIBKPackage.MODEL_ACTION: return createModelAction();
+      case SWEUIBKPackage.MODEL_STRUCTURE: return createModelStructure();
       case SWEUIBKPackage.MONITOR_OBJECT_ACTION: return createMonitorObjectAction();
       case SWEUIBKPackage.ANALYZER_OBJECT_ACTION: return createAnalyzerObjectAction();
       case SWEUIBKPackage.PAGE_OBJECT_ACTION: return createPageObjectAction();
@@ -178,6 +180,17 @@ public class SWEUIBKFactoryImpl extends EFactoryImpl implements SWEUIBKFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public MonitorInitialization createMonitorInitialization()
+  {
+    MonitorInitializationImpl monitorInitialization = new MonitorInitializationImpl();
+    return monitorInitialization;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AnalyzerDeclaration createAnalyzerDeclaration()
   {
     AnalyzerDeclarationImpl analyzerDeclaration = new AnalyzerDeclarationImpl();
@@ -226,6 +239,17 @@ public class SWEUIBKFactoryImpl extends EFactoryImpl implements SWEUIBKFactory
   {
     ModelActionImpl modelAction = new ModelActionImpl();
     return modelAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ModelStructure createModelStructure()
+  {
+    ModelStructureImpl modelStructure = new ModelStructureImpl();
+    return modelStructure;
   }
 
   /**

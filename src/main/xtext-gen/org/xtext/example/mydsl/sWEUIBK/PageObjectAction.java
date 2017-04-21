@@ -3,6 +3,7 @@
  */
 package org.xtext.example.mydsl.sWEUIBK;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,16 +14,44 @@ package org.xtext.example.mydsl.sWEUIBK;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getMethod <em>Method</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getHeaderList <em>Header List</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getPageObjectAction()
  * @model
  * @generated
  */
-public interface PageObjectAction extends ObjectAction
+public interface PageObjectAction extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getPageObjectAction_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
    * The literals are from the enumeration {@link org.xtext.example.mydsl.sWEUIBK.PageOperations}.
@@ -77,5 +106,31 @@ public interface PageObjectAction extends ObjectAction
    * @generated
    */
   void setMethod(String value);
+
+  /**
+   * Returns the value of the '<em><b>Header List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Header List</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Header List</em>' attribute.
+   * @see #setHeaderList(String)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getPageObjectAction_HeaderList()
+   * @model
+   * @generated
+   */
+  String getHeaderList();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getHeaderList <em>Header List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Header List</em>' attribute.
+   * @see #getHeaderList()
+   * @generated
+   */
+  void setHeaderList(String value);
 
 } // PageObjectAction

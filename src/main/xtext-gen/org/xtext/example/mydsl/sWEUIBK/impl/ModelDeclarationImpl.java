@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.sWEUIBK.ModelDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
@@ -25,7 +26,7 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
  *
  * @generated
  */
-public class ModelDeclarationImpl extends ObjectDeclarationImpl implements ModelDeclaration
+public class ModelDeclarationImpl extends MinimalEObjectImpl.Container implements ModelDeclaration
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

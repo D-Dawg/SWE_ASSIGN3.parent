@@ -7,20 +7,20 @@ Domainmodel:
 
 
 ObjectDeclaration:
-    MonitorDeclaration | AnalyzerDeclaration | PageDeclaration | ModelDeclaration ;
+    monitor = MonitorDeclaration | analyzer = AnalyzerDeclaration | page = PageDeclaration | model = ModelDeclaration ;
 
 ModelDeclaration:
     'Model' name=ID;
 
 
 MonitorDeclaration:
-    'Monitor' name=ID MonitorInitialization;
+    'Monitor' name=ID url = MonitorInitialization;
 
 MonitorInitialization:
-    STRING ;
+    url = STRING ;
 
 AnalyzerDeclaration:
-    'Analyzer' Analyzer;
+    'Analyzer' name = Analyzer;
 
 Analyzer: name=ID;
 
@@ -28,14 +28,14 @@ PageDeclaration:
     'Page' name=ID;
 
 ObjectAction:
-    MonitorObjectAction|AnalyzerObjectAction|PageObjectAction|ModelAction;
+    monitorAction = MonitorObjectAction|analyzerAction = AnalyzerObjectAction|pageAction = PageObjectAction|modelAction = ModelAction;
 
 
 ModelAction:
-    name=ID '.' 'loadStructure' '(' ModelStructure+ ')';
+    name=ID '.' 'loadStructure' '(' modelStructure = ModelStructure+ ')';
 
 ModelStructure:
-    STRING ;
+    source = STRING ;
 
 
 MonitorObjectAction:
@@ -45,7 +45,7 @@ AnalyzerObjectAction:
 	name=ID '.' (value=AnalyzerOperations) '(' method=MethodParameter? ')';
 
 PageObjectAction:
-	name=ID '.'(((value=PageOperations) '(' method=MethodParameter? ')')| GenerateHeader);
+	name=ID '.'(((value=PageOperations) '(' method=MethodParameter? ')')| headerList=GenerateHeader);
 
 GenerateHeader:
     'generateHeaderList' '('  Header* ')';

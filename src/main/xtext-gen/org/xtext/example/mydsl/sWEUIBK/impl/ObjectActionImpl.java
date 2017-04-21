@@ -4,13 +4,19 @@
 package org.xtext.example.mydsl.sWEUIBK.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.mydsl.sWEUIBK.AnalyzerObjectAction;
+import org.xtext.example.mydsl.sWEUIBK.ModelAction;
+import org.xtext.example.mydsl.sWEUIBK.MonitorObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.ObjectAction;
+import org.xtext.example.mydsl.sWEUIBK.PageObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
 
 /**
@@ -21,7 +27,10 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.ObjectActionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.ObjectActionImpl#getMonitorAction <em>Monitor Action</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.ObjectActionImpl#getAnalyzerAction <em>Analyzer Action</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.ObjectActionImpl#getPageAction <em>Page Action</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.ObjectActionImpl#getModelAction <em>Model Action</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +38,44 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
 public class ObjectActionImpl extends MinimalEObjectImpl.Container implements ObjectAction
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getMonitorAction() <em>Monitor Action</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getMonitorAction()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected MonitorObjectAction monitorAction;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getAnalyzerAction() <em>Analyzer Action</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAnalyzerAction()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected AnalyzerObjectAction analyzerAction;
+
+  /**
+   * The cached value of the '{@link #getPageAction() <em>Page Action</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPageAction()
+   * @generated
+   * @ordered
+   */
+  protected PageObjectAction pageAction;
+
+  /**
+   * The cached value of the '{@link #getModelAction() <em>Model Action</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModelAction()
+   * @generated
+   * @ordered
+   */
+  protected ModelAction modelAction;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +103,9 @@ public class ObjectActionImpl extends MinimalEObjectImpl.Container implements Ob
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public MonitorObjectAction getMonitorAction()
   {
-    return name;
+    return monitorAction;
   }
 
   /**
@@ -84,12 +113,203 @@ public class ObjectActionImpl extends MinimalEObjectImpl.Container implements Ob
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public NotificationChain basicSetMonitorAction(MonitorObjectAction newMonitorAction, NotificationChain msgs)
   {
-    String oldName = name;
-    name = newName;
+    MonitorObjectAction oldMonitorAction = monitorAction;
+    monitorAction = newMonitorAction;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.OBJECT_ACTION__NAME, oldName, name));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.OBJECT_ACTION__MONITOR_ACTION, oldMonitorAction, newMonitorAction);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMonitorAction(MonitorObjectAction newMonitorAction)
+  {
+    if (newMonitorAction != monitorAction)
+    {
+      NotificationChain msgs = null;
+      if (monitorAction != null)
+        msgs = ((InternalEObject)monitorAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.OBJECT_ACTION__MONITOR_ACTION, null, msgs);
+      if (newMonitorAction != null)
+        msgs = ((InternalEObject)newMonitorAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.OBJECT_ACTION__MONITOR_ACTION, null, msgs);
+      msgs = basicSetMonitorAction(newMonitorAction, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.OBJECT_ACTION__MONITOR_ACTION, newMonitorAction, newMonitorAction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AnalyzerObjectAction getAnalyzerAction()
+  {
+    return analyzerAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAnalyzerAction(AnalyzerObjectAction newAnalyzerAction, NotificationChain msgs)
+  {
+    AnalyzerObjectAction oldAnalyzerAction = analyzerAction;
+    analyzerAction = newAnalyzerAction;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.OBJECT_ACTION__ANALYZER_ACTION, oldAnalyzerAction, newAnalyzerAction);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAnalyzerAction(AnalyzerObjectAction newAnalyzerAction)
+  {
+    if (newAnalyzerAction != analyzerAction)
+    {
+      NotificationChain msgs = null;
+      if (analyzerAction != null)
+        msgs = ((InternalEObject)analyzerAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.OBJECT_ACTION__ANALYZER_ACTION, null, msgs);
+      if (newAnalyzerAction != null)
+        msgs = ((InternalEObject)newAnalyzerAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.OBJECT_ACTION__ANALYZER_ACTION, null, msgs);
+      msgs = basicSetAnalyzerAction(newAnalyzerAction, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.OBJECT_ACTION__ANALYZER_ACTION, newAnalyzerAction, newAnalyzerAction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PageObjectAction getPageAction()
+  {
+    return pageAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPageAction(PageObjectAction newPageAction, NotificationChain msgs)
+  {
+    PageObjectAction oldPageAction = pageAction;
+    pageAction = newPageAction;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.OBJECT_ACTION__PAGE_ACTION, oldPageAction, newPageAction);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPageAction(PageObjectAction newPageAction)
+  {
+    if (newPageAction != pageAction)
+    {
+      NotificationChain msgs = null;
+      if (pageAction != null)
+        msgs = ((InternalEObject)pageAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.OBJECT_ACTION__PAGE_ACTION, null, msgs);
+      if (newPageAction != null)
+        msgs = ((InternalEObject)newPageAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.OBJECT_ACTION__PAGE_ACTION, null, msgs);
+      msgs = basicSetPageAction(newPageAction, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.OBJECT_ACTION__PAGE_ACTION, newPageAction, newPageAction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ModelAction getModelAction()
+  {
+    return modelAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetModelAction(ModelAction newModelAction, NotificationChain msgs)
+  {
+    ModelAction oldModelAction = modelAction;
+    modelAction = newModelAction;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.OBJECT_ACTION__MODEL_ACTION, oldModelAction, newModelAction);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setModelAction(ModelAction newModelAction)
+  {
+    if (newModelAction != modelAction)
+    {
+      NotificationChain msgs = null;
+      if (modelAction != null)
+        msgs = ((InternalEObject)modelAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.OBJECT_ACTION__MODEL_ACTION, null, msgs);
+      if (newModelAction != null)
+        msgs = ((InternalEObject)newModelAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.OBJECT_ACTION__MODEL_ACTION, null, msgs);
+      msgs = basicSetModelAction(newModelAction, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.OBJECT_ACTION__MODEL_ACTION, newModelAction, newModelAction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SWEUIBKPackage.OBJECT_ACTION__MONITOR_ACTION:
+        return basicSetMonitorAction(null, msgs);
+      case SWEUIBKPackage.OBJECT_ACTION__ANALYZER_ACTION:
+        return basicSetAnalyzerAction(null, msgs);
+      case SWEUIBKPackage.OBJECT_ACTION__PAGE_ACTION:
+        return basicSetPageAction(null, msgs);
+      case SWEUIBKPackage.OBJECT_ACTION__MODEL_ACTION:
+        return basicSetModelAction(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -102,8 +322,14 @@ public class ObjectActionImpl extends MinimalEObjectImpl.Container implements Ob
   {
     switch (featureID)
     {
-      case SWEUIBKPackage.OBJECT_ACTION__NAME:
-        return getName();
+      case SWEUIBKPackage.OBJECT_ACTION__MONITOR_ACTION:
+        return getMonitorAction();
+      case SWEUIBKPackage.OBJECT_ACTION__ANALYZER_ACTION:
+        return getAnalyzerAction();
+      case SWEUIBKPackage.OBJECT_ACTION__PAGE_ACTION:
+        return getPageAction();
+      case SWEUIBKPackage.OBJECT_ACTION__MODEL_ACTION:
+        return getModelAction();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +344,17 @@ public class ObjectActionImpl extends MinimalEObjectImpl.Container implements Ob
   {
     switch (featureID)
     {
-      case SWEUIBKPackage.OBJECT_ACTION__NAME:
-        setName((String)newValue);
+      case SWEUIBKPackage.OBJECT_ACTION__MONITOR_ACTION:
+        setMonitorAction((MonitorObjectAction)newValue);
+        return;
+      case SWEUIBKPackage.OBJECT_ACTION__ANALYZER_ACTION:
+        setAnalyzerAction((AnalyzerObjectAction)newValue);
+        return;
+      case SWEUIBKPackage.OBJECT_ACTION__PAGE_ACTION:
+        setPageAction((PageObjectAction)newValue);
+        return;
+      case SWEUIBKPackage.OBJECT_ACTION__MODEL_ACTION:
+        setModelAction((ModelAction)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +370,17 @@ public class ObjectActionImpl extends MinimalEObjectImpl.Container implements Ob
   {
     switch (featureID)
     {
-      case SWEUIBKPackage.OBJECT_ACTION__NAME:
-        setName(NAME_EDEFAULT);
+      case SWEUIBKPackage.OBJECT_ACTION__MONITOR_ACTION:
+        setMonitorAction((MonitorObjectAction)null);
+        return;
+      case SWEUIBKPackage.OBJECT_ACTION__ANALYZER_ACTION:
+        setAnalyzerAction((AnalyzerObjectAction)null);
+        return;
+      case SWEUIBKPackage.OBJECT_ACTION__PAGE_ACTION:
+        setPageAction((PageObjectAction)null);
+        return;
+      case SWEUIBKPackage.OBJECT_ACTION__MODEL_ACTION:
+        setModelAction((ModelAction)null);
         return;
     }
     super.eUnset(featureID);
@@ -152,27 +396,16 @@ public class ObjectActionImpl extends MinimalEObjectImpl.Container implements Ob
   {
     switch (featureID)
     {
-      case SWEUIBKPackage.OBJECT_ACTION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SWEUIBKPackage.OBJECT_ACTION__MONITOR_ACTION:
+        return monitorAction != null;
+      case SWEUIBKPackage.OBJECT_ACTION__ANALYZER_ACTION:
+        return analyzerAction != null;
+      case SWEUIBKPackage.OBJECT_ACTION__PAGE_ACTION:
+        return pageAction != null;
+      case SWEUIBKPackage.OBJECT_ACTION__MODEL_ACTION:
+        return modelAction != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //ObjectActionImpl

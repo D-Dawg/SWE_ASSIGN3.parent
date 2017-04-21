@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.sWEUIBK.PageObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.PageOperations;
@@ -21,14 +22,36 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.PageObjectActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.PageObjectActionImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.PageObjectActionImpl#getMethod <em>Method</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.PageObjectActionImpl#getHeaderList <em>Header List</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PageObjectActionImpl extends ObjectActionImpl implements PageObjectAction
+public class PageObjectActionImpl extends MinimalEObjectImpl.Container implements PageObjectAction
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -70,6 +93,26 @@ public class PageObjectActionImpl extends ObjectActionImpl implements PageObject
   protected String method = METHOD_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getHeaderList() <em>Header List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHeaderList()
+   * @generated
+   * @ordered
+   */
+  protected static final String HEADER_LIST_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getHeaderList() <em>Header List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHeaderList()
+   * @generated
+   * @ordered
+   */
+  protected String headerList = HEADER_LIST_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -88,6 +131,29 @@ public class PageObjectActionImpl extends ObjectActionImpl implements PageObject
   protected EClass eStaticClass()
   {
     return SWEUIBKPackage.Literals.PAGE_OBJECT_ACTION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.PAGE_OBJECT_ACTION__NAME, oldName, name));
   }
 
   /**
@@ -141,15 +207,42 @@ public class PageObjectActionImpl extends ObjectActionImpl implements PageObject
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getHeaderList()
+  {
+    return headerList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHeaderList(String newHeaderList)
+  {
+    String oldHeaderList = headerList;
+    headerList = newHeaderList;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST, oldHeaderList, headerList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__NAME:
+        return getName();
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__VALUE:
         return getValue();
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__METHOD:
         return getMethod();
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST:
+        return getHeaderList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -164,11 +257,17 @@ public class PageObjectActionImpl extends ObjectActionImpl implements PageObject
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__NAME:
+        setName((String)newValue);
+        return;
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__VALUE:
         setValue((PageOperations)newValue);
         return;
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__METHOD:
         setMethod((String)newValue);
+        return;
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST:
+        setHeaderList((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -184,11 +283,17 @@ public class PageObjectActionImpl extends ObjectActionImpl implements PageObject
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__METHOD:
         setMethod(METHOD_EDEFAULT);
+        return;
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST:
+        setHeaderList(HEADER_LIST_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -204,10 +309,14 @@ public class PageObjectActionImpl extends ObjectActionImpl implements PageObject
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__VALUE:
         return value != VALUE_EDEFAULT;
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__METHOD:
         return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST:
+        return HEADER_LIST_EDEFAULT == null ? headerList != null : !HEADER_LIST_EDEFAULT.equals(headerList);
     }
     return super.eIsSet(featureID);
   }
@@ -223,10 +332,14 @@ public class PageObjectActionImpl extends ObjectActionImpl implements PageObject
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", value: ");
     result.append(value);
     result.append(", method: ");
     result.append(method);
+    result.append(", headerList: ");
+    result.append(headerList);
     result.append(')');
     return result.toString();
   }

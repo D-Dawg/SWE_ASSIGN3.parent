@@ -10,6 +10,15 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Object Declaration</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration#getMonitor <em>Monitor</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration#getAnalyzer <em>Analyzer</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration#getPage <em>Page</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration#getModel <em>Model</em>}</li>
+ * </ul>
  *
  * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectDeclaration()
  * @model
@@ -17,4 +26,108 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ObjectDeclaration extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Monitor</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Monitor</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Monitor</em>' containment reference.
+   * @see #setMonitor(MonitorDeclaration)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectDeclaration_Monitor()
+   * @model containment="true"
+   * @generated
+   */
+  MonitorDeclaration getMonitor();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration#getMonitor <em>Monitor</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Monitor</em>' containment reference.
+   * @see #getMonitor()
+   * @generated
+   */
+  void setMonitor(MonitorDeclaration value);
+
+  /**
+   * Returns the value of the '<em><b>Analyzer</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Analyzer</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Analyzer</em>' containment reference.
+   * @see #setAnalyzer(AnalyzerDeclaration)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectDeclaration_Analyzer()
+   * @model containment="true"
+   * @generated
+   */
+  AnalyzerDeclaration getAnalyzer();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration#getAnalyzer <em>Analyzer</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Analyzer</em>' containment reference.
+   * @see #getAnalyzer()
+   * @generated
+   */
+  void setAnalyzer(AnalyzerDeclaration value);
+
+  /**
+   * Returns the value of the '<em><b>Page</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Page</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Page</em>' containment reference.
+   * @see #setPage(PageDeclaration)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectDeclaration_Page()
+   * @model containment="true"
+   * @generated
+   */
+  PageDeclaration getPage();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration#getPage <em>Page</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Page</em>' containment reference.
+   * @see #getPage()
+   * @generated
+   */
+  void setPage(PageDeclaration value);
+
+  /**
+   * Returns the value of the '<em><b>Model</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Model</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Model</em>' containment reference.
+   * @see #setModel(ModelDeclaration)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectDeclaration_Model()
+   * @model containment="true"
+   * @generated
+   */
+  ModelDeclaration getModel();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration#getModel <em>Model</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Model</em>' containment reference.
+   * @see #getModel()
+   * @generated
+   */
+  void setModel(ModelDeclaration value);
+
 } // ObjectDeclaration

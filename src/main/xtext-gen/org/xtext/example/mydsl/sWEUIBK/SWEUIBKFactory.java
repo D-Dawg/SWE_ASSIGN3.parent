@@ -60,6 +60,15 @@ public interface SWEUIBKFactory extends EFactory
   MonitorDeclaration createMonitorDeclaration();
 
   /**
+   * Returns a new object of class '<em>Monitor Initialization</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Monitor Initialization</em>'.
+   * @generated
+   */
+  MonitorInitialization createMonitorInitialization();
+
+  /**
    * Returns a new object of class '<em>Analyzer Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,6 +112,15 @@ public interface SWEUIBKFactory extends EFactory
    * @generated
    */
   ModelAction createModelAction();
+
+  /**
+   * Returns a new object of class '<em>Model Structure</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Model Structure</em>'.
+   * @generated
+   */
+  ModelStructure createModelStructure();
 
   /**
    * Returns a new object of class '<em>Monitor Object Action</em>'.

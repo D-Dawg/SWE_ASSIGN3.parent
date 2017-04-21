@@ -96,6 +96,11 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
         return createMonitorDeclarationAdapter();
       }
       @Override
+      public Adapter caseMonitorInitialization(MonitorInitialization object)
+      {
+        return createMonitorInitializationAdapter();
+      }
+      @Override
       public Adapter caseAnalyzerDeclaration(AnalyzerDeclaration object)
       {
         return createAnalyzerDeclarationAdapter();
@@ -119,6 +124,11 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
       public Adapter caseModelAction(ModelAction object)
       {
         return createModelActionAdapter();
+      }
+      @Override
+      public Adapter caseModelStructure(ModelStructure object)
+      {
+        return createModelStructureAdapter();
       }
       @Override
       public Adapter caseMonitorObjectAction(MonitorObjectAction object)
@@ -218,6 +228,21 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.MonitorInitialization <em>Monitor Initialization</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.sWEUIBK.MonitorInitialization
+   * @generated
+   */
+  public Adapter createMonitorInitializationAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.AnalyzerDeclaration <em>Analyzer Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -288,6 +313,21 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.ModelStructure <em>Model Structure</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.sWEUIBK.ModelStructure
+   * @generated
+   */
+  public Adapter createModelStructureAdapter()
   {
     return null;
   }

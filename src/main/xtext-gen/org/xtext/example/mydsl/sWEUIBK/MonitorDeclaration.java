@@ -3,6 +3,7 @@
  */
 package org.xtext.example.mydsl.sWEUIBK;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,13 +15,14 @@ package org.xtext.example.mydsl.sWEUIBK;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getUrl <em>Url</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getMonitorDeclaration()
  * @model
  * @generated
  */
-public interface MonitorDeclaration extends ObjectDeclaration
+public interface MonitorDeclaration extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -47,5 +49,31 @@ public interface MonitorDeclaration extends ObjectDeclaration
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Url</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Url</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Url</em>' containment reference.
+   * @see #setUrl(MonitorInitialization)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getMonitorDeclaration_Url()
+   * @model containment="true"
+   * @generated
+   */
+  MonitorInitialization getUrl();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getUrl <em>Url</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Url</em>' containment reference.
+   * @see #getUrl()
+   * @generated
+   */
+  void setUrl(MonitorInitialization value);
 
 } // MonitorDeclaration

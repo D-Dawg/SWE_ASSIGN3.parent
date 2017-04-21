@@ -3,20 +3,65 @@
  */
 package org.xtext.example.mydsl.sWEUIBK.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.sWEUIBK.ModelAction;
+import org.xtext.example.mydsl.sWEUIBK.ModelStructure;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Model Action</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.ModelActionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.ModelActionImpl#getModelStructure <em>Model Structure</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class ModelActionImpl extends ObjectActionImpl implements ModelAction
+public class ModelActionImpl extends MinimalEObjectImpl.Container implements ModelAction
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getModelStructure() <em>Model Structure</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModelStructure()
+   * @generated
+   * @ordered
+   */
+  protected ModelStructure modelStructure;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +81,186 @@ public class ModelActionImpl extends ObjectActionImpl implements ModelAction
   protected EClass eStaticClass()
   {
     return SWEUIBKPackage.Literals.MODEL_ACTION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MODEL_ACTION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ModelStructure getModelStructure()
+  {
+    return modelStructure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetModelStructure(ModelStructure newModelStructure, NotificationChain msgs)
+  {
+    ModelStructure oldModelStructure = modelStructure;
+    modelStructure = newModelStructure;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MODEL_ACTION__MODEL_STRUCTURE, oldModelStructure, newModelStructure);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setModelStructure(ModelStructure newModelStructure)
+  {
+    if (newModelStructure != modelStructure)
+    {
+      NotificationChain msgs = null;
+      if (modelStructure != null)
+        msgs = ((InternalEObject)modelStructure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.MODEL_ACTION__MODEL_STRUCTURE, null, msgs);
+      if (newModelStructure != null)
+        msgs = ((InternalEObject)newModelStructure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.MODEL_ACTION__MODEL_STRUCTURE, null, msgs);
+      msgs = basicSetModelStructure(newModelStructure, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MODEL_ACTION__MODEL_STRUCTURE, newModelStructure, newModelStructure));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SWEUIBKPackage.MODEL_ACTION__MODEL_STRUCTURE:
+        return basicSetModelStructure(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case SWEUIBKPackage.MODEL_ACTION__NAME:
+        return getName();
+      case SWEUIBKPackage.MODEL_ACTION__MODEL_STRUCTURE:
+        return getModelStructure();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case SWEUIBKPackage.MODEL_ACTION__NAME:
+        setName((String)newValue);
+        return;
+      case SWEUIBKPackage.MODEL_ACTION__MODEL_STRUCTURE:
+        setModelStructure((ModelStructure)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case SWEUIBKPackage.MODEL_ACTION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case SWEUIBKPackage.MODEL_ACTION__MODEL_STRUCTURE:
+        setModelStructure((ModelStructure)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case SWEUIBKPackage.MODEL_ACTION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SWEUIBKPackage.MODEL_ACTION__MODEL_STRUCTURE:
+        return modelStructure != null;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //ModelActionImpl

@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.sWEUIBK.PageDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
@@ -25,7 +26,7 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
  *
  * @generated
  */
-public class PageDeclarationImpl extends ObjectDeclarationImpl implements PageDeclaration
+public class PageDeclarationImpl extends MinimalEObjectImpl.Container implements PageDeclaration
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

@@ -14,7 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction#getMonitorAction <em>Monitor Action</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction#getAnalyzerAction <em>Analyzer Action</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction#getPageAction <em>Page Action</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction#getModelAction <em>Model Action</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectAction()
@@ -24,29 +27,107 @@ import org.eclipse.emf.ecore.EObject;
 public interface ObjectAction extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Monitor Action</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Monitor Action</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectAction_Name()
-   * @model
+   * @return the value of the '<em>Monitor Action</em>' containment reference.
+   * @see #setMonitorAction(MonitorObjectAction)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectAction_MonitorAction()
+   * @model containment="true"
    * @generated
    */
-  String getName();
+  MonitorObjectAction getMonitorAction();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction#getMonitorAction <em>Monitor Action</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Monitor Action</em>' containment reference.
+   * @see #getMonitorAction()
    * @generated
    */
-  void setName(String value);
+  void setMonitorAction(MonitorObjectAction value);
+
+  /**
+   * Returns the value of the '<em><b>Analyzer Action</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Analyzer Action</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Analyzer Action</em>' containment reference.
+   * @see #setAnalyzerAction(AnalyzerObjectAction)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectAction_AnalyzerAction()
+   * @model containment="true"
+   * @generated
+   */
+  AnalyzerObjectAction getAnalyzerAction();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction#getAnalyzerAction <em>Analyzer Action</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Analyzer Action</em>' containment reference.
+   * @see #getAnalyzerAction()
+   * @generated
+   */
+  void setAnalyzerAction(AnalyzerObjectAction value);
+
+  /**
+   * Returns the value of the '<em><b>Page Action</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Page Action</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Page Action</em>' containment reference.
+   * @see #setPageAction(PageObjectAction)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectAction_PageAction()
+   * @model containment="true"
+   * @generated
+   */
+  PageObjectAction getPageAction();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction#getPageAction <em>Page Action</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Page Action</em>' containment reference.
+   * @see #getPageAction()
+   * @generated
+   */
+  void setPageAction(PageObjectAction value);
+
+  /**
+   * Returns the value of the '<em><b>Model Action</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Model Action</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Model Action</em>' containment reference.
+   * @see #setModelAction(ModelAction)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getObjectAction_ModelAction()
+   * @model containment="true"
+   * @generated
+   */
+  ModelAction getModelAction();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction#getModelAction <em>Model Action</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Model Action</em>' containment reference.
+   * @see #getModelAction()
+   * @generated
+   */
+  void setModelAction(ModelAction value);
 
 } // ObjectAction

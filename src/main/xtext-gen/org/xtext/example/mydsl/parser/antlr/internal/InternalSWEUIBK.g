@@ -134,41 +134,85 @@ ruleObjectDeclaration returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getObjectDeclarationAccess().getMonitorDeclarationParserRuleCall_0());
-		}
-		this_MonitorDeclaration_0=ruleMonitorDeclaration
-		{
-			$current = $this_MonitorDeclaration_0.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectDeclarationAccess().getMonitorMonitorDeclarationParserRuleCall_0_0());
+				}
+				lv_monitor_0_0=ruleMonitorDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectDeclarationRule());
+					}
+					set(
+						$current,
+						"monitor",
+						lv_monitor_0_0,
+						"org.xtext.example.mydsl.SWEUIBK.MonitorDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		    |
-		{
-			newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAnalyzerDeclarationParserRuleCall_1());
-		}
-		this_AnalyzerDeclaration_1=ruleAnalyzerDeclaration
-		{
-			$current = $this_AnalyzerDeclaration_1.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAnalyzerAnalyzerDeclarationParserRuleCall_1_0());
+				}
+				lv_analyzer_1_0=ruleAnalyzerDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectDeclarationRule());
+					}
+					set(
+						$current,
+						"analyzer",
+						lv_analyzer_1_0,
+						"org.xtext.example.mydsl.SWEUIBK.AnalyzerDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		    |
-		{
-			newCompositeNode(grammarAccess.getObjectDeclarationAccess().getPageDeclarationParserRuleCall_2());
-		}
-		this_PageDeclaration_2=rulePageDeclaration
-		{
-			$current = $this_PageDeclaration_2.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectDeclarationAccess().getPagePageDeclarationParserRuleCall_2_0());
+				}
+				lv_page_2_0=rulePageDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectDeclarationRule());
+					}
+					set(
+						$current,
+						"page",
+						lv_page_2_0,
+						"org.xtext.example.mydsl.SWEUIBK.PageDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		    |
-		{
-			newCompositeNode(grammarAccess.getObjectDeclarationAccess().getModelDeclarationParserRuleCall_3());
-		}
-		this_ModelDeclaration_3=ruleModelDeclaration
-		{
-			$current = $this_ModelDeclaration_3.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectDeclarationAccess().getModelModelDeclarationParserRuleCall_3_0());
+				}
+				lv_model_3_0=ruleModelDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectDeclarationRule());
+					}
+					set(
+						$current,
+						"model",
+						lv_model_3_0,
+						"org.xtext.example.mydsl.SWEUIBK.ModelDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -251,38 +295,61 @@ ruleMonitorDeclaration returns [EObject current=null]
 				}
 			)
 		)
-		{
-			newCompositeNode(grammarAccess.getMonitorDeclarationAccess().getMonitorInitializationParserRuleCall_2());
-		}
-		ruleMonitorInitialization
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMonitorDeclarationAccess().getUrlMonitorInitializationParserRuleCall_2_0());
+				}
+				lv_url_2_0=ruleMonitorInitialization
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMonitorDeclarationRule());
+					}
+					set(
+						$current,
+						"url",
+						lv_url_2_0,
+						"org.xtext.example.mydsl.SWEUIBK.MonitorInitialization");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
 // Entry rule entryRuleMonitorInitialization
-entryRuleMonitorInitialization returns [String current=null]:
+entryRuleMonitorInitialization returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getMonitorInitializationRule()); }
 	iv_ruleMonitorInitialization=ruleMonitorInitialization
-	{ $current=$iv_ruleMonitorInitialization.current.getText(); }
+	{ $current=$iv_ruleMonitorInitialization.current; }
 	EOF;
 
 // Rule MonitorInitialization
-ruleMonitorInitialization returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleMonitorInitialization returns [EObject current=null]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	this_STRING_0=RULE_STRING
-	{
-		$current.merge(this_STRING_0);
-	}
-	{
-		newLeafNode(this_STRING_0, grammarAccess.getMonitorInitializationAccess().getSTRINGTerminalRuleCall());
-	}
+	(
+		(
+			lv_url_0_0=RULE_STRING
+			{
+				newLeafNode(lv_url_0_0, grammarAccess.getMonitorInitializationAccess().getUrlSTRINGTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getMonitorInitializationRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"url",
+					lv_url_0_0,
+					"org.eclipse.xtext.common.Terminals.STRING");
+			}
+		)
+	)
 ;
 
 // Entry rule entryRuleAnalyzerDeclaration
@@ -305,14 +372,25 @@ ruleAnalyzerDeclaration returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAnalyzerDeclarationAccess().getAnalyzerKeyword_0());
 		}
-		{
-			newCompositeNode(grammarAccess.getAnalyzerDeclarationAccess().getAnalyzerParserRuleCall_1());
-		}
-		this_Analyzer_1=ruleAnalyzer
-		{
-			$current = $this_Analyzer_1.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAnalyzerDeclarationAccess().getNameAnalyzerParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleAnalyzer
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAnalyzerDeclarationRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.xtext.example.mydsl.SWEUIBK.Analyzer");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -408,41 +486,85 @@ ruleObjectAction returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getObjectActionAccess().getMonitorObjectActionParserRuleCall_0());
-		}
-		this_MonitorObjectAction_0=ruleMonitorObjectAction
-		{
-			$current = $this_MonitorObjectAction_0.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectActionAccess().getMonitorActionMonitorObjectActionParserRuleCall_0_0());
+				}
+				lv_monitorAction_0_0=ruleMonitorObjectAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectActionRule());
+					}
+					set(
+						$current,
+						"monitorAction",
+						lv_monitorAction_0_0,
+						"org.xtext.example.mydsl.SWEUIBK.MonitorObjectAction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		    |
-		{
-			newCompositeNode(grammarAccess.getObjectActionAccess().getAnalyzerObjectActionParserRuleCall_1());
-		}
-		this_AnalyzerObjectAction_1=ruleAnalyzerObjectAction
-		{
-			$current = $this_AnalyzerObjectAction_1.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectActionAccess().getAnalyzerActionAnalyzerObjectActionParserRuleCall_1_0());
+				}
+				lv_analyzerAction_1_0=ruleAnalyzerObjectAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectActionRule());
+					}
+					set(
+						$current,
+						"analyzerAction",
+						lv_analyzerAction_1_0,
+						"org.xtext.example.mydsl.SWEUIBK.AnalyzerObjectAction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		    |
-		{
-			newCompositeNode(grammarAccess.getObjectActionAccess().getPageObjectActionParserRuleCall_2());
-		}
-		this_PageObjectAction_2=rulePageObjectAction
-		{
-			$current = $this_PageObjectAction_2.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectActionAccess().getPageActionPageObjectActionParserRuleCall_2_0());
+				}
+				lv_pageAction_2_0=rulePageObjectAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectActionRule());
+					}
+					set(
+						$current,
+						"pageAction",
+						lv_pageAction_2_0,
+						"org.xtext.example.mydsl.SWEUIBK.PageObjectAction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		    |
-		{
-			newCompositeNode(grammarAccess.getObjectActionAccess().getModelActionParserRuleCall_3());
-		}
-		this_ModelAction_3=ruleModelAction
-		{
-			$current = $this_ModelAction_3.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectActionAccess().getModelActionModelActionParserRuleCall_3_0());
+				}
+				lv_modelAction_3_0=ruleModelAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectActionRule());
+					}
+					set(
+						$current,
+						"modelAction",
+						lv_modelAction_3_0,
+						"org.xtext.example.mydsl.SWEUIBK.ModelAction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -493,13 +615,23 @@ ruleModelAction returns [EObject current=null]
 			newLeafNode(otherlv_3, grammarAccess.getModelActionAccess().getLeftParenthesisKeyword_3());
 		}
 		(
-			{
-				newCompositeNode(grammarAccess.getModelActionAccess().getModelStructureParserRuleCall_4());
-			}
-			ruleModelStructure
-			{
-				afterParserOrEnumRuleCall();
-			}
+			(
+				{
+					newCompositeNode(grammarAccess.getModelActionAccess().getModelStructureModelStructureParserRuleCall_4_0());
+				}
+				lv_modelStructure_4_0=ruleModelStructure
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModelActionRule());
+					}
+					set(
+						$current,
+						"modelStructure",
+						lv_modelStructure_4_0,
+						"org.xtext.example.mydsl.SWEUIBK.ModelStructure");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)+
 		otherlv_5=')'
 		{
@@ -509,27 +641,38 @@ ruleModelAction returns [EObject current=null]
 ;
 
 // Entry rule entryRuleModelStructure
-entryRuleModelStructure returns [String current=null]:
+entryRuleModelStructure returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getModelStructureRule()); }
 	iv_ruleModelStructure=ruleModelStructure
-	{ $current=$iv_ruleModelStructure.current.getText(); }
+	{ $current=$iv_ruleModelStructure.current; }
 	EOF;
 
 // Rule ModelStructure
-ruleModelStructure returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleModelStructure returns [EObject current=null]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	this_STRING_0=RULE_STRING
-	{
-		$current.merge(this_STRING_0);
-	}
-	{
-		newLeafNode(this_STRING_0, grammarAccess.getModelStructureAccess().getSTRINGTerminalRuleCall());
-	}
+	(
+		(
+			lv_source_0_0=RULE_STRING
+			{
+				newLeafNode(lv_source_0_0, grammarAccess.getModelStructureAccess().getSourceSTRINGTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getModelStructureRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"source",
+					lv_source_0_0,
+					"org.eclipse.xtext.common.Terminals.STRING");
+			}
+		)
+	)
 ;
 
 // Entry rule entryRuleMonitorObjectAction
@@ -794,13 +937,25 @@ rulePageObjectAction returns [EObject current=null]
 				}
 			)
 			    |
-			{
-				newCompositeNode(grammarAccess.getPageObjectActionAccess().getGenerateHeaderParserRuleCall_2_1());
-			}
-			ruleGenerateHeader
-			{
-				afterParserOrEnumRuleCall();
-			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPageObjectActionAccess().getHeaderListGenerateHeaderParserRuleCall_2_1_0());
+					}
+					lv_headerList_6_0=ruleGenerateHeader
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPageObjectActionRule());
+						}
+						set(
+							$current,
+							"headerList",
+							lv_headerList_6_0,
+							"org.xtext.example.mydsl.SWEUIBK.GenerateHeader");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
 		)
 	)
 ;

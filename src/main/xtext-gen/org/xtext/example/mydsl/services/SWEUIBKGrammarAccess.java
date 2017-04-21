@@ -55,29 +55,45 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 	public class ObjectDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.SWEUIBK.ObjectDeclaration");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cMonitorDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cAnalyzerDeclarationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cPageDeclarationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cModelDeclarationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final Assignment cMonitorAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cMonitorMonitorDeclarationParserRuleCall_0_0 = (RuleCall)cMonitorAssignment_0.eContents().get(0);
+		private final Assignment cAnalyzerAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cAnalyzerAnalyzerDeclarationParserRuleCall_1_0 = (RuleCall)cAnalyzerAssignment_1.eContents().get(0);
+		private final Assignment cPageAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cPagePageDeclarationParserRuleCall_2_0 = (RuleCall)cPageAssignment_2.eContents().get(0);
+		private final Assignment cModelAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cModelModelDeclarationParserRuleCall_3_0 = (RuleCall)cModelAssignment_3.eContents().get(0);
 		
 		//ObjectDeclaration:
-		//	MonitorDeclaration | AnalyzerDeclaration | PageDeclaration | ModelDeclaration;
+		//	monitor=MonitorDeclaration | analyzer=AnalyzerDeclaration | page=PageDeclaration | model=ModelDeclaration;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MonitorDeclaration | AnalyzerDeclaration | PageDeclaration | ModelDeclaration
+		//monitor=MonitorDeclaration | analyzer=AnalyzerDeclaration | page=PageDeclaration | model=ModelDeclaration
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//monitor=MonitorDeclaration
+		public Assignment getMonitorAssignment_0() { return cMonitorAssignment_0; }
+		
 		//MonitorDeclaration
-		public RuleCall getMonitorDeclarationParserRuleCall_0() { return cMonitorDeclarationParserRuleCall_0; }
+		public RuleCall getMonitorMonitorDeclarationParserRuleCall_0_0() { return cMonitorMonitorDeclarationParserRuleCall_0_0; }
+		
+		//analyzer=AnalyzerDeclaration
+		public Assignment getAnalyzerAssignment_1() { return cAnalyzerAssignment_1; }
 		
 		//AnalyzerDeclaration
-		public RuleCall getAnalyzerDeclarationParserRuleCall_1() { return cAnalyzerDeclarationParserRuleCall_1; }
+		public RuleCall getAnalyzerAnalyzerDeclarationParserRuleCall_1_0() { return cAnalyzerAnalyzerDeclarationParserRuleCall_1_0; }
+		
+		//page=PageDeclaration
+		public Assignment getPageAssignment_2() { return cPageAssignment_2; }
 		
 		//PageDeclaration
-		public RuleCall getPageDeclarationParserRuleCall_2() { return cPageDeclarationParserRuleCall_2; }
+		public RuleCall getPagePageDeclarationParserRuleCall_2_0() { return cPagePageDeclarationParserRuleCall_2_0; }
+		
+		//model=ModelDeclaration
+		public Assignment getModelAssignment_3() { return cModelAssignment_3; }
 		
 		//ModelDeclaration
-		public RuleCall getModelDeclarationParserRuleCall_3() { return cModelDeclarationParserRuleCall_3; }
+		public RuleCall getModelModelDeclarationParserRuleCall_3_0() { return cModelModelDeclarationParserRuleCall_3_0; }
 	}
 	public class ModelDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.SWEUIBK.ModelDeclaration");
@@ -108,13 +124,14 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMonitorKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final RuleCall cMonitorInitializationParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cUrlAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cUrlMonitorInitializationParserRuleCall_2_0 = (RuleCall)cUrlAssignment_2.eContents().get(0);
 		
 		//MonitorDeclaration:
-		//	'Monitor' name=ID MonitorInitialization;
+		//	'Monitor' name=ID url=MonitorInitialization;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Monitor' name=ID MonitorInitialization
+		//'Monitor' name=ID url=MonitorInitialization
 		public Group getGroup() { return cGroup; }
 		
 		//'Monitor'
@@ -126,38 +143,49 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
+		//url=MonitorInitialization
+		public Assignment getUrlAssignment_2() { return cUrlAssignment_2; }
+		
 		//MonitorInitialization
-		public RuleCall getMonitorInitializationParserRuleCall_2() { return cMonitorInitializationParserRuleCall_2; }
+		public RuleCall getUrlMonitorInitializationParserRuleCall_2_0() { return cUrlMonitorInitializationParserRuleCall_2_0; }
 	}
 	public class MonitorInitializationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.SWEUIBK.MonitorInitialization");
-		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Assignment cUrlAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cUrlSTRINGTerminalRuleCall_0 = (RuleCall)cUrlAssignment.eContents().get(0);
 		
 		//MonitorInitialization:
-		//	STRING;
+		//	url=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//url=STRING
+		public Assignment getUrlAssignment() { return cUrlAssignment; }
+		
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
+		public RuleCall getUrlSTRINGTerminalRuleCall_0() { return cUrlSTRINGTerminalRuleCall_0; }
 	}
 	public class AnalyzerDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.SWEUIBK.AnalyzerDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAnalyzerKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cAnalyzerParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameAnalyzerParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//AnalyzerDeclaration:
-		//	'Analyzer' Analyzer;
+		//	'Analyzer' name=Analyzer;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Analyzer' Analyzer
+		//'Analyzer' name=Analyzer
 		public Group getGroup() { return cGroup; }
 		
 		//'Analyzer'
 		public Keyword getAnalyzerKeyword_0() { return cAnalyzerKeyword_0; }
 		
+		//name=Analyzer
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
 		//Analyzer
-		public RuleCall getAnalyzerParserRuleCall_1() { return cAnalyzerParserRuleCall_1; }
+		public RuleCall getNameAnalyzerParserRuleCall_1_0() { return cNameAnalyzerParserRuleCall_1_0; }
 	}
 	public class AnalyzerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.SWEUIBK.Analyzer");
@@ -200,29 +228,47 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 	public class ObjectActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.SWEUIBK.ObjectAction");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cMonitorObjectActionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cAnalyzerObjectActionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cPageObjectActionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cModelActionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final Assignment cMonitorActionAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cMonitorActionMonitorObjectActionParserRuleCall_0_0 = (RuleCall)cMonitorActionAssignment_0.eContents().get(0);
+		private final Assignment cAnalyzerActionAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cAnalyzerActionAnalyzerObjectActionParserRuleCall_1_0 = (RuleCall)cAnalyzerActionAssignment_1.eContents().get(0);
+		private final Assignment cPageActionAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cPageActionPageObjectActionParserRuleCall_2_0 = (RuleCall)cPageActionAssignment_2.eContents().get(0);
+		private final Assignment cModelActionAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cModelActionModelActionParserRuleCall_3_0 = (RuleCall)cModelActionAssignment_3.eContents().get(0);
 		
 		//ObjectAction:
-		//	MonitorObjectAction | AnalyzerObjectAction | PageObjectAction | ModelAction;
+		//	monitorAction=MonitorObjectAction | analyzerAction=AnalyzerObjectAction | pageAction=PageObjectAction |
+		//	modelAction=ModelAction;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MonitorObjectAction | AnalyzerObjectAction | PageObjectAction | ModelAction
+		//monitorAction=MonitorObjectAction | analyzerAction=AnalyzerObjectAction | pageAction=PageObjectAction |
+		//modelAction=ModelAction
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//monitorAction=MonitorObjectAction
+		public Assignment getMonitorActionAssignment_0() { return cMonitorActionAssignment_0; }
+		
 		//MonitorObjectAction
-		public RuleCall getMonitorObjectActionParserRuleCall_0() { return cMonitorObjectActionParserRuleCall_0; }
+		public RuleCall getMonitorActionMonitorObjectActionParserRuleCall_0_0() { return cMonitorActionMonitorObjectActionParserRuleCall_0_0; }
+		
+		//analyzerAction=AnalyzerObjectAction
+		public Assignment getAnalyzerActionAssignment_1() { return cAnalyzerActionAssignment_1; }
 		
 		//AnalyzerObjectAction
-		public RuleCall getAnalyzerObjectActionParserRuleCall_1() { return cAnalyzerObjectActionParserRuleCall_1; }
+		public RuleCall getAnalyzerActionAnalyzerObjectActionParserRuleCall_1_0() { return cAnalyzerActionAnalyzerObjectActionParserRuleCall_1_0; }
+		
+		//pageAction=PageObjectAction
+		public Assignment getPageActionAssignment_2() { return cPageActionAssignment_2; }
 		
 		//PageObjectAction
-		public RuleCall getPageObjectActionParserRuleCall_2() { return cPageObjectActionParserRuleCall_2; }
+		public RuleCall getPageActionPageObjectActionParserRuleCall_2_0() { return cPageActionPageObjectActionParserRuleCall_2_0; }
+		
+		//modelAction=ModelAction
+		public Assignment getModelActionAssignment_3() { return cModelActionAssignment_3; }
 		
 		//ModelAction
-		public RuleCall getModelActionParserRuleCall_3() { return cModelActionParserRuleCall_3; }
+		public RuleCall getModelActionModelActionParserRuleCall_3_0() { return cModelActionModelActionParserRuleCall_3_0; }
 	}
 	public class ModelActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.SWEUIBK.ModelAction");
@@ -232,14 +278,15 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLoadStructureKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final RuleCall cModelStructureParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cModelStructureAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cModelStructureModelStructureParserRuleCall_4_0 = (RuleCall)cModelStructureAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ModelAction:
-		//	name=ID '.' 'loadStructure' '(' ModelStructure+ ')';
+		//	name=ID '.' 'loadStructure' '(' modelStructure=ModelStructure+ ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '.' 'loadStructure' '(' ModelStructure+ ')'
+		//name=ID '.' 'loadStructure' '(' modelStructure=ModelStructure+ ')'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -257,22 +304,29 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
 		
-		//ModelStructure+
-		public RuleCall getModelStructureParserRuleCall_4() { return cModelStructureParserRuleCall_4; }
+		//modelStructure=ModelStructure+
+		public Assignment getModelStructureAssignment_4() { return cModelStructureAssignment_4; }
+		
+		//ModelStructure
+		public RuleCall getModelStructureModelStructureParserRuleCall_4_0() { return cModelStructureModelStructureParserRuleCall_4_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 	public class ModelStructureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.SWEUIBK.ModelStructure");
-		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Assignment cSourceAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cSourceSTRINGTerminalRuleCall_0 = (RuleCall)cSourceAssignment.eContents().get(0);
 		
 		//ModelStructure:
-		//	STRING;
+		//	source=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//source=STRING
+		public Assignment getSourceAssignment() { return cSourceAssignment; }
+		
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
+		public RuleCall getSourceSTRINGTerminalRuleCall_0() { return cSourceSTRINGTerminalRuleCall_0; }
 	}
 	public class MonitorObjectActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.SWEUIBK.MonitorObjectAction");
@@ -382,13 +436,14 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cMethodAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
 		private final RuleCall cMethodMethodParameterParserRuleCall_2_0_2_0 = (RuleCall)cMethodAssignment_2_0_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_2_0_3 = (Keyword)cGroup_2_0.eContents().get(3);
-		private final RuleCall cGenerateHeaderParserRuleCall_2_1 = (RuleCall)cAlternatives_2.eContents().get(1);
+		private final Assignment cHeaderListAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cHeaderListGenerateHeaderParserRuleCall_2_1_0 = (RuleCall)cHeaderListAssignment_2_1.eContents().get(0);
 		
 		//PageObjectAction:
-		//	name=ID '.' (value=PageOperations '(' method=MethodParameter? ')' | GenerateHeader);
+		//	name=ID '.' (value=PageOperations '(' method=MethodParameter? ')' | headerList=GenerateHeader);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '.' (value=PageOperations '(' method=MethodParameter? ')' | GenerateHeader)
+		//name=ID '.' (value=PageOperations '(' method=MethodParameter? ')' | headerList=GenerateHeader)
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -400,7 +455,7 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//(value=PageOperations '(' method=MethodParameter? ')' | GenerateHeader)
+		//(value=PageOperations '(' method=MethodParameter? ')' | headerList=GenerateHeader)
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//value=PageOperations '(' method=MethodParameter? ')'
@@ -424,8 +479,11 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_2_0_3() { return cRightParenthesisKeyword_2_0_3; }
 		
+		//headerList=GenerateHeader
+		public Assignment getHeaderListAssignment_2_1() { return cHeaderListAssignment_2_1; }
+		
 		//GenerateHeader
-		public RuleCall getGenerateHeaderParserRuleCall_2_1() { return cGenerateHeaderParserRuleCall_2_1; }
+		public RuleCall getHeaderListGenerateHeaderParserRuleCall_2_1_0() { return cHeaderListGenerateHeaderParserRuleCall_2_1_0; }
 	}
 	public class GenerateHeaderElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.SWEUIBK.GenerateHeader");
@@ -716,7 +774,7 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ObjectDeclaration:
-	//	MonitorDeclaration | AnalyzerDeclaration | PageDeclaration | ModelDeclaration;
+	//	monitor=MonitorDeclaration | analyzer=AnalyzerDeclaration | page=PageDeclaration | model=ModelDeclaration;
 	public ObjectDeclarationElements getObjectDeclarationAccess() {
 		return pObjectDeclaration;
 	}
@@ -736,7 +794,7 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MonitorDeclaration:
-	//	'Monitor' name=ID MonitorInitialization;
+	//	'Monitor' name=ID url=MonitorInitialization;
 	public MonitorDeclarationElements getMonitorDeclarationAccess() {
 		return pMonitorDeclaration;
 	}
@@ -746,7 +804,7 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MonitorInitialization:
-	//	STRING;
+	//	url=STRING;
 	public MonitorInitializationElements getMonitorInitializationAccess() {
 		return pMonitorInitialization;
 	}
@@ -756,7 +814,7 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AnalyzerDeclaration:
-	//	'Analyzer' Analyzer;
+	//	'Analyzer' name=Analyzer;
 	public AnalyzerDeclarationElements getAnalyzerDeclarationAccess() {
 		return pAnalyzerDeclaration;
 	}
@@ -786,7 +844,8 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ObjectAction:
-	//	MonitorObjectAction | AnalyzerObjectAction | PageObjectAction | ModelAction;
+	//	monitorAction=MonitorObjectAction | analyzerAction=AnalyzerObjectAction | pageAction=PageObjectAction |
+	//	modelAction=ModelAction;
 	public ObjectActionElements getObjectActionAccess() {
 		return pObjectAction;
 	}
@@ -796,7 +855,7 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ModelAction:
-	//	name=ID '.' 'loadStructure' '(' ModelStructure+ ')';
+	//	name=ID '.' 'loadStructure' '(' modelStructure=ModelStructure+ ')';
 	public ModelActionElements getModelActionAccess() {
 		return pModelAction;
 	}
@@ -806,7 +865,7 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ModelStructure:
-	//	STRING;
+	//	source=STRING;
 	public ModelStructureElements getModelStructureAccess() {
 		return pModelStructure;
 	}
@@ -836,7 +895,7 @@ public class SWEUIBKGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PageObjectAction:
-	//	name=ID '.' (value=PageOperations '(' method=MethodParameter? ')' | GenerateHeader);
+	//	name=ID '.' (value=PageOperations '(' method=MethodParameter? ')' | headerList=GenerateHeader);
 	public PageObjectActionElements getPageObjectActionAccess() {
 		return pPageObjectAction;
 	}

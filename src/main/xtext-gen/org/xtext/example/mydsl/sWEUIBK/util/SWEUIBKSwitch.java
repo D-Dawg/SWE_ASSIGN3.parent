@@ -91,7 +91,6 @@ public class SWEUIBKSwitch<T> extends Switch<T>
       {
         ModelDeclaration modelDeclaration = (ModelDeclaration)theEObject;
         T result = caseModelDeclaration(modelDeclaration);
-        if (result == null) result = caseObjectDeclaration(modelDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -99,7 +98,13 @@ public class SWEUIBKSwitch<T> extends Switch<T>
       {
         MonitorDeclaration monitorDeclaration = (MonitorDeclaration)theEObject;
         T result = caseMonitorDeclaration(monitorDeclaration);
-        if (result == null) result = caseObjectDeclaration(monitorDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SWEUIBKPackage.MONITOR_INITIALIZATION:
+      {
+        MonitorInitialization monitorInitialization = (MonitorInitialization)theEObject;
+        T result = caseMonitorInitialization(monitorInitialization);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -107,7 +112,6 @@ public class SWEUIBKSwitch<T> extends Switch<T>
       {
         AnalyzerDeclaration analyzerDeclaration = (AnalyzerDeclaration)theEObject;
         T result = caseAnalyzerDeclaration(analyzerDeclaration);
-        if (result == null) result = caseObjectDeclaration(analyzerDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,8 +119,6 @@ public class SWEUIBKSwitch<T> extends Switch<T>
       {
         Analyzer analyzer = (Analyzer)theEObject;
         T result = caseAnalyzer(analyzer);
-        if (result == null) result = caseAnalyzerDeclaration(analyzer);
-        if (result == null) result = caseObjectDeclaration(analyzer);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -124,7 +126,6 @@ public class SWEUIBKSwitch<T> extends Switch<T>
       {
         PageDeclaration pageDeclaration = (PageDeclaration)theEObject;
         T result = casePageDeclaration(pageDeclaration);
-        if (result == null) result = caseObjectDeclaration(pageDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -139,7 +140,13 @@ public class SWEUIBKSwitch<T> extends Switch<T>
       {
         ModelAction modelAction = (ModelAction)theEObject;
         T result = caseModelAction(modelAction);
-        if (result == null) result = caseObjectAction(modelAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SWEUIBKPackage.MODEL_STRUCTURE:
+      {
+        ModelStructure modelStructure = (ModelStructure)theEObject;
+        T result = caseModelStructure(modelStructure);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -147,7 +154,6 @@ public class SWEUIBKSwitch<T> extends Switch<T>
       {
         MonitorObjectAction monitorObjectAction = (MonitorObjectAction)theEObject;
         T result = caseMonitorObjectAction(monitorObjectAction);
-        if (result == null) result = caseObjectAction(monitorObjectAction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -155,7 +161,6 @@ public class SWEUIBKSwitch<T> extends Switch<T>
       {
         AnalyzerObjectAction analyzerObjectAction = (AnalyzerObjectAction)theEObject;
         T result = caseAnalyzerObjectAction(analyzerObjectAction);
-        if (result == null) result = caseObjectAction(analyzerObjectAction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -163,7 +168,6 @@ public class SWEUIBKSwitch<T> extends Switch<T>
       {
         PageObjectAction pageObjectAction = (PageObjectAction)theEObject;
         T result = casePageObjectAction(pageObjectAction);
-        if (result == null) result = caseObjectAction(pageObjectAction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -231,6 +235,22 @@ public class SWEUIBKSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMonitorDeclaration(MonitorDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Monitor Initialization</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Monitor Initialization</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMonitorInitialization(MonitorInitialization object)
   {
     return null;
   }
@@ -311,6 +331,22 @@ public class SWEUIBKSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModelAction(ModelAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Model Structure</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Model Structure</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModelStructure(ModelStructure object)
   {
     return null;
   }

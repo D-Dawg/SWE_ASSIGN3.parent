@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.sWEUIBK.Analyzer;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
@@ -25,7 +26,7 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
  *
  * @generated
  */
-public class AnalyzerImpl extends AnalyzerDeclarationImpl implements Analyzer
+public class AnalyzerImpl extends MinimalEObjectImpl.Container implements Analyzer
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.sWEUIBK.AnalyzerObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.AnalyzerOperations;
@@ -21,14 +22,35 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.AnalyzerObjectActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.AnalyzerObjectActionImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.AnalyzerObjectActionImpl#getMethod <em>Method</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AnalyzerObjectActionImpl extends ObjectActionImpl implements AnalyzerObjectAction
+public class AnalyzerObjectActionImpl extends MinimalEObjectImpl.Container implements AnalyzerObjectAction
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -95,6 +117,29 @@ public class AnalyzerObjectActionImpl extends ObjectActionImpl implements Analyz
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.ANALYZER_OBJECT_ACTION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AnalyzerOperations getValue()
   {
     return value;
@@ -146,6 +191,8 @@ public class AnalyzerObjectActionImpl extends ObjectActionImpl implements Analyz
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.ANALYZER_OBJECT_ACTION__NAME:
+        return getName();
       case SWEUIBKPackage.ANALYZER_OBJECT_ACTION__VALUE:
         return getValue();
       case SWEUIBKPackage.ANALYZER_OBJECT_ACTION__METHOD:
@@ -164,6 +211,9 @@ public class AnalyzerObjectActionImpl extends ObjectActionImpl implements Analyz
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.ANALYZER_OBJECT_ACTION__NAME:
+        setName((String)newValue);
+        return;
       case SWEUIBKPackage.ANALYZER_OBJECT_ACTION__VALUE:
         setValue((AnalyzerOperations)newValue);
         return;
@@ -184,6 +234,9 @@ public class AnalyzerObjectActionImpl extends ObjectActionImpl implements Analyz
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.ANALYZER_OBJECT_ACTION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case SWEUIBKPackage.ANALYZER_OBJECT_ACTION__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
@@ -204,6 +257,8 @@ public class AnalyzerObjectActionImpl extends ObjectActionImpl implements Analyz
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.ANALYZER_OBJECT_ACTION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SWEUIBKPackage.ANALYZER_OBJECT_ACTION__VALUE:
         return value != VALUE_EDEFAULT;
       case SWEUIBKPackage.ANALYZER_OBJECT_ACTION__METHOD:
@@ -223,7 +278,9 @@ public class AnalyzerObjectActionImpl extends ObjectActionImpl implements Analyz
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", value: ");
     result.append(value);
     result.append(", method: ");
     result.append(method);

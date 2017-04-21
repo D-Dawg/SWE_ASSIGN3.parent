@@ -3,6 +3,7 @@
  */
 package org.xtext.example.mydsl.sWEUIBK;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package org.xtext.example.mydsl.sWEUIBK;
  * @model
  * @generated
  */
-public interface ModelDeclaration extends ObjectDeclaration
+public interface ModelDeclaration extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

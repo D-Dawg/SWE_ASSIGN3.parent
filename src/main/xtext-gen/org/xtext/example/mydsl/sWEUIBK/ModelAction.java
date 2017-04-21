@@ -3,17 +3,77 @@
  */
 package org.xtext.example.mydsl.sWEUIBK;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Model Action</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ModelAction#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.ModelAction#getModelStructure <em>Model Structure</em>}</li>
+ * </ul>
  *
  * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getModelAction()
  * @model
  * @generated
  */
-public interface ModelAction extends ObjectAction
+public interface ModelAction extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getModelAction_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ModelAction#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Model Structure</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Model Structure</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Model Structure</em>' containment reference.
+   * @see #setModelStructure(ModelStructure)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getModelAction_ModelStructure()
+   * @model containment="true"
+   * @generated
+   */
+  ModelStructure getModelStructure();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.ModelAction#getModelStructure <em>Model Structure</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Model Structure</em>' containment reference.
+   * @see #getModelStructure()
+   * @generated
+   */
+  void setModelStructure(ModelStructure value);
+
 } // ModelAction

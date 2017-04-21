@@ -4,12 +4,16 @@
 package org.xtext.example.mydsl.sWEUIBK.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration;
+import org.xtext.example.mydsl.sWEUIBK.MonitorInitialization;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
 
 /**
@@ -21,11 +25,12 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorDeclarationImpl#getUrl <em>Url</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MonitorDeclarationImpl extends ObjectDeclarationImpl implements MonitorDeclaration
+public class MonitorDeclarationImpl extends MinimalEObjectImpl.Container implements MonitorDeclaration
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -46,6 +51,16 @@ public class MonitorDeclarationImpl extends ObjectDeclarationImpl implements Mon
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getUrl() <em>Url</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUrl()
+   * @generated
+   * @ordered
+   */
+  protected MonitorInitialization url;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,6 +111,70 @@ public class MonitorDeclarationImpl extends ObjectDeclarationImpl implements Mon
    * <!-- end-user-doc -->
    * @generated
    */
+  public MonitorInitialization getUrl()
+  {
+    return url;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetUrl(MonitorInitialization newUrl, NotificationChain msgs)
+  {
+    MonitorInitialization oldUrl = url;
+    url = newUrl;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MONITOR_DECLARATION__URL, oldUrl, newUrl);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUrl(MonitorInitialization newUrl)
+  {
+    if (newUrl != url)
+    {
+      NotificationChain msgs = null;
+      if (url != null)
+        msgs = ((InternalEObject)url).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.MONITOR_DECLARATION__URL, null, msgs);
+      if (newUrl != null)
+        msgs = ((InternalEObject)newUrl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.MONITOR_DECLARATION__URL, null, msgs);
+      msgs = basicSetUrl(newUrl, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MONITOR_DECLARATION__URL, newUrl, newUrl));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SWEUIBKPackage.MONITOR_DECLARATION__URL:
+        return basicSetUrl(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -103,6 +182,8 @@ public class MonitorDeclarationImpl extends ObjectDeclarationImpl implements Mon
     {
       case SWEUIBKPackage.MONITOR_DECLARATION__NAME:
         return getName();
+      case SWEUIBKPackage.MONITOR_DECLARATION__URL:
+        return getUrl();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,6 +200,9 @@ public class MonitorDeclarationImpl extends ObjectDeclarationImpl implements Mon
     {
       case SWEUIBKPackage.MONITOR_DECLARATION__NAME:
         setName((String)newValue);
+        return;
+      case SWEUIBKPackage.MONITOR_DECLARATION__URL:
+        setUrl((MonitorInitialization)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,6 +221,9 @@ public class MonitorDeclarationImpl extends ObjectDeclarationImpl implements Mon
       case SWEUIBKPackage.MONITOR_DECLARATION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case SWEUIBKPackage.MONITOR_DECLARATION__URL:
+        setUrl((MonitorInitialization)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -153,6 +240,8 @@ public class MonitorDeclarationImpl extends ObjectDeclarationImpl implements Mon
     {
       case SWEUIBKPackage.MONITOR_DECLARATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SWEUIBKPackage.MONITOR_DECLARATION__URL:
+        return url != null;
     }
     return super.eIsSet(featureID);
   }

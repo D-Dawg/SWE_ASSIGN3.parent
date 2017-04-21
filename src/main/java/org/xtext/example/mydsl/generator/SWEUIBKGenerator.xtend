@@ -8,18 +8,143 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 
-/**
- * Generates code from your model files on save.
- * 
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
- */
+import org.xtext.example.mydsl.sWEUIBK.Domainmodel
+import org.xtext.example.mydsl.sWEUIBK.ModelDeclaration
+import org.xtext.example.mydsl.sWEUIBK.AnalyzerDeclaration
+import org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration
+import org.xtext.example.mydsl.sWEUIBK.PageDeclaration
+import org.xtext.example.mydsl.sWEUIBK.ModelAction
+import org.xtext.example.mydsl.sWEUIBK.PageObjectAction
+import org.xtext.example.mydsl.sWEUIBK.GenerateHeader
+
+
+
 class SWEUIBKGenerator extends AbstractGenerator {
 
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+
+		resource.allContents
+		.filter(typeof(Domainmodel))
+		.forEach[{
+				fsa.generateFile("Analyzer.java", vnlContents)
+			}]
+
 	}
+
+
+	def vnlContents(Domainmodel domainmodel) {
+		'''
+        import com.fasterxml.jackson.databind.ObjectMapper;
+        import org.apache.http.Header;
+        import org.apache.http.message.BasicHeader;
+
+        import com.SWE.server.Monitor;
+        import com.SWE.server.Analyzer;
+        import com.SWE.server.Model;
+        import com.SWE.server.Page;
+
+        public static void main (String [] args){
+
+            «FOR objectInitialization : domainmodel.elements»
+                «IF objectInitialization.monitor !=null»
+                    «objectInitialization.monitor.monitorInitialization»
+                «ENDIF»
+                «IF objectInitialization.model !=null»
+                    «objectInitialization.model.modelInitialization»
+                «ENDIF»
+                «IF objectInitialization.page !=null»
+                    «objectInitialization.page.pageInitialization»
+
+                «ENDIF»
+                «IF objectInitialization.analyzer !=null»
+                   	«objectInitialization.analyzer.analyzerInitialization»
+                «ENDIF»
+            «ENDFOR»
+
+            «FOR objectAction : domainmodel.actions»
+                «IF objectAction.monitorAction !=null»
+                    «objectAction»
+                «ENDIF»
+                «IF objectAction.modelAction !=null»
+                    «objectAction.modelAction.modelAction»
+                «ENDIF»
+                «IF objectAction.pageAction !=null»
+                    «objectAction.pageAction.pageAction»
+
+                «ENDIF»
+                «IF objectAction.analyzerAction !=null»
+                   	«objectAction»
+                «ENDIF»
+            «ENDFOR»
+
+        }
+        '''.toString
+	}
+
+	def modelInitialization(ModelDeclaration model){
+		'''
+             Model «model.name» = new Model();
+        '''.toString
+	}
+
+	def analyzerInitialization(AnalyzerDeclaration analyzer){
+		'''
+             Analyzer «analyzer.name.name» = new Analyzer();
+        '''.toString
+	}
+
+	def monitorInitialization(MonitorDeclaration monitor){
+		'''
+             Monitor «monitor.name» = new Monitor();
+             «monitor.name».initialzeFromSource("«monitor.url.url»");
+        '''.toString
+	}
+
+	def pageInitialization(PageDeclaration page){
+		'''
+             Page «page.name» = new Page();
+        '''.toString
+	}
+
+	def modelAction(ModelAction modelAction){
+		'''
+             «modelAction.name».initialzeFromSource("«modelAction.modelStructure.source»");
+        '''.toString
+	}
+
+	def pageAction(PageObjectAction pageAction){
+		'''
+              «IF pageAction.value.equals("url")»
+                   	«pageAction.name».«pageAction.value».
+              «ENDIF»
+              «IF pageAction.value.equals("connectType")»
+              		«pageAction.name».setConnectionType("get");
+              «ENDIF»
+              «IF pageAction.headerList != null»
+              		ObjectMapper mapper = new ObjectMapper();
+       				mapper.readValue(json, GRUModel.class);
+              «ENDIF»
+
+        '''.toString
+	}
+
+
+	def generateHeaderList(GenerateHeader pageAction){
+		'''
+              «IF pageAction.value.equals("url")»
+                   	«pageAction.name».«pageAction.value».
+              «ENDIF»
+              «IF pageAction.value.equals("connectType")»
+              		«pageAction.name».setConnectionType("get");
+              «ENDIF»
+              «IF pageAction.headerList != null»
+              		ObjectMapper mapper = new ObjectMapper();
+       				mapper.readValue(json, GRUModel.class);
+              «ENDIF»
+
+        '''.toString
+	}
+
+
 }

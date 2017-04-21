@@ -10,8 +10,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.example.mydsl.services.SWEUIBKGrammarAccess;
@@ -20,54 +18,17 @@ import org.xtext.example.mydsl.services.SWEUIBKGrammarAccess;
 public class SWEUIBKSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SWEUIBKGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_ModelAction_ModelStructureParserRuleCall_4_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SWEUIBKGrammarAccess) access;
-		match_ModelAction_ModelStructureParserRuleCall_4_p = new TokenAlias(true, false, grammarAccess.getModelActionAccess().getModelStructureParserRuleCall_4());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getGenerateHeaderRule())
-			return getGenerateHeaderToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getModelStructureRule())
-			return getModelStructureToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getMonitorInitializationRule())
-			return getMonitorInitializationToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * GenerateHeader:
-	 *     'generateHeaderList' '('  Header* ')';
-	 */
-	protected String getGenerateHeaderToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "generateHeaderList()";
-	}
-	
-	/**
-	 * ModelStructure:
-	 *     STRING ;
-	 */
-	protected String getModelStructureToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "\"\"";
-	}
-	
-	/**
-	 * MonitorInitialization:
-	 *     STRING ;
-	 */
-	protected String getMonitorInitializationToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "\"\"";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -75,21 +36,8 @@ public class SWEUIBKSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_ModelAction_ModelStructureParserRuleCall_4_p.equals(syntax))
-				emit_ModelAction_ModelStructureParserRuleCall_4_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     ModelStructure+
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     name=ID '.' 'loadStructure' '(' (ambiguity) ')' (rule end)
-	 */
-	protected void emit_ModelAction_ModelStructureParserRuleCall_4_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }

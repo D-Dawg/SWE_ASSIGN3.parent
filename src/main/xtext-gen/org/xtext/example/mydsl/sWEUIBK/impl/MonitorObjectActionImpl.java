@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.sWEUIBK.MonitorObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.MonitorOperations;
@@ -21,14 +22,35 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorObjectActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorObjectActionImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorObjectActionImpl#getMethod <em>Method</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MonitorObjectActionImpl extends ObjectActionImpl implements MonitorObjectAction
+public class MonitorObjectActionImpl extends MinimalEObjectImpl.Container implements MonitorObjectAction
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -95,6 +117,29 @@ public class MonitorObjectActionImpl extends ObjectActionImpl implements Monitor
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MONITOR_OBJECT_ACTION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public MonitorOperations getValue()
   {
     return value;
@@ -146,6 +191,8 @@ public class MonitorObjectActionImpl extends ObjectActionImpl implements Monitor
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.MONITOR_OBJECT_ACTION__NAME:
+        return getName();
       case SWEUIBKPackage.MONITOR_OBJECT_ACTION__VALUE:
         return getValue();
       case SWEUIBKPackage.MONITOR_OBJECT_ACTION__METHOD:
@@ -164,6 +211,9 @@ public class MonitorObjectActionImpl extends ObjectActionImpl implements Monitor
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.MONITOR_OBJECT_ACTION__NAME:
+        setName((String)newValue);
+        return;
       case SWEUIBKPackage.MONITOR_OBJECT_ACTION__VALUE:
         setValue((MonitorOperations)newValue);
         return;
@@ -184,6 +234,9 @@ public class MonitorObjectActionImpl extends ObjectActionImpl implements Monitor
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.MONITOR_OBJECT_ACTION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case SWEUIBKPackage.MONITOR_OBJECT_ACTION__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
@@ -204,6 +257,8 @@ public class MonitorObjectActionImpl extends ObjectActionImpl implements Monitor
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.MONITOR_OBJECT_ACTION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SWEUIBKPackage.MONITOR_OBJECT_ACTION__VALUE:
         return value != VALUE_EDEFAULT;
       case SWEUIBKPackage.MONITOR_OBJECT_ACTION__METHOD:
@@ -223,7 +278,9 @@ public class MonitorObjectActionImpl extends ObjectActionImpl implements Monitor
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", value: ");
     result.append(value);
     result.append(", method: ");
     result.append(method);
