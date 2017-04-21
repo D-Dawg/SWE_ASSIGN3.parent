@@ -15,7 +15,8 @@ import org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration
 import org.xtext.example.mydsl.sWEUIBK.PageDeclaration
 import org.xtext.example.mydsl.sWEUIBK.ModelAction
 import org.xtext.example.mydsl.sWEUIBK.PageObjectAction
-import org.xtext.example.mydsl.sWEUIBK.GenerateHeader
+import org.xtext.example.mydsl.sWEUIBK.AnalyzerObjectAction
+import org.xtext.example.mydsl.sWEUIBK.MonitorObjectAction
 
 
 
@@ -43,6 +44,7 @@ class SWEUIBKGenerator extends AbstractGenerator {
         import com.SWE.server.Analyzer;
         import com.SWE.server.Model;
         import com.SWE.server.Page;
+        import com.SWE.server.Utils;
 
         public static void main (String [] args){
 
@@ -64,7 +66,7 @@ class SWEUIBKGenerator extends AbstractGenerator {
 
             «FOR objectAction : domainmodel.actions»
                 «IF objectAction.monitorAction !=null»
-                    «objectAction»
+                    «objectAction.monitorAction.monitorAction»
                 «ENDIF»
                 «IF objectAction.modelAction !=null»
                     «objectAction.modelAction.modelAction»
@@ -74,7 +76,7 @@ class SWEUIBKGenerator extends AbstractGenerator {
 
                 «ENDIF»
                 «IF objectAction.analyzerAction !=null»
-                   	«objectAction»
+                   	«objectAction.analyzerAction.analyzerAction»
                 «ENDIF»
             «ENDFOR»
 
@@ -122,27 +124,29 @@ class SWEUIBKGenerator extends AbstractGenerator {
               		«pageAction.name».setConnectionType("get");
               «ENDIF»
               «IF pageAction.headerList != null»
-              		ObjectMapper mapper = new ObjectMapper();
-       				mapper.readValue(json, GRUModel.class);
               «ENDIF»
 
         '''.toString
 	}
 
 
-	def generateHeaderList(GenerateHeader pageAction){
+	def monitorAction(MonitorObjectAction monitorAction){
 		'''
-              «IF pageAction.value.equals("url")»
-                   	«pageAction.name».«pageAction.value».
-              «ENDIF»
-              «IF pageAction.value.equals("connectType")»
-              		«pageAction.name».setConnectionType("get");
-              «ENDIF»
-              «IF pageAction.headerList != null»
-              		ObjectMapper mapper = new ObjectMapper();
-       				mapper.readValue(json, GRUModel.class);
-              «ENDIF»
 
+        '''.toString
+	}
+
+	def analyzerAction(AnalyzerObjectAction analyzerAction){
+		'''
+				ObjectMapper mapper = new ObjectMapper();
+       			mapper.readValue(json, GRUModel.class);
+        '''.toString
+	}
+
+	def generateHeaderList(){
+		'''
+		List<Header> headerList = new ArrayList<Header>();
+        headerList.add(new BasicHeader("HOST","appmobile.gru.com.br"));
         '''.toString
 	}
 
