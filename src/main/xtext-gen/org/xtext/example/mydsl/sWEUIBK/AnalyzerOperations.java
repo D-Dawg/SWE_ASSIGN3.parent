@@ -21,16 +21,6 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum AnalyzerOperations implements Enumerator
 {
   /**
-   * The '<em><b>LOADPAGE</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #LOADPAGE_VALUE
-   * @generated
-   * @ordered
-   */
-  LOADPAGE(0, "LOADPAGE", "LoadPage"),
-
-  /**
    * The '<em><b>EXECUTE</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,17 +28,17 @@ public enum AnalyzerOperations implements Enumerator
    * @generated
    * @ordered
    */
-  EXECUTE(1, "EXECUTE", "Execute"),
+  EXECUTE(0, "EXECUTE", "Execute"),
 
   /**
-   * The '<em><b>REMOVE</b></em>' literal object.
+   * The '<em><b>LOADPAGE</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #REMOVE_VALUE
+   * @see #LOADPAGE_VALUE
    * @generated
    * @ordered
    */
-  REMOVE(2, "REMOVE", "RemovePage"),
+  LOADPAGE(1, "LOADPAGE", "LoadPage"),
 
   /**
    * The '<em><b>LOADMODEL</b></em>' literal object.
@@ -58,22 +48,7 @@ public enum AnalyzerOperations implements Enumerator
    * @generated
    * @ordered
    */
-  LOADMODEL(3, "LOADMODEL", "LoadModel");
-
-  /**
-   * The '<em><b>LOADPAGE</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>LOADPAGE</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @see #LOADPAGE
-   * @model literal="LoadPage"
-   * @generated
-   * @ordered
-   */
-  public static final int LOADPAGE_VALUE = 0;
+  LOADMODEL(2, "LOADMODEL", "LoadModel");
 
   /**
    * The '<em><b>EXECUTE</b></em>' literal value.
@@ -88,22 +63,22 @@ public enum AnalyzerOperations implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int EXECUTE_VALUE = 1;
+  public static final int EXECUTE_VALUE = 0;
 
   /**
-   * The '<em><b>REMOVE</b></em>' literal value.
+   * The '<em><b>LOADPAGE</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>REMOVE</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>LOADPAGE</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #REMOVE
-   * @model literal="RemovePage"
+   * @see #LOADPAGE
+   * @model literal="LoadPage"
    * @generated
    * @ordered
    */
-  public static final int REMOVE_VALUE = 2;
+  public static final int LOADPAGE_VALUE = 1;
 
   /**
    * The '<em><b>LOADMODEL</b></em>' literal value.
@@ -118,7 +93,7 @@ public enum AnalyzerOperations implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int LOADMODEL_VALUE = 3;
+  public static final int LOADMODEL_VALUE = 2;
 
   /**
    * An array of all the '<em><b>Analyzer Operations</b></em>' enumerators.
@@ -129,9 +104,8 @@ public enum AnalyzerOperations implements Enumerator
   private static final AnalyzerOperations[] VALUES_ARRAY =
     new AnalyzerOperations[]
     {
-      LOADPAGE,
       EXECUTE,
-      REMOVE,
+      LOADPAGE,
       LOADMODEL,
     };
 
@@ -197,9 +171,8 @@ public enum AnalyzerOperations implements Enumerator
   {
     switch (value)
     {
-      case LOADPAGE_VALUE: return LOADPAGE;
       case EXECUTE_VALUE: return EXECUTE;
-      case REMOVE_VALUE: return REMOVE;
+      case LOADPAGE_VALUE: return LOADPAGE;
       case LOADMODEL_VALUE: return LOADMODEL;
     }
     return null;

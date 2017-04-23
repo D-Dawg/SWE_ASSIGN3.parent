@@ -28,17 +28,7 @@ public enum PageOperations implements Enumerator
    * @generated
    * @ordered
    */
-  URL(0, "URL", "url"),
-
-  /**
-   * The '<em><b>CONNECTIONTYPE</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #CONNECTIONTYPE_VALUE
-   * @generated
-   * @ordered
-   */
-  CONNECTIONTYPE(1, "CONNECTIONTYPE", "connectType");
+  URL(0, "URL", "url");
 
   /**
    * The '<em><b>URL</b></em>' literal value.
@@ -56,21 +46,6 @@ public enum PageOperations implements Enumerator
   public static final int URL_VALUE = 0;
 
   /**
-   * The '<em><b>CONNECTIONTYPE</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>CONNECTIONTYPE</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @see #CONNECTIONTYPE
-   * @model literal="connectType"
-   * @generated
-   * @ordered
-   */
-  public static final int CONNECTIONTYPE_VALUE = 1;
-
-  /**
    * An array of all the '<em><b>Page Operations</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -80,7 +55,6 @@ public enum PageOperations implements Enumerator
     new PageOperations[]
     {
       URL,
-      CONNECTIONTYPE,
     };
 
   /**
@@ -146,7 +120,6 @@ public enum PageOperations implements Enumerator
     switch (value)
     {
       case URL_VALUE: return URL;
-      case CONNECTIONTYPE_VALUE: return CONNECTIONTYPE;
     }
     return null;
   }

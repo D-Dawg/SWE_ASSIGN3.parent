@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getMethod <em>Method</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getHeaderList <em>Header List</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getSetConnectionType <em>Set Connection Type</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getPageObjectAction()
@@ -108,29 +109,55 @@ public interface PageObjectAction extends EObject
   void setMethod(String value);
 
   /**
-   * Returns the value of the '<em><b>Header List</b></em>' attribute.
+   * Returns the value of the '<em><b>Header List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Header List</em>' attribute isn't clear,
+   * If the meaning of the '<em>Header List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Header List</em>' attribute.
-   * @see #setHeaderList(String)
+   * @return the value of the '<em>Header List</em>' containment reference.
+   * @see #setHeaderList(GenerateHeader)
    * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getPageObjectAction_HeaderList()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getHeaderList();
+  GenerateHeader getHeaderList();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getHeaderList <em>Header List</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getHeaderList <em>Header List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Header List</em>' attribute.
+   * @param value the new value of the '<em>Header List</em>' containment reference.
    * @see #getHeaderList()
    * @generated
    */
-  void setHeaderList(String value);
+  void setHeaderList(GenerateHeader value);
+
+  /**
+   * Returns the value of the '<em><b>Set Connection Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Set Connection Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Set Connection Type</em>' containment reference.
+   * @see #setSetConnectionType(SetConnecttionType)
+   * @see org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage#getPageObjectAction_SetConnectionType()
+   * @model containment="true"
+   * @generated
+   */
+  SetConnecttionType getSetConnectionType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getSetConnectionType <em>Set Connection Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Set Connection Type</em>' containment reference.
+   * @see #getSetConnectionType()
+   * @generated
+   */
+  void setSetConnectionType(SetConnecttionType value);
 
 } // PageObjectAction

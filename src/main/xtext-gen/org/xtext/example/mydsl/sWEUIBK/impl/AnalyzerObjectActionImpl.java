@@ -59,7 +59,7 @@ public class AnalyzerObjectActionImpl extends MinimalEObjectImpl.Container imple
    * @generated
    * @ordered
    */
-  protected static final AnalyzerOperations VALUE_EDEFAULT = AnalyzerOperations.LOADPAGE;
+  protected static final AnalyzerOperations VALUE_EDEFAULT = AnalyzerOperations.EXECUTE;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.

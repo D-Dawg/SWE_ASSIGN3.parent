@@ -17,20 +17,27 @@ import org.xtext.example.mydsl.sWEUIBK.AnalyzerObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.AnalyzerOperations;
 import org.xtext.example.mydsl.sWEUIBK.ConnectionType;
 import org.xtext.example.mydsl.sWEUIBK.Domainmodel;
+import org.xtext.example.mydsl.sWEUIBK.GenerateHeader;
+import org.xtext.example.mydsl.sWEUIBK.Header;
+import org.xtext.example.mydsl.sWEUIBK.MethodParameter;
+import org.xtext.example.mydsl.sWEUIBK.Model;
 import org.xtext.example.mydsl.sWEUIBK.ModelAction;
 import org.xtext.example.mydsl.sWEUIBK.ModelDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.ModelStructure;
+import org.xtext.example.mydsl.sWEUIBK.Monitor;
 import org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.MonitorInitialization;
 import org.xtext.example.mydsl.sWEUIBK.MonitorObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.MonitorOperations;
 import org.xtext.example.mydsl.sWEUIBK.ObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration;
+import org.xtext.example.mydsl.sWEUIBK.Page;
 import org.xtext.example.mydsl.sWEUIBK.PageDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.PageObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.PageOperations;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKFactory;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
+import org.xtext.example.mydsl.sWEUIBK.SetConnecttionType;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,6 +73,13 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass analyzerDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass monitorDeclarationEClass = null;
 
   /**
@@ -73,14 +87,7 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass monitorInitializationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass analyzerDeclarationEClass = null;
+  private EClass pageDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -94,7 +101,28 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass pageDeclarationEClass = null;
+  private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass monitorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass monitorInitializationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -137,6 +165,34 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
    * @generated
    */
   private EClass pageObjectActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass generateHeaderEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass setConnecttionTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass headerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass methodParameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -324,59 +380,9 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getModelDeclaration_Name()
+  public EReference getModelDeclaration_Name()
   {
-    return (EAttribute)modelDeclarationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getMonitorDeclaration()
-  {
-    return monitorDeclarationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getMonitorDeclaration_Name()
-  {
-    return (EAttribute)monitorDeclarationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMonitorDeclaration_Url()
-  {
-    return (EReference)monitorDeclarationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getMonitorInitialization()
-  {
-    return monitorInitializationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getMonitorInitialization_Url()
-  {
-    return (EAttribute)monitorInitializationEClass.getEStructuralFeatures().get(0);
+    return (EReference)modelDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -404,6 +410,56 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMonitorDeclaration()
+  {
+    return monitorDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMonitorDeclaration_Name()
+  {
+    return (EReference)monitorDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMonitorDeclaration_Url()
+  {
+    return (EReference)monitorDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPageDeclaration()
+  {
+    return pageDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPageDeclaration_Name()
+  {
+    return (EReference)pageDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAnalyzer()
   {
     return analyzerEClass;
@@ -424,9 +480,9 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPageDeclaration()
+  public EClass getModel()
   {
-    return pageDeclarationEClass;
+    return modelEClass;
   }
 
   /**
@@ -434,9 +490,69 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPageDeclaration_Name()
+  public EAttribute getModel_Name()
   {
-    return (EAttribute)pageDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMonitor()
+  {
+    return monitorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMonitor_Name()
+  {
+    return (EAttribute)monitorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPage()
+  {
+    return pageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPage_Name()
+  {
+    return (EAttribute)pageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMonitorInitialization()
+  {
+    return monitorInitializationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMonitorInitialization_Url()
+  {
+    return (EAttribute)monitorInitializationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -664,9 +780,109 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPageObjectAction_HeaderList()
+  public EReference getPageObjectAction_HeaderList()
   {
-    return (EAttribute)pageObjectActionEClass.getEStructuralFeatures().get(3);
+    return (EReference)pageObjectActionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPageObjectAction_SetConnectionType()
+  {
+    return (EReference)pageObjectActionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGenerateHeader()
+  {
+    return generateHeaderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGenerateHeader_Header()
+  {
+    return (EReference)generateHeaderEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSetConnecttionType()
+  {
+    return setConnecttionTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSetConnecttionType_Type()
+  {
+    return (EAttribute)setConnecttionTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getHeader()
+  {
+    return headerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getHeader_Key()
+  {
+    return (EAttribute)headerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getHeader_HeaderValue()
+  {
+    return (EAttribute)headerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMethodParameter()
+  {
+    return methodParameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMethodParameter_Name()
+  {
+    return (EAttribute)methodParameterEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -750,23 +966,32 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
     createEReference(objectDeclarationEClass, OBJECT_DECLARATION__MODEL);
 
     modelDeclarationEClass = createEClass(MODEL_DECLARATION);
-    createEAttribute(modelDeclarationEClass, MODEL_DECLARATION__NAME);
-
-    monitorDeclarationEClass = createEClass(MONITOR_DECLARATION);
-    createEAttribute(monitorDeclarationEClass, MONITOR_DECLARATION__NAME);
-    createEReference(monitorDeclarationEClass, MONITOR_DECLARATION__URL);
-
-    monitorInitializationEClass = createEClass(MONITOR_INITIALIZATION);
-    createEAttribute(monitorInitializationEClass, MONITOR_INITIALIZATION__URL);
+    createEReference(modelDeclarationEClass, MODEL_DECLARATION__NAME);
 
     analyzerDeclarationEClass = createEClass(ANALYZER_DECLARATION);
     createEReference(analyzerDeclarationEClass, ANALYZER_DECLARATION__NAME);
 
+    monitorDeclarationEClass = createEClass(MONITOR_DECLARATION);
+    createEReference(monitorDeclarationEClass, MONITOR_DECLARATION__NAME);
+    createEReference(monitorDeclarationEClass, MONITOR_DECLARATION__URL);
+
+    pageDeclarationEClass = createEClass(PAGE_DECLARATION);
+    createEReference(pageDeclarationEClass, PAGE_DECLARATION__NAME);
+
     analyzerEClass = createEClass(ANALYZER);
     createEAttribute(analyzerEClass, ANALYZER__NAME);
 
-    pageDeclarationEClass = createEClass(PAGE_DECLARATION);
-    createEAttribute(pageDeclarationEClass, PAGE_DECLARATION__NAME);
+    modelEClass = createEClass(MODEL);
+    createEAttribute(modelEClass, MODEL__NAME);
+
+    monitorEClass = createEClass(MONITOR);
+    createEAttribute(monitorEClass, MONITOR__NAME);
+
+    pageEClass = createEClass(PAGE);
+    createEAttribute(pageEClass, PAGE__NAME);
+
+    monitorInitializationEClass = createEClass(MONITOR_INITIALIZATION);
+    createEAttribute(monitorInitializationEClass, MONITOR_INITIALIZATION__URL);
 
     objectActionEClass = createEClass(OBJECT_ACTION);
     createEReference(objectActionEClass, OBJECT_ACTION__MONITOR_ACTION);
@@ -795,7 +1020,21 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
     createEAttribute(pageObjectActionEClass, PAGE_OBJECT_ACTION__NAME);
     createEAttribute(pageObjectActionEClass, PAGE_OBJECT_ACTION__VALUE);
     createEAttribute(pageObjectActionEClass, PAGE_OBJECT_ACTION__METHOD);
-    createEAttribute(pageObjectActionEClass, PAGE_OBJECT_ACTION__HEADER_LIST);
+    createEReference(pageObjectActionEClass, PAGE_OBJECT_ACTION__HEADER_LIST);
+    createEReference(pageObjectActionEClass, PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE);
+
+    generateHeaderEClass = createEClass(GENERATE_HEADER);
+    createEReference(generateHeaderEClass, GENERATE_HEADER__HEADER);
+
+    setConnecttionTypeEClass = createEClass(SET_CONNECTTION_TYPE);
+    createEAttribute(setConnecttionTypeEClass, SET_CONNECTTION_TYPE__TYPE);
+
+    headerEClass = createEClass(HEADER);
+    createEAttribute(headerEClass, HEADER__KEY);
+    createEAttribute(headerEClass, HEADER__HEADER_VALUE);
+
+    methodParameterEClass = createEClass(METHOD_PARAMETER);
+    createEAttribute(methodParameterEClass, METHOD_PARAMETER__NAME);
 
     // Create enums
     monitorOperationsEEnum = createEEnum(MONITOR_OPERATIONS);
@@ -846,23 +1085,32 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
     initEReference(getObjectDeclaration_Model(), this.getModelDeclaration(), null, "model", null, 0, 1, ObjectDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(modelDeclarationEClass, ModelDeclaration.class, "ModelDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getModelDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(monitorDeclarationEClass, MonitorDeclaration.class, "MonitorDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMonitorDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, MonitorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMonitorDeclaration_Url(), this.getMonitorInitialization(), null, "url", null, 0, 1, MonitorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(monitorInitializationEClass, MonitorInitialization.class, "MonitorInitialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMonitorInitialization_Url(), ecorePackage.getEString(), "url", null, 0, 1, MonitorInitialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModelDeclaration_Name(), this.getModel(), null, "name", null, 0, 1, ModelDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(analyzerDeclarationEClass, AnalyzerDeclaration.class, "AnalyzerDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAnalyzerDeclaration_Name(), this.getAnalyzer(), null, "name", null, 0, 1, AnalyzerDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(monitorDeclarationEClass, MonitorDeclaration.class, "MonitorDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMonitorDeclaration_Name(), this.getMonitor(), null, "name", null, 0, 1, MonitorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMonitorDeclaration_Url(), this.getMonitorInitialization(), null, "url", null, 0, 1, MonitorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pageDeclarationEClass, PageDeclaration.class, "PageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPageDeclaration_Name(), this.getPage(), null, "name", null, 0, 1, PageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(analyzerEClass, Analyzer.class, "Analyzer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAnalyzer_Name(), ecorePackage.getEString(), "name", null, 0, 1, Analyzer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(pageDeclarationEClass, PageDeclaration.class, "PageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPageDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, PageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(monitorEClass, Monitor.class, "Monitor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMonitor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Monitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPage_Name(), ecorePackage.getEString(), "name", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(monitorInitializationEClass, MonitorInitialization.class, "MonitorInitialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMonitorInitialization_Url(), ecorePackage.getEString(), "url", null, 0, 1, MonitorInitialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectActionEClass, ObjectAction.class, "ObjectAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getObjectAction_MonitorAction(), this.getMonitorObjectAction(), null, "monitorAction", null, 0, 1, ObjectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -891,7 +1139,21 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
     initEAttribute(getPageObjectAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, PageObjectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPageObjectAction_Value(), this.getPageOperations(), "value", null, 0, 1, PageObjectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPageObjectAction_Method(), ecorePackage.getEString(), "method", null, 0, 1, PageObjectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPageObjectAction_HeaderList(), ecorePackage.getEString(), "headerList", null, 0, 1, PageObjectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPageObjectAction_HeaderList(), this.getGenerateHeader(), null, "headerList", null, 0, 1, PageObjectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPageObjectAction_SetConnectionType(), this.getSetConnecttionType(), null, "setConnectionType", null, 0, 1, PageObjectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(generateHeaderEClass, GenerateHeader.class, "GenerateHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGenerateHeader_Header(), this.getHeader(), null, "header", null, 0, -1, GenerateHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(setConnecttionTypeEClass, SetConnecttionType.class, "SetConnecttionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSetConnecttionType_Type(), this.getConnectionType(), "type", null, 0, 1, SetConnecttionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getHeader_Key(), ecorePackage.getEString(), "key", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHeader_HeaderValue(), ecorePackage.getEString(), "headerValue", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(methodParameterEClass, MethodParameter.class, "MethodParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMethodParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, MethodParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(monitorOperationsEEnum, MonitorOperations.class, "MonitorOperations");
@@ -899,14 +1161,12 @@ public class SWEUIBKPackageImpl extends EPackageImpl implements SWEUIBKPackage
     addEEnumLiteral(monitorOperationsEEnum, MonitorOperations.REMOVE);
 
     initEEnum(analyzerOperationsEEnum, AnalyzerOperations.class, "AnalyzerOperations");
-    addEEnumLiteral(analyzerOperationsEEnum, AnalyzerOperations.LOADPAGE);
     addEEnumLiteral(analyzerOperationsEEnum, AnalyzerOperations.EXECUTE);
-    addEEnumLiteral(analyzerOperationsEEnum, AnalyzerOperations.REMOVE);
+    addEEnumLiteral(analyzerOperationsEEnum, AnalyzerOperations.LOADPAGE);
     addEEnumLiteral(analyzerOperationsEEnum, AnalyzerOperations.LOADMODEL);
 
     initEEnum(pageOperationsEEnum, PageOperations.class, "PageOperations");
     addEEnumLiteral(pageOperationsEEnum, PageOperations.URL);
-    addEEnumLiteral(pageOperationsEEnum, PageOperations.CONNECTIONTYPE);
 
     initEEnum(connectionTypeEEnum, ConnectionType.class, "ConnectionType");
     addEEnumLiteral(connectionTypeEEnum, ConnectionType.POST);

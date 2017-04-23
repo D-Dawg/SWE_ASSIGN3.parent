@@ -11,14 +11,12 @@
       <genEnumLiterals ecoreEnumLiteral="SWEUIBK.ecore#//MonitorOperations/REMOVE"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWEUIBK.ecore#//AnalyzerOperations">
-      <genEnumLiterals ecoreEnumLiteral="SWEUIBK.ecore#//AnalyzerOperations/LOADPAGE"/>
       <genEnumLiterals ecoreEnumLiteral="SWEUIBK.ecore#//AnalyzerOperations/EXECUTE"/>
-      <genEnumLiterals ecoreEnumLiteral="SWEUIBK.ecore#//AnalyzerOperations/REMOVE"/>
+      <genEnumLiterals ecoreEnumLiteral="SWEUIBK.ecore#//AnalyzerOperations/LOADPAGE"/>
       <genEnumLiterals ecoreEnumLiteral="SWEUIBK.ecore#//AnalyzerOperations/LOADMODEL"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWEUIBK.ecore#//PageOperations">
       <genEnumLiterals ecoreEnumLiteral="SWEUIBK.ecore#//PageOperations/URL"/>
-      <genEnumLiterals ecoreEnumLiteral="SWEUIBK.ecore#//PageOperations/CONNECTIONTYPE"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="SWEUIBK.ecore#//ConnectionType">
       <genEnumLiterals ecoreEnumLiteral="SWEUIBK.ecore#//ConnectionType/POST"/>
@@ -35,23 +33,32 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//ObjectDeclaration/model"/>
     </genClasses>
     <genClasses ecoreClass="SWEUIBK.ecore#//ModelDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//ModelDeclaration/name"/>
-    </genClasses>
-    <genClasses ecoreClass="SWEUIBK.ecore#//MonitorDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//MonitorDeclaration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//MonitorDeclaration/url"/>
-    </genClasses>
-    <genClasses ecoreClass="SWEUIBK.ecore#//MonitorInitialization">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//MonitorInitialization/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//ModelDeclaration/name"/>
     </genClasses>
     <genClasses ecoreClass="SWEUIBK.ecore#//AnalyzerDeclaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//AnalyzerDeclaration/name"/>
     </genClasses>
+    <genClasses ecoreClass="SWEUIBK.ecore#//MonitorDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//MonitorDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//MonitorDeclaration/url"/>
+    </genClasses>
+    <genClasses ecoreClass="SWEUIBK.ecore#//PageDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//PageDeclaration/name"/>
+    </genClasses>
     <genClasses ecoreClass="SWEUIBK.ecore#//Analyzer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//Analyzer/name"/>
     </genClasses>
-    <genClasses ecoreClass="SWEUIBK.ecore#//PageDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//PageDeclaration/name"/>
+    <genClasses ecoreClass="SWEUIBK.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//Model/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWEUIBK.ecore#//Monitor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//Monitor/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWEUIBK.ecore#//Page">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//Page/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SWEUIBK.ecore#//MonitorInitialization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//MonitorInitialization/url"/>
     </genClasses>
     <genClasses ecoreClass="SWEUIBK.ecore#//ObjectAction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//ObjectAction/monitorAction"/>
@@ -80,7 +87,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//PageObjectAction/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//PageObjectAction/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//PageObjectAction/method"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//PageObjectAction/headerList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//PageObjectAction/headerList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//PageObjectAction/setConnectionType"/>
+    </genClasses>
+    <genClasses ecoreClass="SWEUIBK.ecore#//GenerateHeader">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SWEUIBK.ecore#//GenerateHeader/header"/>
+    </genClasses>
+    <genClasses ecoreClass="SWEUIBK.ecore#//SetConnecttionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//SetConnecttionType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SWEUIBK.ecore#//Header">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//Header/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//Header/headerValue"/>
+    </genClasses>
+    <genClasses ecoreClass="SWEUIBK.ecore#//MethodParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SWEUIBK.ecore#//MethodParameter/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

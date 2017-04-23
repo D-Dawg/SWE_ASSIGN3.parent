@@ -51,6 +51,15 @@ public interface SWEUIBKFactory extends EFactory
   ModelDeclaration createModelDeclaration();
 
   /**
+   * Returns a new object of class '<em>Analyzer Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Analyzer Declaration</em>'.
+   * @generated
+   */
+  AnalyzerDeclaration createAnalyzerDeclaration();
+
+  /**
    * Returns a new object of class '<em>Monitor Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -60,22 +69,13 @@ public interface SWEUIBKFactory extends EFactory
   MonitorDeclaration createMonitorDeclaration();
 
   /**
-   * Returns a new object of class '<em>Monitor Initialization</em>'.
+   * Returns a new object of class '<em>Page Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Monitor Initialization</em>'.
+   * @return a new object of class '<em>Page Declaration</em>'.
    * @generated
    */
-  MonitorInitialization createMonitorInitialization();
-
-  /**
-   * Returns a new object of class '<em>Analyzer Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Analyzer Declaration</em>'.
-   * @generated
-   */
-  AnalyzerDeclaration createAnalyzerDeclaration();
+  PageDeclaration createPageDeclaration();
 
   /**
    * Returns a new object of class '<em>Analyzer</em>'.
@@ -87,13 +87,40 @@ public interface SWEUIBKFactory extends EFactory
   Analyzer createAnalyzer();
 
   /**
-   * Returns a new object of class '<em>Page Declaration</em>'.
+   * Returns a new object of class '<em>Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Page Declaration</em>'.
+   * @return a new object of class '<em>Model</em>'.
    * @generated
    */
-  PageDeclaration createPageDeclaration();
+  Model createModel();
+
+  /**
+   * Returns a new object of class '<em>Monitor</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Monitor</em>'.
+   * @generated
+   */
+  Monitor createMonitor();
+
+  /**
+   * Returns a new object of class '<em>Page</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Page</em>'.
+   * @generated
+   */
+  Page createPage();
+
+  /**
+   * Returns a new object of class '<em>Monitor Initialization</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Monitor Initialization</em>'.
+   * @generated
+   */
+  MonitorInitialization createMonitorInitialization();
 
   /**
    * Returns a new object of class '<em>Object Action</em>'.
@@ -148,6 +175,42 @@ public interface SWEUIBKFactory extends EFactory
    * @generated
    */
   PageObjectAction createPageObjectAction();
+
+  /**
+   * Returns a new object of class '<em>Generate Header</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Generate Header</em>'.
+   * @generated
+   */
+  GenerateHeader createGenerateHeader();
+
+  /**
+   * Returns a new object of class '<em>Set Connecttion Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set Connecttion Type</em>'.
+   * @generated
+   */
+  SetConnecttionType createSetConnecttionType();
+
+  /**
+   * Returns a new object of class '<em>Header</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Header</em>'.
+   * @generated
+   */
+  Header createHeader();
+
+  /**
+   * Returns a new object of class '<em>Method Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Method Parameter</em>'.
+   * @generated
+   */
+  MethodParameter createMethodParameter();
 
   /**
    * Returns the package supported by this factory.

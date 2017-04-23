@@ -161,7 +161,7 @@ public interface SWEUIBKPackage extends EPackage
   int MODEL_DECLARATION = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -179,6 +179,34 @@ public interface SWEUIBKPackage extends EPackage
   int MODEL_DECLARATION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.AnalyzerDeclarationImpl <em>Analyzer Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.AnalyzerDeclarationImpl
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getAnalyzerDeclaration()
+   * @generated
+   */
+  int ANALYZER_DECLARATION = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYZER_DECLARATION__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Analyzer Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANALYZER_DECLARATION_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorDeclarationImpl <em>Monitor Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -186,10 +214,10 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitorDeclaration()
    * @generated
    */
-  int MONITOR_DECLARATION = 3;
+  int MONITOR_DECLARATION = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -216,42 +244,14 @@ public interface SWEUIBKPackage extends EPackage
   int MONITOR_DECLARATION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorInitializationImpl <em>Monitor Initialization</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.PageDeclarationImpl <em>Page Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.sWEUIBK.impl.MonitorInitializationImpl
-   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitorInitialization()
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.PageDeclarationImpl
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getPageDeclaration()
    * @generated
    */
-  int MONITOR_INITIALIZATION = 4;
-
-  /**
-   * The feature id for the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MONITOR_INITIALIZATION__URL = 0;
-
-  /**
-   * The number of structural features of the '<em>Monitor Initialization</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MONITOR_INITIALIZATION_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.AnalyzerDeclarationImpl <em>Analyzer Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.sWEUIBK.impl.AnalyzerDeclarationImpl
-   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getAnalyzerDeclaration()
-   * @generated
-   */
-  int ANALYZER_DECLARATION = 5;
+  int PAGE_DECLARATION = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -260,16 +260,16 @@ public interface SWEUIBKPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYZER_DECLARATION__NAME = 0;
+  int PAGE_DECLARATION__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Analyzer Declaration</em>' class.
+   * The number of structural features of the '<em>Page Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANALYZER_DECLARATION_FEATURE_COUNT = 1;
+  int PAGE_DECLARATION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.AnalyzerImpl <em>Analyzer</em>}' class.
@@ -300,14 +300,14 @@ public interface SWEUIBKPackage extends EPackage
   int ANALYZER_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.PageDeclarationImpl <em>Page Declaration</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.ModelImpl <em>Model</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.sWEUIBK.impl.PageDeclarationImpl
-   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getPageDeclaration()
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.ModelImpl
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getModel()
    * @generated
    */
-  int PAGE_DECLARATION = 7;
+  int MODEL = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -316,16 +316,100 @@ public interface SWEUIBKPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAGE_DECLARATION__NAME = 0;
+  int MODEL__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Page Declaration</em>' class.
+   * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PAGE_DECLARATION_FEATURE_COUNT = 1;
+  int MODEL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorImpl <em>Monitor</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.MonitorImpl
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitor()
+   * @generated
+   */
+  int MONITOR = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONITOR__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Monitor</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONITOR_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.PageImpl <em>Page</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.PageImpl
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getPage()
+   * @generated
+   */
+  int PAGE = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Page</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorInitializationImpl <em>Monitor Initialization</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.MonitorInitializationImpl
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitorInitialization()
+   * @generated
+   */
+  int MONITOR_INITIALIZATION = 10;
+
+  /**
+   * The feature id for the '<em><b>Url</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONITOR_INITIALIZATION__URL = 0;
+
+  /**
+   * The number of structural features of the '<em>Monitor Initialization</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONITOR_INITIALIZATION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.ObjectActionImpl <em>Object Action</em>}' class.
@@ -335,7 +419,7 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getObjectAction()
    * @generated
    */
-  int OBJECT_ACTION = 8;
+  int OBJECT_ACTION = 11;
 
   /**
    * The feature id for the '<em><b>Monitor Action</b></em>' containment reference.
@@ -390,7 +474,7 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getModelAction()
    * @generated
    */
-  int MODEL_ACTION = 9;
+  int MODEL_ACTION = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -427,7 +511,7 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getModelStructure()
    * @generated
    */
-  int MODEL_STRUCTURE = 10;
+  int MODEL_STRUCTURE = 13;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -455,7 +539,7 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitorObjectAction()
    * @generated
    */
-  int MONITOR_OBJECT_ACTION = 11;
+  int MONITOR_OBJECT_ACTION = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -501,7 +585,7 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getAnalyzerObjectAction()
    * @generated
    */
-  int ANALYZER_OBJECT_ACTION = 12;
+  int ANALYZER_OBJECT_ACTION = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -547,7 +631,7 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getPageObjectAction()
    * @generated
    */
-  int PAGE_OBJECT_ACTION = 13;
+  int PAGE_OBJECT_ACTION = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -577,7 +661,7 @@ public interface SWEUIBKPackage extends EPackage
   int PAGE_OBJECT_ACTION__METHOD = 2;
 
   /**
-   * The feature id for the '<em><b>Header List</b></em>' attribute.
+   * The feature id for the '<em><b>Header List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -586,13 +670,143 @@ public interface SWEUIBKPackage extends EPackage
   int PAGE_OBJECT_ACTION__HEADER_LIST = 3;
 
   /**
+   * The feature id for the '<em><b>Set Connection Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE = 4;
+
+  /**
    * The number of structural features of the '<em>Page Object Action</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PAGE_OBJECT_ACTION_FEATURE_COUNT = 4;
+  int PAGE_OBJECT_ACTION_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.GenerateHeaderImpl <em>Generate Header</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.GenerateHeaderImpl
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getGenerateHeader()
+   * @generated
+   */
+  int GENERATE_HEADER = 17;
+
+  /**
+   * The feature id for the '<em><b>Header</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERATE_HEADER__HEADER = 0;
+
+  /**
+   * The number of structural features of the '<em>Generate Header</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERATE_HEADER_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.SetConnecttionTypeImpl <em>Set Connecttion Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SetConnecttionTypeImpl
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getSetConnecttionType()
+   * @generated
+   */
+  int SET_CONNECTTION_TYPE = 18;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_CONNECTTION_TYPE__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>Set Connecttion Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_CONNECTTION_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.HeaderImpl <em>Header</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.HeaderImpl
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getHeader()
+   * @generated
+   */
+  int HEADER = 19;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEADER__KEY = 0;
+
+  /**
+   * The feature id for the '<em><b>Header Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEADER__HEADER_VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Header</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEADER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MethodParameterImpl <em>Method Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.MethodParameterImpl
+   * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMethodParameter()
+   * @generated
+   */
+  int METHOD_PARAMETER = 20;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_PARAMETER__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Method Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_PARAMETER_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.MonitorOperations <em>Monitor Operations</em>}' enum.
@@ -602,7 +816,7 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitorOperations()
    * @generated
    */
-  int MONITOR_OPERATIONS = 14;
+  int MONITOR_OPERATIONS = 21;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.AnalyzerOperations <em>Analyzer Operations</em>}' enum.
@@ -612,7 +826,7 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getAnalyzerOperations()
    * @generated
    */
-  int ANALYZER_OPERATIONS = 15;
+  int ANALYZER_OPERATIONS = 22;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.PageOperations <em>Page Operations</em>}' enum.
@@ -622,7 +836,7 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getPageOperations()
    * @generated
    */
-  int PAGE_OPERATIONS = 16;
+  int PAGE_OPERATIONS = 23;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.sWEUIBK.ConnectionType <em>Connection Type</em>}' enum.
@@ -632,7 +846,7 @@ public interface SWEUIBKPackage extends EPackage
    * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getConnectionType()
    * @generated
    */
-  int CONNECTION_TYPE = 17;
+  int CONNECTION_TYPE = 24;
 
 
   /**
@@ -732,68 +946,15 @@ public interface SWEUIBKPackage extends EPackage
   EClass getModelDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.ModelDeclaration#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.sWEUIBK.ModelDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
+   * @return the meta object for the containment reference '<em>Name</em>'.
    * @see org.xtext.example.mydsl.sWEUIBK.ModelDeclaration#getName()
    * @see #getModelDeclaration()
    * @generated
    */
-  EAttribute getModelDeclaration_Name();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration <em>Monitor Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Monitor Declaration</em>'.
-   * @see org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration
-   * @generated
-   */
-  EClass getMonitorDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getName()
-   * @see #getMonitorDeclaration()
-   * @generated
-   */
-  EAttribute getMonitorDeclaration_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getUrl <em>Url</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Url</em>'.
-   * @see org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getUrl()
-   * @see #getMonitorDeclaration()
-   * @generated
-   */
-  EReference getMonitorDeclaration_Url();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.MonitorInitialization <em>Monitor Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Monitor Initialization</em>'.
-   * @see org.xtext.example.mydsl.sWEUIBK.MonitorInitialization
-   * @generated
-   */
-  EClass getMonitorInitialization();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.MonitorInitialization#getUrl <em>Url</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Url</em>'.
-   * @see org.xtext.example.mydsl.sWEUIBK.MonitorInitialization#getUrl()
-   * @see #getMonitorInitialization()
-   * @generated
-   */
-  EAttribute getMonitorInitialization_Url();
+  EReference getModelDeclaration_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.AnalyzerDeclaration <em>Analyzer Declaration</em>}'.
@@ -817,6 +978,59 @@ public interface SWEUIBKPackage extends EPackage
   EReference getAnalyzerDeclaration_Name();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration <em>Monitor Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Monitor Declaration</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration
+   * @generated
+   */
+  EClass getMonitorDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getName()
+   * @see #getMonitorDeclaration()
+   * @generated
+   */
+  EReference getMonitorDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getUrl <em>Url</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Url</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration#getUrl()
+   * @see #getMonitorDeclaration()
+   * @generated
+   */
+  EReference getMonitorDeclaration_Url();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.PageDeclaration <em>Page Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Page Declaration</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.PageDeclaration
+   * @generated
+   */
+  EClass getPageDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.sWEUIBK.PageDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.PageDeclaration#getName()
+   * @see #getPageDeclaration()
+   * @generated
+   */
+  EReference getPageDeclaration_Name();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.Analyzer <em>Analyzer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -838,25 +1052,88 @@ public interface SWEUIBKPackage extends EPackage
   EAttribute getAnalyzer_Name();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.PageDeclaration <em>Page Declaration</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.Model <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Page Declaration</em>'.
-   * @see org.xtext.example.mydsl.sWEUIBK.PageDeclaration
+   * @return the meta object for class '<em>Model</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.Model
    * @generated
    */
-  EClass getPageDeclaration();
+  EClass getModel();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.PageDeclaration#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.Model#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.mydsl.sWEUIBK.PageDeclaration#getName()
-   * @see #getPageDeclaration()
+   * @see org.xtext.example.mydsl.sWEUIBK.Model#getName()
+   * @see #getModel()
    * @generated
    */
-  EAttribute getPageDeclaration_Name();
+  EAttribute getModel_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.Monitor <em>Monitor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Monitor</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.Monitor
+   * @generated
+   */
+  EClass getMonitor();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.Monitor#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.Monitor#getName()
+   * @see #getMonitor()
+   * @generated
+   */
+  EAttribute getMonitor_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.Page <em>Page</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Page</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.Page
+   * @generated
+   */
+  EClass getPage();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.Page#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.Page#getName()
+   * @see #getPage()
+   * @generated
+   */
+  EAttribute getPage_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.MonitorInitialization <em>Monitor Initialization</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Monitor Initialization</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.MonitorInitialization
+   * @generated
+   */
+  EClass getMonitorInitialization();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.MonitorInitialization#getUrl <em>Url</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Url</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.MonitorInitialization#getUrl()
+   * @see #getMonitorInitialization()
+   * @generated
+   */
+  EAttribute getMonitorInitialization_Url();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.ObjectAction <em>Object Action</em>}'.
@@ -1095,15 +1372,121 @@ public interface SWEUIBKPackage extends EPackage
   EAttribute getPageObjectAction_Method();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getHeaderList <em>Header List</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getHeaderList <em>Header List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Header List</em>'.
+   * @return the meta object for the containment reference '<em>Header List</em>'.
    * @see org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getHeaderList()
    * @see #getPageObjectAction()
    * @generated
    */
-  EAttribute getPageObjectAction_HeaderList();
+  EReference getPageObjectAction_HeaderList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getSetConnectionType <em>Set Connection Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Set Connection Type</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.PageObjectAction#getSetConnectionType()
+   * @see #getPageObjectAction()
+   * @generated
+   */
+  EReference getPageObjectAction_SetConnectionType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.GenerateHeader <em>Generate Header</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Generate Header</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.GenerateHeader
+   * @generated
+   */
+  EClass getGenerateHeader();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.sWEUIBK.GenerateHeader#getHeader <em>Header</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Header</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.GenerateHeader#getHeader()
+   * @see #getGenerateHeader()
+   * @generated
+   */
+  EReference getGenerateHeader_Header();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.SetConnecttionType <em>Set Connecttion Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Set Connecttion Type</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.SetConnecttionType
+   * @generated
+   */
+  EClass getSetConnecttionType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.SetConnecttionType#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.SetConnecttionType#getType()
+   * @see #getSetConnecttionType()
+   * @generated
+   */
+  EAttribute getSetConnecttionType_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.Header <em>Header</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Header</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.Header
+   * @generated
+   */
+  EClass getHeader();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.Header#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Key</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.Header#getKey()
+   * @see #getHeader()
+   * @generated
+   */
+  EAttribute getHeader_Key();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.Header#getHeaderValue <em>Header Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Header Value</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.Header#getHeaderValue()
+   * @see #getHeader()
+   * @generated
+   */
+  EAttribute getHeader_HeaderValue();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.sWEUIBK.MethodParameter <em>Method Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Method Parameter</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.MethodParameter
+   * @generated
+   */
+  EClass getMethodParameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.sWEUIBK.MethodParameter#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.sWEUIBK.MethodParameter#getName()
+   * @see #getMethodParameter()
+   * @generated
+   */
+  EAttribute getMethodParameter_Name();
 
   /**
    * Returns the meta object for enum '{@link org.xtext.example.mydsl.sWEUIBK.MonitorOperations <em>Monitor Operations</em>}'.
@@ -1247,56 +1630,12 @@ public interface SWEUIBKPackage extends EPackage
     EClass MODEL_DECLARATION = eINSTANCE.getModelDeclaration();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MODEL_DECLARATION__NAME = eINSTANCE.getModelDeclaration_Name();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorDeclarationImpl <em>Monitor Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.sWEUIBK.impl.MonitorDeclarationImpl
-     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitorDeclaration()
-     * @generated
-     */
-    EClass MONITOR_DECLARATION = eINSTANCE.getMonitorDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MONITOR_DECLARATION__NAME = eINSTANCE.getMonitorDeclaration_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Url</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MONITOR_DECLARATION__URL = eINSTANCE.getMonitorDeclaration_Url();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorInitializationImpl <em>Monitor Initialization</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.sWEUIBK.impl.MonitorInitializationImpl
-     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitorInitialization()
-     * @generated
-     */
-    EClass MONITOR_INITIALIZATION = eINSTANCE.getMonitorInitialization();
-
-    /**
-     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MONITOR_INITIALIZATION__URL = eINSTANCE.getMonitorInitialization_Url();
+    EReference MODEL_DECLARATION__NAME = eINSTANCE.getModelDeclaration_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.AnalyzerDeclarationImpl <em>Analyzer Declaration</em>}' class.
@@ -1317,6 +1656,50 @@ public interface SWEUIBKPackage extends EPackage
     EReference ANALYZER_DECLARATION__NAME = eINSTANCE.getAnalyzerDeclaration_Name();
 
     /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorDeclarationImpl <em>Monitor Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.MonitorDeclarationImpl
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitorDeclaration()
+     * @generated
+     */
+    EClass MONITOR_DECLARATION = eINSTANCE.getMonitorDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MONITOR_DECLARATION__NAME = eINSTANCE.getMonitorDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Url</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MONITOR_DECLARATION__URL = eINSTANCE.getMonitorDeclaration_Url();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.PageDeclarationImpl <em>Page Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.PageDeclarationImpl
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getPageDeclaration()
+     * @generated
+     */
+    EClass PAGE_DECLARATION = eINSTANCE.getPageDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PAGE_DECLARATION__NAME = eINSTANCE.getPageDeclaration_Name();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.AnalyzerImpl <em>Analyzer</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1335,14 +1718,14 @@ public interface SWEUIBKPackage extends EPackage
     EAttribute ANALYZER__NAME = eINSTANCE.getAnalyzer_Name();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.PageDeclarationImpl <em>Page Declaration</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.ModelImpl <em>Model</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.sWEUIBK.impl.PageDeclarationImpl
-     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getPageDeclaration()
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.ModelImpl
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getModel()
      * @generated
      */
-    EClass PAGE_DECLARATION = eINSTANCE.getPageDeclaration();
+    EClass MODEL = eINSTANCE.getModel();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1350,7 +1733,61 @@ public interface SWEUIBKPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PAGE_DECLARATION__NAME = eINSTANCE.getPageDeclaration_Name();
+    EAttribute MODEL__NAME = eINSTANCE.getModel_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorImpl <em>Monitor</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.MonitorImpl
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitor()
+     * @generated
+     */
+    EClass MONITOR = eINSTANCE.getMonitor();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MONITOR__NAME = eINSTANCE.getMonitor_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.PageImpl <em>Page</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.PageImpl
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getPage()
+     * @generated
+     */
+    EClass PAGE = eINSTANCE.getPage();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PAGE__NAME = eINSTANCE.getPage_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MonitorInitializationImpl <em>Monitor Initialization</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.MonitorInitializationImpl
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMonitorInitialization()
+     * @generated
+     */
+    EClass MONITOR_INITIALIZATION = eINSTANCE.getMonitorInitialization();
+
+    /**
+     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MONITOR_INITIALIZATION__URL = eINSTANCE.getMonitorInitialization_Url();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.ObjectActionImpl <em>Object Action</em>}' class.
@@ -1541,12 +1978,100 @@ public interface SWEUIBKPackage extends EPackage
     EAttribute PAGE_OBJECT_ACTION__METHOD = eINSTANCE.getPageObjectAction_Method();
 
     /**
-     * The meta object literal for the '<em><b>Header List</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Header List</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PAGE_OBJECT_ACTION__HEADER_LIST = eINSTANCE.getPageObjectAction_HeaderList();
+    EReference PAGE_OBJECT_ACTION__HEADER_LIST = eINSTANCE.getPageObjectAction_HeaderList();
+
+    /**
+     * The meta object literal for the '<em><b>Set Connection Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE = eINSTANCE.getPageObjectAction_SetConnectionType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.GenerateHeaderImpl <em>Generate Header</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.GenerateHeaderImpl
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getGenerateHeader()
+     * @generated
+     */
+    EClass GENERATE_HEADER = eINSTANCE.getGenerateHeader();
+
+    /**
+     * The meta object literal for the '<em><b>Header</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GENERATE_HEADER__HEADER = eINSTANCE.getGenerateHeader_Header();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.SetConnecttionTypeImpl <em>Set Connecttion Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SetConnecttionTypeImpl
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getSetConnecttionType()
+     * @generated
+     */
+    EClass SET_CONNECTTION_TYPE = eINSTANCE.getSetConnecttionType();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET_CONNECTTION_TYPE__TYPE = eINSTANCE.getSetConnecttionType_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.HeaderImpl <em>Header</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.HeaderImpl
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getHeader()
+     * @generated
+     */
+    EClass HEADER = eINSTANCE.getHeader();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HEADER__KEY = eINSTANCE.getHeader_Key();
+
+    /**
+     * The meta object literal for the '<em><b>Header Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HEADER__HEADER_VALUE = eINSTANCE.getHeader_HeaderValue();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.impl.MethodParameterImpl <em>Method Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.MethodParameterImpl
+     * @see org.xtext.example.mydsl.sWEUIBK.impl.SWEUIBKPackageImpl#getMethodParameter()
+     * @generated
+     */
+    EClass METHOD_PARAMETER = eINSTANCE.getMethodParameter();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METHOD_PARAMETER__NAME = eINSTANCE.getMethodParameter_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.sWEUIBK.MonitorOperations <em>Monitor Operations</em>}' enum.

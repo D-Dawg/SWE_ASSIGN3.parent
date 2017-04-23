@@ -4,15 +4,19 @@
 package org.xtext.example.mydsl.sWEUIBK.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.mydsl.sWEUIBK.GenerateHeader;
 import org.xtext.example.mydsl.sWEUIBK.PageObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.PageOperations;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
+import org.xtext.example.mydsl.sWEUIBK.SetConnecttionType;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +30,7 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.PageObjectActionImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.PageObjectActionImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.PageObjectActionImpl#getHeaderList <em>Header List</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.sWEUIBK.impl.PageObjectActionImpl#getSetConnectionType <em>Set Connection Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,24 +98,24 @@ public class PageObjectActionImpl extends MinimalEObjectImpl.Container implement
   protected String method = METHOD_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getHeaderList() <em>Header List</em>}' attribute.
+   * The cached value of the '{@link #getHeaderList() <em>Header List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getHeaderList()
    * @generated
    * @ordered
    */
-  protected static final String HEADER_LIST_EDEFAULT = null;
+  protected GenerateHeader headerList;
 
   /**
-   * The cached value of the '{@link #getHeaderList() <em>Header List</em>}' attribute.
+   * The cached value of the '{@link #getSetConnectionType() <em>Set Connection Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHeaderList()
+   * @see #getSetConnectionType()
    * @generated
    * @ordered
    */
-  protected String headerList = HEADER_LIST_EDEFAULT;
+  protected SetConnecttionType setConnectionType;
 
   /**
    * <!-- begin-user-doc -->
@@ -207,7 +212,7 @@ public class PageObjectActionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getHeaderList()
+  public GenerateHeader getHeaderList()
   {
     return headerList;
   }
@@ -217,12 +222,103 @@ public class PageObjectActionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setHeaderList(String newHeaderList)
+  public NotificationChain basicSetHeaderList(GenerateHeader newHeaderList, NotificationChain msgs)
   {
-    String oldHeaderList = headerList;
+    GenerateHeader oldHeaderList = headerList;
     headerList = newHeaderList;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST, oldHeaderList, headerList));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST, oldHeaderList, newHeaderList);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHeaderList(GenerateHeader newHeaderList)
+  {
+    if (newHeaderList != headerList)
+    {
+      NotificationChain msgs = null;
+      if (headerList != null)
+        msgs = ((InternalEObject)headerList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST, null, msgs);
+      if (newHeaderList != null)
+        msgs = ((InternalEObject)newHeaderList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST, null, msgs);
+      msgs = basicSetHeaderList(newHeaderList, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST, newHeaderList, newHeaderList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SetConnecttionType getSetConnectionType()
+  {
+    return setConnectionType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetSetConnectionType(SetConnecttionType newSetConnectionType, NotificationChain msgs)
+  {
+    SetConnecttionType oldSetConnectionType = setConnectionType;
+    setConnectionType = newSetConnectionType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE, oldSetConnectionType, newSetConnectionType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSetConnectionType(SetConnecttionType newSetConnectionType)
+  {
+    if (newSetConnectionType != setConnectionType)
+    {
+      NotificationChain msgs = null;
+      if (setConnectionType != null)
+        msgs = ((InternalEObject)setConnectionType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE, null, msgs);
+      if (newSetConnectionType != null)
+        msgs = ((InternalEObject)newSetConnectionType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE, null, msgs);
+      msgs = basicSetSetConnectionType(newSetConnectionType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE, newSetConnectionType, newSetConnectionType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST:
+        return basicSetHeaderList(null, msgs);
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE:
+        return basicSetSetConnectionType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -243,6 +339,8 @@ public class PageObjectActionImpl extends MinimalEObjectImpl.Container implement
         return getMethod();
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST:
         return getHeaderList();
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE:
+        return getSetConnectionType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -267,7 +365,10 @@ public class PageObjectActionImpl extends MinimalEObjectImpl.Container implement
         setMethod((String)newValue);
         return;
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST:
-        setHeaderList((String)newValue);
+        setHeaderList((GenerateHeader)newValue);
+        return;
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE:
+        setSetConnectionType((SetConnecttionType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -293,7 +394,10 @@ public class PageObjectActionImpl extends MinimalEObjectImpl.Container implement
         setMethod(METHOD_EDEFAULT);
         return;
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST:
-        setHeaderList(HEADER_LIST_EDEFAULT);
+        setHeaderList((GenerateHeader)null);
+        return;
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE:
+        setSetConnectionType((SetConnecttionType)null);
         return;
     }
     super.eUnset(featureID);
@@ -316,7 +420,9 @@ public class PageObjectActionImpl extends MinimalEObjectImpl.Container implement
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__METHOD:
         return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
       case SWEUIBKPackage.PAGE_OBJECT_ACTION__HEADER_LIST:
-        return HEADER_LIST_EDEFAULT == null ? headerList != null : !HEADER_LIST_EDEFAULT.equals(headerList);
+        return headerList != null;
+      case SWEUIBKPackage.PAGE_OBJECT_ACTION__SET_CONNECTION_TYPE:
+        return setConnectionType != null;
     }
     return super.eIsSet(featureID);
   }
@@ -338,8 +444,6 @@ public class PageObjectActionImpl extends MinimalEObjectImpl.Container implement
     result.append(value);
     result.append(", method: ");
     result.append(method);
-    result.append(", headerList: ");
-    result.append(headerList);
     result.append(')');
     return result.toString();
   }

@@ -10,22 +10,32 @@ ObjectDeclaration:
     monitor = MonitorDeclaration | analyzer = AnalyzerDeclaration | page = PageDeclaration | model = ModelDeclaration ;
 
 ModelDeclaration:
-    'Model' name=ID;
-
-
-MonitorDeclaration:
-    'Monitor' name=ID url = MonitorInitialization;
-
-MonitorInitialization:
-    url = STRING ;
+    'Model' name=Model;
 
 AnalyzerDeclaration:
     'Analyzer' name = Analyzer;
 
-Analyzer: name=ID;
+MonitorDeclaration:
+    'Monitor' name=Monitor url = MonitorInitialization;
 
 PageDeclaration:
-    'Page' name=ID;
+    'Page' name=Page;
+
+Analyzer:
+    name=ID;
+
+Model:
+    name=ID;
+
+Monitor:
+    name=ID;
+
+Page:
+    name=ID;
+
+MonitorInitialization:
+    url = STRING ;
+
 
 ObjectAction:
     monitorAction = MonitorObjectAction|analyzerAction = AnalyzerObjectAction|pageAction = PageObjectAction|modelAction = ModelAction;
@@ -39,23 +49,26 @@ ModelStructure:
 
 
 MonitorObjectAction:
-    (name=ID '.' (value=MonitorOperations) '(' method=MethodParameter? ')');
+    (name=ID '.' (value=MonitorOperations) '(' method=ID? ')');
 
 AnalyzerObjectAction:
-	name=ID '.' (value=AnalyzerOperations) '(' method=MethodParameter? ')';
+	name=ID '.' (value=AnalyzerOperations) '(' method=ID? ')';
 
 PageObjectAction:
-	name=ID '.'(((value=PageOperations) '(' method=MethodParameter? ')')| headerList=GenerateHeader);
+	name=ID '.'(((value=PageOperations) '(' method=STRING? ')')| headerList=GenerateHeader | setConnectionType = SetConnecttionType);
 
 GenerateHeader:
-    'generateHeaderList' '('  Header* ')';
+    'generateHeaderList' '('  header+=Header* ')';
+
+SetConnecttionType:
+    'connectType' '(' type=ConnectionType ')';
 
 
 Header:
-    STRING '(' STRING ')';
+    key=STRING '(' headerValue=STRING ')';
 
 MethodParameter:
-	STRING  ;
+    name=ID;
 
 
 enum MonitorOperations :
@@ -63,14 +76,12 @@ enum MonitorOperations :
     REMOVE='RemoveAnalyzer';
 
 enum AnalyzerOperations :
-    LOADPAGE='LoadPage' |
     EXECUTE='Execute'|
-    REMOVE='RemovePage'|
+    LOADPAGE='LoadPage' |
     LOADMODEL='LoadModel';
 
 enum PageOperations :
-    URL='url' |
-    CONNECTIONTYPE = 'connectType';
+    URL='url';
 
 enum ConnectionType:
     POST='post'|

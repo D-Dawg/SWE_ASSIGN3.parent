@@ -91,19 +91,19 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
         return createModelDeclarationAdapter();
       }
       @Override
+      public Adapter caseAnalyzerDeclaration(AnalyzerDeclaration object)
+      {
+        return createAnalyzerDeclarationAdapter();
+      }
+      @Override
       public Adapter caseMonitorDeclaration(MonitorDeclaration object)
       {
         return createMonitorDeclarationAdapter();
       }
       @Override
-      public Adapter caseMonitorInitialization(MonitorInitialization object)
+      public Adapter casePageDeclaration(PageDeclaration object)
       {
-        return createMonitorInitializationAdapter();
-      }
-      @Override
-      public Adapter caseAnalyzerDeclaration(AnalyzerDeclaration object)
-      {
-        return createAnalyzerDeclarationAdapter();
+        return createPageDeclarationAdapter();
       }
       @Override
       public Adapter caseAnalyzer(Analyzer object)
@@ -111,9 +111,24 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
         return createAnalyzerAdapter();
       }
       @Override
-      public Adapter casePageDeclaration(PageDeclaration object)
+      public Adapter caseModel(Model object)
       {
-        return createPageDeclarationAdapter();
+        return createModelAdapter();
+      }
+      @Override
+      public Adapter caseMonitor(Monitor object)
+      {
+        return createMonitorAdapter();
+      }
+      @Override
+      public Adapter casePage(Page object)
+      {
+        return createPageAdapter();
+      }
+      @Override
+      public Adapter caseMonitorInitialization(MonitorInitialization object)
+      {
+        return createMonitorInitializationAdapter();
       }
       @Override
       public Adapter caseObjectAction(ObjectAction object)
@@ -144,6 +159,26 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
       public Adapter casePageObjectAction(PageObjectAction object)
       {
         return createPageObjectActionAdapter();
+      }
+      @Override
+      public Adapter caseGenerateHeader(GenerateHeader object)
+      {
+        return createGenerateHeaderAdapter();
+      }
+      @Override
+      public Adapter caseSetConnecttionType(SetConnecttionType object)
+      {
+        return createSetConnecttionTypeAdapter();
+      }
+      @Override
+      public Adapter caseHeader(Header object)
+      {
+        return createHeaderAdapter();
+      }
+      @Override
+      public Adapter caseMethodParameter(MethodParameter object)
+      {
+        return createMethodParameterAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -213,6 +248,21 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.AnalyzerDeclaration <em>Analyzer Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.sWEUIBK.AnalyzerDeclaration
+   * @generated
+   */
+  public Adapter createAnalyzerDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration <em>Monitor Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -228,31 +278,16 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.MonitorInitialization <em>Monitor Initialization</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.PageDeclaration <em>Page Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.sWEUIBK.MonitorInitialization
+   * @see org.xtext.example.mydsl.sWEUIBK.PageDeclaration
    * @generated
    */
-  public Adapter createMonitorInitializationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.AnalyzerDeclaration <em>Analyzer Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.sWEUIBK.AnalyzerDeclaration
-   * @generated
-   */
-  public Adapter createAnalyzerDeclarationAdapter()
+  public Adapter createPageDeclarationAdapter()
   {
     return null;
   }
@@ -273,16 +308,61 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.PageDeclaration <em>Page Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.Model <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.sWEUIBK.PageDeclaration
+   * @see org.xtext.example.mydsl.sWEUIBK.Model
    * @generated
    */
-  public Adapter createPageDeclarationAdapter()
+  public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.Monitor <em>Monitor</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.sWEUIBK.Monitor
+   * @generated
+   */
+  public Adapter createMonitorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.Page <em>Page</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.sWEUIBK.Page
+   * @generated
+   */
+  public Adapter createPageAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.MonitorInitialization <em>Monitor Initialization</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.sWEUIBK.MonitorInitialization
+   * @generated
+   */
+  public Adapter createMonitorInitializationAdapter()
   {
     return null;
   }
@@ -373,6 +453,66 @@ public class SWEUIBKAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPageObjectActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.GenerateHeader <em>Generate Header</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.sWEUIBK.GenerateHeader
+   * @generated
+   */
+  public Adapter createGenerateHeaderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.SetConnecttionType <em>Set Connecttion Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.sWEUIBK.SetConnecttionType
+   * @generated
+   */
+  public Adapter createSetConnecttionTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.Header <em>Header</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.sWEUIBK.Header
+   * @generated
+   */
+  public Adapter createHeaderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.sWEUIBK.MethodParameter <em>Method Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.sWEUIBK.MethodParameter
+   * @generated
+   */
+  public Adapter createMethodParameterAdapter()
   {
     return null;
   }

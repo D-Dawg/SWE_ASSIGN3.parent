@@ -94,6 +94,13 @@ public class SWEUIBKSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SWEUIBKPackage.ANALYZER_DECLARATION:
+      {
+        AnalyzerDeclaration analyzerDeclaration = (AnalyzerDeclaration)theEObject;
+        T result = caseAnalyzerDeclaration(analyzerDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SWEUIBKPackage.MONITOR_DECLARATION:
       {
         MonitorDeclaration monitorDeclaration = (MonitorDeclaration)theEObject;
@@ -101,17 +108,10 @@ public class SWEUIBKSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SWEUIBKPackage.MONITOR_INITIALIZATION:
+      case SWEUIBKPackage.PAGE_DECLARATION:
       {
-        MonitorInitialization monitorInitialization = (MonitorInitialization)theEObject;
-        T result = caseMonitorInitialization(monitorInitialization);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SWEUIBKPackage.ANALYZER_DECLARATION:
-      {
-        AnalyzerDeclaration analyzerDeclaration = (AnalyzerDeclaration)theEObject;
-        T result = caseAnalyzerDeclaration(analyzerDeclaration);
+        PageDeclaration pageDeclaration = (PageDeclaration)theEObject;
+        T result = casePageDeclaration(pageDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -122,10 +122,31 @@ public class SWEUIBKSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SWEUIBKPackage.PAGE_DECLARATION:
+      case SWEUIBKPackage.MODEL:
       {
-        PageDeclaration pageDeclaration = (PageDeclaration)theEObject;
-        T result = casePageDeclaration(pageDeclaration);
+        Model model = (Model)theEObject;
+        T result = caseModel(model);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SWEUIBKPackage.MONITOR:
+      {
+        Monitor monitor = (Monitor)theEObject;
+        T result = caseMonitor(monitor);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SWEUIBKPackage.PAGE:
+      {
+        Page page = (Page)theEObject;
+        T result = casePage(page);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SWEUIBKPackage.MONITOR_INITIALIZATION:
+      {
+        MonitorInitialization monitorInitialization = (MonitorInitialization)theEObject;
+        T result = caseMonitorInitialization(monitorInitialization);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -168,6 +189,34 @@ public class SWEUIBKSwitch<T> extends Switch<T>
       {
         PageObjectAction pageObjectAction = (PageObjectAction)theEObject;
         T result = casePageObjectAction(pageObjectAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SWEUIBKPackage.GENERATE_HEADER:
+      {
+        GenerateHeader generateHeader = (GenerateHeader)theEObject;
+        T result = caseGenerateHeader(generateHeader);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SWEUIBKPackage.SET_CONNECTTION_TYPE:
+      {
+        SetConnecttionType setConnecttionType = (SetConnecttionType)theEObject;
+        T result = caseSetConnecttionType(setConnecttionType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SWEUIBKPackage.HEADER:
+      {
+        Header header = (Header)theEObject;
+        T result = caseHeader(header);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SWEUIBKPackage.METHOD_PARAMETER:
+      {
+        MethodParameter methodParameter = (MethodParameter)theEObject;
+        T result = caseMethodParameter(methodParameter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -224,6 +273,22 @@ public class SWEUIBKSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Analyzer Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Analyzer Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnalyzerDeclaration(AnalyzerDeclaration object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Monitor Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -240,33 +305,17 @@ public class SWEUIBKSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Monitor Initialization</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Page Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Monitor Initialization</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Page Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMonitorInitialization(MonitorInitialization object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Analyzer Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Analyzer Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAnalyzerDeclaration(AnalyzerDeclaration object)
+  public T casePageDeclaration(PageDeclaration object)
   {
     return null;
   }
@@ -288,17 +337,65 @@ public class SWEUIBKSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Page Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Page Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePageDeclaration(PageDeclaration object)
+  public T caseModel(Model object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Monitor</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Monitor</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMonitor(Monitor object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Page</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Page</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePage(Page object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Monitor Initialization</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Monitor Initialization</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMonitorInitialization(MonitorInitialization object)
   {
     return null;
   }
@@ -395,6 +492,70 @@ public class SWEUIBKSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePageObjectAction(PageObjectAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Generate Header</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Generate Header</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGenerateHeader(GenerateHeader object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Set Connecttion Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set Connecttion Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSetConnecttionType(SetConnecttionType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Header</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Header</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHeader(Header object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Method Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Method Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMethodParameter(MethodParameter object)
   {
     return null;
   }

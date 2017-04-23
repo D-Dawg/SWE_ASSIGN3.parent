@@ -17,6 +17,14 @@ import org.xtext.example.mydsl.sWEUIBK.ModelAction
 import org.xtext.example.mydsl.sWEUIBK.PageObjectAction
 import org.xtext.example.mydsl.sWEUIBK.AnalyzerObjectAction
 import org.xtext.example.mydsl.sWEUIBK.MonitorObjectAction
+import org.xtext.example.mydsl.sWEUIBK.GenerateHeader
+import org.xtext.example.mydsl.sWEUIBK.PageOperations
+import org.xtext.example.mydsl.sWEUIBK.ConnectionType
+import org.xtext.example.mydsl.sWEUIBK.AnalyzerOperations
+import org.xtext.example.mydsl.sWEUIBK.MonitorOperations
+import org.xtext.example.mydsl.sWEUIBK.SetConnecttionType
+
+
 
 
 
@@ -36,117 +44,149 @@ class SWEUIBKGenerator extends AbstractGenerator {
 
 	def vnlContents(Domainmodel domainmodel) {
 		'''
-        import com.fasterxml.jackson.databind.ObjectMapper;
-        import org.apache.http.Header;
-        import org.apache.http.message.BasicHeader;
+package mydsl;
 
-        import com.SWE.server.Monitor;
-        import com.SWE.server.Analyzer;
-        import com.SWE.server.Model;
-        import com.SWE.server.Page;
-        import com.SWE.server.Utils;
+import org.apache.http.Header;
+import org.apache.http.message.BasicHeader;
+import server.Analyzer;
+import server.Model;
+import server.Monitor;
+import server.Page;
+import java.util.ArrayList;
+import java.util.List;
 
-        public static void main (String [] args){
+public class Generator {
+	public static void main (String [] args){
 
-            «FOR objectInitialization : domainmodel.elements»
-                «IF objectInitialization.monitor !=null»
-                    «objectInitialization.monitor.monitorInitialization»
-                «ENDIF»
-                «IF objectInitialization.model !=null»
-                    «objectInitialization.model.modelInitialization»
-                «ENDIF»
-                «IF objectInitialization.page !=null»
-                    «objectInitialization.page.pageInitialization»
+	«FOR objectInitialization : domainmodel.elements»
+		«IF objectInitialization.monitor !=null»
+			«objectInitialization.monitor.monitorInitialization»
+		«ENDIF»
+		«IF objectInitialization.model !=null»
+			«objectInitialization.model.modelInitialization»
+		«ENDIF»
+		«IF objectInitialization.page !=null»
+			«objectInitialization.page.pageInitialization»
 
-                «ENDIF»
-                «IF objectInitialization.analyzer !=null»
-                   	«objectInitialization.analyzer.analyzerInitialization»
-                «ENDIF»
-            «ENDFOR»
+		«ENDIF»
+		«IF objectInitialization.analyzer !=null»
+			«objectInitialization.analyzer.analyzerInitialization»
+		«ENDIF»
+	«ENDFOR»
 
-            «FOR objectAction : domainmodel.actions»
-                «IF objectAction.monitorAction !=null»
-                    «objectAction.monitorAction.monitorAction»
-                «ENDIF»
-                «IF objectAction.modelAction !=null»
-                    «objectAction.modelAction.modelAction»
-                «ENDIF»
-                «IF objectAction.pageAction !=null»
-                    «objectAction.pageAction.pageAction»
+	«FOR objectAction : domainmodel.actions»
+		«IF objectAction.monitorAction !=null»
+			«objectAction.monitorAction.monitorAction»
+		«ENDIF»
+		«IF objectAction.modelAction !=null»
+			«objectAction.modelAction.modelAction»
+		«ENDIF»
+		«IF objectAction.pageAction !=null»
+			«objectAction.pageAction.pageAction»
 
-                «ENDIF»
-                «IF objectAction.analyzerAction !=null»
-                   	«objectAction.analyzerAction.analyzerAction»
-                «ENDIF»
-            «ENDFOR»
-
-        }
+		«ENDIF»
+		«IF objectAction.analyzerAction !=null»
+			«objectAction.analyzerAction.analyzerAction»
+		«ENDIF»
+	«ENDFOR»
+	}
+}
         '''.toString
 	}
 
 	def modelInitialization(ModelDeclaration model){
 		'''
-             Model «model.name» = new Model();
+     Model «model.name.name» = new Model();
         '''.toString
 	}
 
 	def analyzerInitialization(AnalyzerDeclaration analyzer){
 		'''
-             Analyzer «analyzer.name.name» = new Analyzer();
+     Analyzer «analyzer.name.name» = new Analyzer();
         '''.toString
 	}
 
 	def monitorInitialization(MonitorDeclaration monitor){
 		'''
-             Monitor «monitor.name» = new Monitor();
-             «monitor.name».initialzeFromSource("«monitor.url.url»");
+     Monitor «monitor.name.name» = new Monitor();
+     «monitor.name.name».initialzeFromSource("«monitor.url.url»");
         '''.toString
 	}
 
 	def pageInitialization(PageDeclaration page){
 		'''
-             Page «page.name» = new Page();
+     Page «page.name.name» = new Page();
         '''.toString
 	}
 
 	def modelAction(ModelAction modelAction){
 		'''
-             «modelAction.name».initialzeFromSource("«modelAction.modelStructure.source»");
+     «modelAction.name».initialzeFromSource("«modelAction.modelStructure.source»");
         '''.toString
 	}
 
 	def pageAction(PageObjectAction pageAction){
 		'''
-              «IF pageAction.value.equals("url")»
-                   	«pageAction.name».«pageAction.value».
+		«IF pageAction.value != null»
+              «IF pageAction.value == PageOperations.URL»
+	«pageAction.name».setUrl("«pageAction.method»");
               «ENDIF»
-              «IF pageAction.value.equals("connectType")»
-              		«pageAction.name».setConnectionType("get");
+               «IF pageAction.setConnectionType != null»
+              	«pageAction.name»«pageAction.setConnectionType.defineConnectionType»
               «ENDIF»
               «IF pageAction.headerList != null»
+	«pageAction.headerList.generateHeaderList»
+	«pageAction.name».setHeaderList(headerList);
               «ENDIF»
-
+	  	«ENDIF»
         '''.toString
 	}
 
 
 	def monitorAction(MonitorObjectAction monitorAction){
 		'''
-
+		«IF monitorAction.value != null»
+              «IF monitorAction.value == MonitorOperations.ADD»
+	«monitorAction.name».setAnalyzer(«monitorAction.method»);
+              «ELSE»
+    «monitorAction.name».setAnalyzer(null);
+              «ENDIF»
+	  	«ENDIF»
         '''.toString
 	}
 
 	def analyzerAction(AnalyzerObjectAction analyzerAction){
 		'''
-				ObjectMapper mapper = new ObjectMapper();
-       			mapper.readValue(json, GRUModel.class);
+		«IF analyzerAction.value != null»
+              «IF analyzerAction.value == AnalyzerOperations.LOADMODEL»
+	«analyzerAction.name».setModel(«analyzerAction.method»);
+              «ENDIF»
+              «IF analyzerAction.value == AnalyzerOperations.LOADPAGE»
+	«analyzerAction.name».setPage(«analyzerAction.method»);
+              «ENDIF»
+              «IF analyzerAction.value == AnalyzerOperations.EXECUTE»
+	«analyzerAction.name».execute();
+              «ENDIF»
+	  	«ENDIF»
         '''.toString
 	}
 
-	def generateHeaderList(){
+	def generateHeaderList(GenerateHeader headerList){
 		'''
-		List<Header> headerList = new ArrayList<Header>();
-        headerList.add(new BasicHeader("HOST","appmobile.gru.com.br"));
+	List<Header> headerList = new ArrayList<Header>();
+		 «FOR header : headerList.header»
+    headerList.add(new BasicHeader("«header.key»","«header.headerValue»"));
+         «ENDFOR»
+        '''.toString
+	}
+
+	def defineConnectionType(SetConnecttionType connectionType){
+		'''
+        «IF connectionType.type == ConnectionType.GET»
+	.setConnectionType("GET");
+              	«ELSE»
+	.setConnectionType("POST");
+              	«ENDIF»
         '''.toString
 	}
 

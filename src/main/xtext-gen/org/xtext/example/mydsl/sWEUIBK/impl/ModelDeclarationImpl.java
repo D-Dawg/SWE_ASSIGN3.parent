@@ -4,12 +4,15 @@
 package org.xtext.example.mydsl.sWEUIBK.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.mydsl.sWEUIBK.Model;
 import org.xtext.example.mydsl.sWEUIBK.ModelDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
 
@@ -29,24 +32,14 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
 public class ModelDeclarationImpl extends MinimalEObjectImpl.Container implements ModelDeclaration
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected Model name;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +67,7 @@ public class ModelDeclarationImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public Model getName()
   {
     return name;
   }
@@ -84,12 +77,53 @@ public class ModelDeclarationImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public NotificationChain basicSetName(Model newName, NotificationChain msgs)
   {
-    String oldName = name;
+    Model oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MODEL_DECLARATION__NAME, oldName, name));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MODEL_DECLARATION__NAME, oldName, newName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(Model newName)
+  {
+    if (newName != name)
+    {
+      NotificationChain msgs = null;
+      if (name != null)
+        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.MODEL_DECLARATION__NAME, null, msgs);
+      if (newName != null)
+        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.MODEL_DECLARATION__NAME, null, msgs);
+      msgs = basicSetName(newName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MODEL_DECLARATION__NAME, newName, newName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SWEUIBKPackage.MODEL_DECLARATION__NAME:
+        return basicSetName(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -119,7 +153,7 @@ public class ModelDeclarationImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case SWEUIBKPackage.MODEL_DECLARATION__NAME:
-        setName((String)newValue);
+        setName((Model)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,7 +170,7 @@ public class ModelDeclarationImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case SWEUIBKPackage.MODEL_DECLARATION__NAME:
-        setName(NAME_EDEFAULT);
+        setName((Model)null);
         return;
     }
     super.eUnset(featureID);
@@ -153,26 +187,9 @@ public class ModelDeclarationImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case SWEUIBKPackage.MODEL_DECLARATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+        return name != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //ModelDeclarationImpl

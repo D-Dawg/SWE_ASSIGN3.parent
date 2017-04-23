@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.mydsl.sWEUIBK.Monitor;
 import org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.MonitorInitialization;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
@@ -33,24 +34,14 @@ import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
 public class MonitorDeclarationImpl extends MinimalEObjectImpl.Container implements MonitorDeclaration
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected Monitor name;
 
   /**
    * The cached value of the '{@link #getUrl() <em>Url</em>}' containment reference.
@@ -88,7 +79,7 @@ public class MonitorDeclarationImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public Monitor getName()
   {
     return name;
   }
@@ -98,12 +89,37 @@ public class MonitorDeclarationImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public NotificationChain basicSetName(Monitor newName, NotificationChain msgs)
   {
-    String oldName = name;
+    Monitor oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MONITOR_DECLARATION__NAME, oldName, name));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MONITOR_DECLARATION__NAME, oldName, newName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(Monitor newName)
+  {
+    if (newName != name)
+    {
+      NotificationChain msgs = null;
+      if (name != null)
+        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.MONITOR_DECLARATION__NAME, null, msgs);
+      if (newName != null)
+        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SWEUIBKPackage.MONITOR_DECLARATION__NAME, null, msgs);
+      msgs = basicSetName(newName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SWEUIBKPackage.MONITOR_DECLARATION__NAME, newName, newName));
   }
 
   /**
@@ -164,6 +180,8 @@ public class MonitorDeclarationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case SWEUIBKPackage.MONITOR_DECLARATION__NAME:
+        return basicSetName(null, msgs);
       case SWEUIBKPackage.MONITOR_DECLARATION__URL:
         return basicSetUrl(null, msgs);
     }
@@ -199,7 +217,7 @@ public class MonitorDeclarationImpl extends MinimalEObjectImpl.Container impleme
     switch (featureID)
     {
       case SWEUIBKPackage.MONITOR_DECLARATION__NAME:
-        setName((String)newValue);
+        setName((Monitor)newValue);
         return;
       case SWEUIBKPackage.MONITOR_DECLARATION__URL:
         setUrl((MonitorInitialization)newValue);
@@ -219,7 +237,7 @@ public class MonitorDeclarationImpl extends MinimalEObjectImpl.Container impleme
     switch (featureID)
     {
       case SWEUIBKPackage.MONITOR_DECLARATION__NAME:
-        setName(NAME_EDEFAULT);
+        setName((Monitor)null);
         return;
       case SWEUIBKPackage.MONITOR_DECLARATION__URL:
         setUrl((MonitorInitialization)null);
@@ -239,28 +257,11 @@ public class MonitorDeclarationImpl extends MinimalEObjectImpl.Container impleme
     switch (featureID)
     {
       case SWEUIBKPackage.MONITOR_DECLARATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+        return name != null;
       case SWEUIBKPackage.MONITOR_DECLARATION__URL:
         return url != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //MonitorDeclarationImpl

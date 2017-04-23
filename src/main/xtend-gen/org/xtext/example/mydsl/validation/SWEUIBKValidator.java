@@ -9,9 +9,11 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.xtext.example.mydsl.sWEUIBK.AnalyzerObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.Domainmodel;
+import org.xtext.example.mydsl.sWEUIBK.Monitor;
 import org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.MonitorObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration;
+import org.xtext.example.mydsl.sWEUIBK.Page;
 import org.xtext.example.mydsl.sWEUIBK.PageDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.PageObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
@@ -92,12 +94,12 @@ public class SWEUIBKValidator extends AbstractSWEUIBKValidator {
   
   @Check
   public void checkLowerCaseMonitor(final MonitorDeclaration action) {
-    String _name = action.getName();
+    Monitor _name = action.getName();
     String _string = _name.toString();
     char _charAt = _string.charAt(0);
     boolean _isUpperCase = Character.isUpperCase(_charAt);
     if (_isUpperCase) {
-      String _name_1 = action.getName();
+      Monitor _name_1 = action.getName();
       String _string_1 = _name_1.toString();
       String _plus = ("Only Lower case: " + _string_1);
       this.error(_plus, action, null, (-1));
@@ -106,12 +108,12 @@ public class SWEUIBKValidator extends AbstractSWEUIBKValidator {
   
   @Check
   public void checkLowerCasePage(final PageDeclaration action) {
-    String _name = action.getName();
+    Page _name = action.getName();
     String _string = _name.toString();
     char _charAt = _string.charAt(0);
     boolean _isUpperCase = Character.isUpperCase(_charAt);
     if (_isUpperCase) {
-      String _name_1 = action.getName();
+      Page _name_1 = action.getName();
       String _string_1 = _name_1.toString();
       String _plus = ("Only Lower case: " + _string_1);
       this.error(_plus, action, null, (-1));

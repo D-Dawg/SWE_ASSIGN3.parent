@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Model'", "'Monitor'", "'Analyzer'", "'Page'", "'.'", "'loadStructure'", "'('", "')'", "'generateHeaderList'", "'AddAnalyzer'", "'RemoveAnalyzer'", "'LoadPage'", "'Execute'", "'RemovePage'", "'LoadModel'", "'url'", "'connectType'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Model'", "'Analyzer'", "'Monitor'", "'Page'", "'.'", "'loadStructure'", "'('", "')'", "'generateHeaderList'", "'connectType'", "'AddAnalyzer'", "'RemoveAnalyzer'", "'Execute'", "'LoadPage'", "'LoadModel'", "'url'", "'post'", "'get'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -41,6 +41,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=6;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -325,12 +326,12 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
             // InternalSWEUIBK.g:136:2: ( ( (lv_monitor_0_0= ruleMonitorDeclaration ) ) | ( (lv_analyzer_1_0= ruleAnalyzerDeclaration ) ) | ( (lv_page_2_0= rulePageDeclaration ) ) | ( (lv_model_3_0= ruleModelDeclaration ) ) )
             int alt3=4;
             switch ( input.LA(1) ) {
-            case 12:
+            case 13:
                 {
                 alt3=1;
                 }
                 break;
-            case 13:
+            case 12:
                 {
                 alt3=2;
                 }
@@ -560,46 +561,52 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModelDeclaration"
-    // InternalSWEUIBK.g:227:1: ruleModelDeclaration returns [EObject current=null] : (otherlv_0= 'Model' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSWEUIBK.g:227:1: ruleModelDeclaration returns [EObject current=null] : (otherlv_0= 'Model' ( (lv_name_1_0= ruleModel ) ) ) ;
     public final EObject ruleModelDeclaration() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        EObject lv_name_1_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:233:2: ( (otherlv_0= 'Model' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSWEUIBK.g:234:2: (otherlv_0= 'Model' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSWEUIBK.g:233:2: ( (otherlv_0= 'Model' ( (lv_name_1_0= ruleModel ) ) ) )
+            // InternalSWEUIBK.g:234:2: (otherlv_0= 'Model' ( (lv_name_1_0= ruleModel ) ) )
             {
-            // InternalSWEUIBK.g:234:2: (otherlv_0= 'Model' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSWEUIBK.g:235:3: otherlv_0= 'Model' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSWEUIBK.g:234:2: (otherlv_0= 'Model' ( (lv_name_1_0= ruleModel ) ) )
+            // InternalSWEUIBK.g:235:3: otherlv_0= 'Model' ( (lv_name_1_0= ruleModel ) )
             {
             otherlv_0=(Token)match(input,11,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getModelDeclarationAccess().getModelKeyword_0());
             		
-            // InternalSWEUIBK.g:239:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSWEUIBK.g:240:4: (lv_name_1_0= RULE_ID )
+            // InternalSWEUIBK.g:239:3: ( (lv_name_1_0= ruleModel ) )
+            // InternalSWEUIBK.g:240:4: (lv_name_1_0= ruleModel )
             {
-            // InternalSWEUIBK.g:240:4: (lv_name_1_0= RULE_ID )
-            // InternalSWEUIBK.g:241:5: lv_name_1_0= RULE_ID
+            // InternalSWEUIBK.g:240:4: (lv_name_1_0= ruleModel )
+            // InternalSWEUIBK.g:241:5: lv_name_1_0= ruleModel
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getModelDeclarationAccess().getNameIDTerminalRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getModelDeclarationAccess().getNameModelParserRuleCall_1_0());
             				
+            pushFollow(FOLLOW_2);
+            lv_name_1_0=ruleModel();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getModelDeclarationRule());
+            						current = createModelElementForParent(grammarAccess.getModelDeclarationRule());
             					}
-            					setWithLastConsumed(
+            					set(
             						current,
             						"name",
             						lv_name_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
+            						"org.xtext.example.mydsl.SWEUIBK.Model");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -629,242 +636,8 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleModelDeclaration"
 
 
-    // $ANTLR start "entryRuleMonitorDeclaration"
-    // InternalSWEUIBK.g:261:1: entryRuleMonitorDeclaration returns [EObject current=null] : iv_ruleMonitorDeclaration= ruleMonitorDeclaration EOF ;
-    public final EObject entryRuleMonitorDeclaration() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleMonitorDeclaration = null;
-
-
-        try {
-            // InternalSWEUIBK.g:261:59: (iv_ruleMonitorDeclaration= ruleMonitorDeclaration EOF )
-            // InternalSWEUIBK.g:262:2: iv_ruleMonitorDeclaration= ruleMonitorDeclaration EOF
-            {
-             newCompositeNode(grammarAccess.getMonitorDeclarationRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleMonitorDeclaration=ruleMonitorDeclaration();
-
-            state._fsp--;
-
-             current =iv_ruleMonitorDeclaration; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleMonitorDeclaration"
-
-
-    // $ANTLR start "ruleMonitorDeclaration"
-    // InternalSWEUIBK.g:268:1: ruleMonitorDeclaration returns [EObject current=null] : (otherlv_0= 'Monitor' ( (lv_name_1_0= RULE_ID ) ) ( (lv_url_2_0= ruleMonitorInitialization ) ) ) ;
-    public final EObject ruleMonitorDeclaration() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token lv_name_1_0=null;
-        EObject lv_url_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalSWEUIBK.g:274:2: ( (otherlv_0= 'Monitor' ( (lv_name_1_0= RULE_ID ) ) ( (lv_url_2_0= ruleMonitorInitialization ) ) ) )
-            // InternalSWEUIBK.g:275:2: (otherlv_0= 'Monitor' ( (lv_name_1_0= RULE_ID ) ) ( (lv_url_2_0= ruleMonitorInitialization ) ) )
-            {
-            // InternalSWEUIBK.g:275:2: (otherlv_0= 'Monitor' ( (lv_name_1_0= RULE_ID ) ) ( (lv_url_2_0= ruleMonitorInitialization ) ) )
-            // InternalSWEUIBK.g:276:3: otherlv_0= 'Monitor' ( (lv_name_1_0= RULE_ID ) ) ( (lv_url_2_0= ruleMonitorInitialization ) )
-            {
-            otherlv_0=(Token)match(input,12,FOLLOW_5); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getMonitorDeclarationAccess().getMonitorKeyword_0());
-            		
-            // InternalSWEUIBK.g:280:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSWEUIBK.g:281:4: (lv_name_1_0= RULE_ID )
-            {
-            // InternalSWEUIBK.g:281:4: (lv_name_1_0= RULE_ID )
-            // InternalSWEUIBK.g:282:5: lv_name_1_0= RULE_ID
-            {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
-
-            					newLeafNode(lv_name_1_0, grammarAccess.getMonitorDeclarationAccess().getNameIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getMonitorDeclarationRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"name",
-            						lv_name_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            // InternalSWEUIBK.g:298:3: ( (lv_url_2_0= ruleMonitorInitialization ) )
-            // InternalSWEUIBK.g:299:4: (lv_url_2_0= ruleMonitorInitialization )
-            {
-            // InternalSWEUIBK.g:299:4: (lv_url_2_0= ruleMonitorInitialization )
-            // InternalSWEUIBK.g:300:5: lv_url_2_0= ruleMonitorInitialization
-            {
-
-            					newCompositeNode(grammarAccess.getMonitorDeclarationAccess().getUrlMonitorInitializationParserRuleCall_2_0());
-            				
-            pushFollow(FOLLOW_2);
-            lv_url_2_0=ruleMonitorInitialization();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getMonitorDeclarationRule());
-            					}
-            					set(
-            						current,
-            						"url",
-            						lv_url_2_0,
-            						"org.xtext.example.mydsl.SWEUIBK.MonitorInitialization");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleMonitorDeclaration"
-
-
-    // $ANTLR start "entryRuleMonitorInitialization"
-    // InternalSWEUIBK.g:321:1: entryRuleMonitorInitialization returns [EObject current=null] : iv_ruleMonitorInitialization= ruleMonitorInitialization EOF ;
-    public final EObject entryRuleMonitorInitialization() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleMonitorInitialization = null;
-
-
-        try {
-            // InternalSWEUIBK.g:321:62: (iv_ruleMonitorInitialization= ruleMonitorInitialization EOF )
-            // InternalSWEUIBK.g:322:2: iv_ruleMonitorInitialization= ruleMonitorInitialization EOF
-            {
-             newCompositeNode(grammarAccess.getMonitorInitializationRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleMonitorInitialization=ruleMonitorInitialization();
-
-            state._fsp--;
-
-             current =iv_ruleMonitorInitialization; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleMonitorInitialization"
-
-
-    // $ANTLR start "ruleMonitorInitialization"
-    // InternalSWEUIBK.g:328:1: ruleMonitorInitialization returns [EObject current=null] : ( (lv_url_0_0= RULE_STRING ) ) ;
-    public final EObject ruleMonitorInitialization() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_url_0_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalSWEUIBK.g:334:2: ( ( (lv_url_0_0= RULE_STRING ) ) )
-            // InternalSWEUIBK.g:335:2: ( (lv_url_0_0= RULE_STRING ) )
-            {
-            // InternalSWEUIBK.g:335:2: ( (lv_url_0_0= RULE_STRING ) )
-            // InternalSWEUIBK.g:336:3: (lv_url_0_0= RULE_STRING )
-            {
-            // InternalSWEUIBK.g:336:3: (lv_url_0_0= RULE_STRING )
-            // InternalSWEUIBK.g:337:4: lv_url_0_0= RULE_STRING
-            {
-            lv_url_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
-
-            				newLeafNode(lv_url_0_0, grammarAccess.getMonitorInitializationAccess().getUrlSTRINGTerminalRuleCall_0());
-            			
-
-            				if (current==null) {
-            					current = createModelElement(grammarAccess.getMonitorInitializationRule());
-            				}
-            				setWithLastConsumed(
-            					current,
-            					"url",
-            					lv_url_0_0,
-            					"org.eclipse.xtext.common.Terminals.STRING");
-            			
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleMonitorInitialization"
-
-
     // $ANTLR start "entryRuleAnalyzerDeclaration"
-    // InternalSWEUIBK.g:356:1: entryRuleAnalyzerDeclaration returns [EObject current=null] : iv_ruleAnalyzerDeclaration= ruleAnalyzerDeclaration EOF ;
+    // InternalSWEUIBK.g:262:1: entryRuleAnalyzerDeclaration returns [EObject current=null] : iv_ruleAnalyzerDeclaration= ruleAnalyzerDeclaration EOF ;
     public final EObject entryRuleAnalyzerDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -872,8 +645,8 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSWEUIBK.g:356:60: (iv_ruleAnalyzerDeclaration= ruleAnalyzerDeclaration EOF )
-            // InternalSWEUIBK.g:357:2: iv_ruleAnalyzerDeclaration= ruleAnalyzerDeclaration EOF
+            // InternalSWEUIBK.g:262:60: (iv_ruleAnalyzerDeclaration= ruleAnalyzerDeclaration EOF )
+            // InternalSWEUIBK.g:263:2: iv_ruleAnalyzerDeclaration= ruleAnalyzerDeclaration EOF
             {
              newCompositeNode(grammarAccess.getAnalyzerDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -900,7 +673,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnalyzerDeclaration"
-    // InternalSWEUIBK.g:363:1: ruleAnalyzerDeclaration returns [EObject current=null] : (otherlv_0= 'Analyzer' ( (lv_name_1_0= ruleAnalyzer ) ) ) ;
+    // InternalSWEUIBK.g:269:1: ruleAnalyzerDeclaration returns [EObject current=null] : (otherlv_0= 'Analyzer' ( (lv_name_1_0= ruleAnalyzer ) ) ) ;
     public final EObject ruleAnalyzerDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -912,21 +685,21 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:369:2: ( (otherlv_0= 'Analyzer' ( (lv_name_1_0= ruleAnalyzer ) ) ) )
-            // InternalSWEUIBK.g:370:2: (otherlv_0= 'Analyzer' ( (lv_name_1_0= ruleAnalyzer ) ) )
+            // InternalSWEUIBK.g:275:2: ( (otherlv_0= 'Analyzer' ( (lv_name_1_0= ruleAnalyzer ) ) ) )
+            // InternalSWEUIBK.g:276:2: (otherlv_0= 'Analyzer' ( (lv_name_1_0= ruleAnalyzer ) ) )
             {
-            // InternalSWEUIBK.g:370:2: (otherlv_0= 'Analyzer' ( (lv_name_1_0= ruleAnalyzer ) ) )
-            // InternalSWEUIBK.g:371:3: otherlv_0= 'Analyzer' ( (lv_name_1_0= ruleAnalyzer ) )
+            // InternalSWEUIBK.g:276:2: (otherlv_0= 'Analyzer' ( (lv_name_1_0= ruleAnalyzer ) ) )
+            // InternalSWEUIBK.g:277:3: otherlv_0= 'Analyzer' ( (lv_name_1_0= ruleAnalyzer ) )
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_5); 
+            otherlv_0=(Token)match(input,12,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAnalyzerDeclarationAccess().getAnalyzerKeyword_0());
             		
-            // InternalSWEUIBK.g:375:3: ( (lv_name_1_0= ruleAnalyzer ) )
-            // InternalSWEUIBK.g:376:4: (lv_name_1_0= ruleAnalyzer )
+            // InternalSWEUIBK.g:281:3: ( (lv_name_1_0= ruleAnalyzer ) )
+            // InternalSWEUIBK.g:282:4: (lv_name_1_0= ruleAnalyzer )
             {
-            // InternalSWEUIBK.g:376:4: (lv_name_1_0= ruleAnalyzer )
-            // InternalSWEUIBK.g:377:5: lv_name_1_0= ruleAnalyzer
+            // InternalSWEUIBK.g:282:4: (lv_name_1_0= ruleAnalyzer )
+            // InternalSWEUIBK.g:283:5: lv_name_1_0= ruleAnalyzer
             {
 
             					newCompositeNode(grammarAccess.getAnalyzerDeclarationAccess().getNameAnalyzerParserRuleCall_1_0());
@@ -975,8 +748,265 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleAnalyzerDeclaration"
 
 
+    // $ANTLR start "entryRuleMonitorDeclaration"
+    // InternalSWEUIBK.g:304:1: entryRuleMonitorDeclaration returns [EObject current=null] : iv_ruleMonitorDeclaration= ruleMonitorDeclaration EOF ;
+    public final EObject entryRuleMonitorDeclaration() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMonitorDeclaration = null;
+
+
+        try {
+            // InternalSWEUIBK.g:304:59: (iv_ruleMonitorDeclaration= ruleMonitorDeclaration EOF )
+            // InternalSWEUIBK.g:305:2: iv_ruleMonitorDeclaration= ruleMonitorDeclaration EOF
+            {
+             newCompositeNode(grammarAccess.getMonitorDeclarationRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMonitorDeclaration=ruleMonitorDeclaration();
+
+            state._fsp--;
+
+             current =iv_ruleMonitorDeclaration; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMonitorDeclaration"
+
+
+    // $ANTLR start "ruleMonitorDeclaration"
+    // InternalSWEUIBK.g:311:1: ruleMonitorDeclaration returns [EObject current=null] : (otherlv_0= 'Monitor' ( (lv_name_1_0= ruleMonitor ) ) ( (lv_url_2_0= ruleMonitorInitialization ) ) ) ;
+    public final EObject ruleMonitorDeclaration() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        EObject lv_name_1_0 = null;
+
+        EObject lv_url_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSWEUIBK.g:317:2: ( (otherlv_0= 'Monitor' ( (lv_name_1_0= ruleMonitor ) ) ( (lv_url_2_0= ruleMonitorInitialization ) ) ) )
+            // InternalSWEUIBK.g:318:2: (otherlv_0= 'Monitor' ( (lv_name_1_0= ruleMonitor ) ) ( (lv_url_2_0= ruleMonitorInitialization ) ) )
+            {
+            // InternalSWEUIBK.g:318:2: (otherlv_0= 'Monitor' ( (lv_name_1_0= ruleMonitor ) ) ( (lv_url_2_0= ruleMonitorInitialization ) ) )
+            // InternalSWEUIBK.g:319:3: otherlv_0= 'Monitor' ( (lv_name_1_0= ruleMonitor ) ) ( (lv_url_2_0= ruleMonitorInitialization ) )
+            {
+            otherlv_0=(Token)match(input,13,FOLLOW_5); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getMonitorDeclarationAccess().getMonitorKeyword_0());
+            		
+            // InternalSWEUIBK.g:323:3: ( (lv_name_1_0= ruleMonitor ) )
+            // InternalSWEUIBK.g:324:4: (lv_name_1_0= ruleMonitor )
+            {
+            // InternalSWEUIBK.g:324:4: (lv_name_1_0= ruleMonitor )
+            // InternalSWEUIBK.g:325:5: lv_name_1_0= ruleMonitor
+            {
+
+            					newCompositeNode(grammarAccess.getMonitorDeclarationAccess().getNameMonitorParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_6);
+            lv_name_1_0=ruleMonitor();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMonitorDeclarationRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.xtext.example.mydsl.SWEUIBK.Monitor");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalSWEUIBK.g:342:3: ( (lv_url_2_0= ruleMonitorInitialization ) )
+            // InternalSWEUIBK.g:343:4: (lv_url_2_0= ruleMonitorInitialization )
+            {
+            // InternalSWEUIBK.g:343:4: (lv_url_2_0= ruleMonitorInitialization )
+            // InternalSWEUIBK.g:344:5: lv_url_2_0= ruleMonitorInitialization
+            {
+
+            					newCompositeNode(grammarAccess.getMonitorDeclarationAccess().getUrlMonitorInitializationParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_url_2_0=ruleMonitorInitialization();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMonitorDeclarationRule());
+            					}
+            					set(
+            						current,
+            						"url",
+            						lv_url_2_0,
+            						"org.xtext.example.mydsl.SWEUIBK.MonitorInitialization");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMonitorDeclaration"
+
+
+    // $ANTLR start "entryRulePageDeclaration"
+    // InternalSWEUIBK.g:365:1: entryRulePageDeclaration returns [EObject current=null] : iv_rulePageDeclaration= rulePageDeclaration EOF ;
+    public final EObject entryRulePageDeclaration() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePageDeclaration = null;
+
+
+        try {
+            // InternalSWEUIBK.g:365:56: (iv_rulePageDeclaration= rulePageDeclaration EOF )
+            // InternalSWEUIBK.g:366:2: iv_rulePageDeclaration= rulePageDeclaration EOF
+            {
+             newCompositeNode(grammarAccess.getPageDeclarationRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePageDeclaration=rulePageDeclaration();
+
+            state._fsp--;
+
+             current =iv_rulePageDeclaration; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePageDeclaration"
+
+
+    // $ANTLR start "rulePageDeclaration"
+    // InternalSWEUIBK.g:372:1: rulePageDeclaration returns [EObject current=null] : (otherlv_0= 'Page' ( (lv_name_1_0= rulePage ) ) ) ;
+    public final EObject rulePageDeclaration() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        EObject lv_name_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSWEUIBK.g:378:2: ( (otherlv_0= 'Page' ( (lv_name_1_0= rulePage ) ) ) )
+            // InternalSWEUIBK.g:379:2: (otherlv_0= 'Page' ( (lv_name_1_0= rulePage ) ) )
+            {
+            // InternalSWEUIBK.g:379:2: (otherlv_0= 'Page' ( (lv_name_1_0= rulePage ) ) )
+            // InternalSWEUIBK.g:380:3: otherlv_0= 'Page' ( (lv_name_1_0= rulePage ) )
+            {
+            otherlv_0=(Token)match(input,14,FOLLOW_5); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getPageDeclarationAccess().getPageKeyword_0());
+            		
+            // InternalSWEUIBK.g:384:3: ( (lv_name_1_0= rulePage ) )
+            // InternalSWEUIBK.g:385:4: (lv_name_1_0= rulePage )
+            {
+            // InternalSWEUIBK.g:385:4: (lv_name_1_0= rulePage )
+            // InternalSWEUIBK.g:386:5: lv_name_1_0= rulePage
+            {
+
+            					newCompositeNode(grammarAccess.getPageDeclarationAccess().getNamePageParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_name_1_0=rulePage();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getPageDeclarationRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.xtext.example.mydsl.SWEUIBK.Page");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePageDeclaration"
+
+
     // $ANTLR start "entryRuleAnalyzer"
-    // InternalSWEUIBK.g:398:1: entryRuleAnalyzer returns [EObject current=null] : iv_ruleAnalyzer= ruleAnalyzer EOF ;
+    // InternalSWEUIBK.g:407:1: entryRuleAnalyzer returns [EObject current=null] : iv_ruleAnalyzer= ruleAnalyzer EOF ;
     public final EObject entryRuleAnalyzer() throws RecognitionException {
         EObject current = null;
 
@@ -984,8 +1014,8 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSWEUIBK.g:398:49: (iv_ruleAnalyzer= ruleAnalyzer EOF )
-            // InternalSWEUIBK.g:399:2: iv_ruleAnalyzer= ruleAnalyzer EOF
+            // InternalSWEUIBK.g:407:49: (iv_ruleAnalyzer= ruleAnalyzer EOF )
+            // InternalSWEUIBK.g:408:2: iv_ruleAnalyzer= ruleAnalyzer EOF
             {
              newCompositeNode(grammarAccess.getAnalyzerRule()); 
             pushFollow(FOLLOW_1);
@@ -1012,7 +1042,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnalyzer"
-    // InternalSWEUIBK.g:405:1: ruleAnalyzer returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // InternalSWEUIBK.g:414:1: ruleAnalyzer returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
     public final EObject ruleAnalyzer() throws RecognitionException {
         EObject current = null;
 
@@ -1022,14 +1052,14 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:411:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalSWEUIBK.g:412:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSWEUIBK.g:420:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalSWEUIBK.g:421:2: ( (lv_name_0_0= RULE_ID ) )
             {
-            // InternalSWEUIBK.g:412:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalSWEUIBK.g:413:3: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:421:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSWEUIBK.g:422:3: (lv_name_0_0= RULE_ID )
             {
-            // InternalSWEUIBK.g:413:3: (lv_name_0_0= RULE_ID )
-            // InternalSWEUIBK.g:414:4: lv_name_0_0= RULE_ID
+            // InternalSWEUIBK.g:422:3: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:423:4: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1070,25 +1100,25 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleAnalyzer"
 
 
-    // $ANTLR start "entryRulePageDeclaration"
-    // InternalSWEUIBK.g:433:1: entryRulePageDeclaration returns [EObject current=null] : iv_rulePageDeclaration= rulePageDeclaration EOF ;
-    public final EObject entryRulePageDeclaration() throws RecognitionException {
+    // $ANTLR start "entryRuleModel"
+    // InternalSWEUIBK.g:442:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
+    public final EObject entryRuleModel() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_rulePageDeclaration = null;
+        EObject iv_ruleModel = null;
 
 
         try {
-            // InternalSWEUIBK.g:433:56: (iv_rulePageDeclaration= rulePageDeclaration EOF )
-            // InternalSWEUIBK.g:434:2: iv_rulePageDeclaration= rulePageDeclaration EOF
+            // InternalSWEUIBK.g:442:46: (iv_ruleModel= ruleModel EOF )
+            // InternalSWEUIBK.g:443:2: iv_ruleModel= ruleModel EOF
             {
-             newCompositeNode(grammarAccess.getPageDeclarationRule()); 
+             newCompositeNode(grammarAccess.getModelRule()); 
             pushFollow(FOLLOW_1);
-            iv_rulePageDeclaration=rulePageDeclaration();
+            iv_ruleModel=ruleModel();
 
             state._fsp--;
 
-             current =iv_rulePageDeclaration; 
+             current =iv_ruleModel; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1103,54 +1133,43 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRulePageDeclaration"
+    // $ANTLR end "entryRuleModel"
 
 
-    // $ANTLR start "rulePageDeclaration"
-    // InternalSWEUIBK.g:440:1: rulePageDeclaration returns [EObject current=null] : (otherlv_0= 'Page' ( (lv_name_1_0= RULE_ID ) ) ) ;
-    public final EObject rulePageDeclaration() throws RecognitionException {
+    // $ANTLR start "ruleModel"
+    // InternalSWEUIBK.g:449:1: ruleModel returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_name_0_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:446:2: ( (otherlv_0= 'Page' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSWEUIBK.g:447:2: (otherlv_0= 'Page' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSWEUIBK.g:455:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalSWEUIBK.g:456:2: ( (lv_name_0_0= RULE_ID ) )
             {
-            // InternalSWEUIBK.g:447:2: (otherlv_0= 'Page' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSWEUIBK.g:448:3: otherlv_0= 'Page' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSWEUIBK.g:456:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSWEUIBK.g:457:3: (lv_name_0_0= RULE_ID )
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_5); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getPageDeclarationAccess().getPageKeyword_0());
-            		
-            // InternalSWEUIBK.g:452:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSWEUIBK.g:453:4: (lv_name_1_0= RULE_ID )
+            // InternalSWEUIBK.g:457:3: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:458:4: lv_name_0_0= RULE_ID
             {
-            // InternalSWEUIBK.g:453:4: (lv_name_1_0= RULE_ID )
-            // InternalSWEUIBK.g:454:5: lv_name_1_0= RULE_ID
-            {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getPageDeclarationAccess().getNameIDTerminalRuleCall_1_0());
-            				
+            				newLeafNode(lv_name_0_0, grammarAccess.getModelAccess().getNameIDTerminalRuleCall_0());
+            			
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getPageDeclarationRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"name",
-            						lv_name_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
+            				if (current==null) {
+            					current = createModelElement(grammarAccess.getModelRule());
+            				}
+            				setWithLastConsumed(
+            					current,
+            					"name",
+            					lv_name_0_0,
+            					"org.eclipse.xtext.common.Terminals.ID");
+            			
 
             }
 
@@ -1173,11 +1192,296 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "rulePageDeclaration"
+    // $ANTLR end "ruleModel"
+
+
+    // $ANTLR start "entryRuleMonitor"
+    // InternalSWEUIBK.g:477:1: entryRuleMonitor returns [EObject current=null] : iv_ruleMonitor= ruleMonitor EOF ;
+    public final EObject entryRuleMonitor() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMonitor = null;
+
+
+        try {
+            // InternalSWEUIBK.g:477:48: (iv_ruleMonitor= ruleMonitor EOF )
+            // InternalSWEUIBK.g:478:2: iv_ruleMonitor= ruleMonitor EOF
+            {
+             newCompositeNode(grammarAccess.getMonitorRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMonitor=ruleMonitor();
+
+            state._fsp--;
+
+             current =iv_ruleMonitor; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMonitor"
+
+
+    // $ANTLR start "ruleMonitor"
+    // InternalSWEUIBK.g:484:1: ruleMonitor returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    public final EObject ruleMonitor() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_name_0_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSWEUIBK.g:490:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalSWEUIBK.g:491:2: ( (lv_name_0_0= RULE_ID ) )
+            {
+            // InternalSWEUIBK.g:491:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSWEUIBK.g:492:3: (lv_name_0_0= RULE_ID )
+            {
+            // InternalSWEUIBK.g:492:3: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:493:4: lv_name_0_0= RULE_ID
+            {
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            				newLeafNode(lv_name_0_0, grammarAccess.getMonitorAccess().getNameIDTerminalRuleCall_0());
+            			
+
+            				if (current==null) {
+            					current = createModelElement(grammarAccess.getMonitorRule());
+            				}
+            				setWithLastConsumed(
+            					current,
+            					"name",
+            					lv_name_0_0,
+            					"org.eclipse.xtext.common.Terminals.ID");
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMonitor"
+
+
+    // $ANTLR start "entryRulePage"
+    // InternalSWEUIBK.g:512:1: entryRulePage returns [EObject current=null] : iv_rulePage= rulePage EOF ;
+    public final EObject entryRulePage() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePage = null;
+
+
+        try {
+            // InternalSWEUIBK.g:512:45: (iv_rulePage= rulePage EOF )
+            // InternalSWEUIBK.g:513:2: iv_rulePage= rulePage EOF
+            {
+             newCompositeNode(grammarAccess.getPageRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePage=rulePage();
+
+            state._fsp--;
+
+             current =iv_rulePage; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePage"
+
+
+    // $ANTLR start "rulePage"
+    // InternalSWEUIBK.g:519:1: rulePage returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    public final EObject rulePage() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_name_0_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSWEUIBK.g:525:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalSWEUIBK.g:526:2: ( (lv_name_0_0= RULE_ID ) )
+            {
+            // InternalSWEUIBK.g:526:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSWEUIBK.g:527:3: (lv_name_0_0= RULE_ID )
+            {
+            // InternalSWEUIBK.g:527:3: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:528:4: lv_name_0_0= RULE_ID
+            {
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            				newLeafNode(lv_name_0_0, grammarAccess.getPageAccess().getNameIDTerminalRuleCall_0());
+            			
+
+            				if (current==null) {
+            					current = createModelElement(grammarAccess.getPageRule());
+            				}
+            				setWithLastConsumed(
+            					current,
+            					"name",
+            					lv_name_0_0,
+            					"org.eclipse.xtext.common.Terminals.ID");
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePage"
+
+
+    // $ANTLR start "entryRuleMonitorInitialization"
+    // InternalSWEUIBK.g:547:1: entryRuleMonitorInitialization returns [EObject current=null] : iv_ruleMonitorInitialization= ruleMonitorInitialization EOF ;
+    public final EObject entryRuleMonitorInitialization() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMonitorInitialization = null;
+
+
+        try {
+            // InternalSWEUIBK.g:547:62: (iv_ruleMonitorInitialization= ruleMonitorInitialization EOF )
+            // InternalSWEUIBK.g:548:2: iv_ruleMonitorInitialization= ruleMonitorInitialization EOF
+            {
+             newCompositeNode(grammarAccess.getMonitorInitializationRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMonitorInitialization=ruleMonitorInitialization();
+
+            state._fsp--;
+
+             current =iv_ruleMonitorInitialization; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMonitorInitialization"
+
+
+    // $ANTLR start "ruleMonitorInitialization"
+    // InternalSWEUIBK.g:554:1: ruleMonitorInitialization returns [EObject current=null] : ( (lv_url_0_0= RULE_STRING ) ) ;
+    public final EObject ruleMonitorInitialization() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_url_0_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSWEUIBK.g:560:2: ( ( (lv_url_0_0= RULE_STRING ) ) )
+            // InternalSWEUIBK.g:561:2: ( (lv_url_0_0= RULE_STRING ) )
+            {
+            // InternalSWEUIBK.g:561:2: ( (lv_url_0_0= RULE_STRING ) )
+            // InternalSWEUIBK.g:562:3: (lv_url_0_0= RULE_STRING )
+            {
+            // InternalSWEUIBK.g:562:3: (lv_url_0_0= RULE_STRING )
+            // InternalSWEUIBK.g:563:4: lv_url_0_0= RULE_STRING
+            {
+            lv_url_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+            				newLeafNode(lv_url_0_0, grammarAccess.getMonitorInitializationAccess().getUrlSTRINGTerminalRuleCall_0());
+            			
+
+            				if (current==null) {
+            					current = createModelElement(grammarAccess.getMonitorInitializationRule());
+            				}
+            				setWithLastConsumed(
+            					current,
+            					"url",
+            					lv_url_0_0,
+            					"org.eclipse.xtext.common.Terminals.STRING");
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMonitorInitialization"
 
 
     // $ANTLR start "entryRuleObjectAction"
-    // InternalSWEUIBK.g:474:1: entryRuleObjectAction returns [EObject current=null] : iv_ruleObjectAction= ruleObjectAction EOF ;
+    // InternalSWEUIBK.g:582:1: entryRuleObjectAction returns [EObject current=null] : iv_ruleObjectAction= ruleObjectAction EOF ;
     public final EObject entryRuleObjectAction() throws RecognitionException {
         EObject current = null;
 
@@ -1185,8 +1489,8 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSWEUIBK.g:474:53: (iv_ruleObjectAction= ruleObjectAction EOF )
-            // InternalSWEUIBK.g:475:2: iv_ruleObjectAction= ruleObjectAction EOF
+            // InternalSWEUIBK.g:582:53: (iv_ruleObjectAction= ruleObjectAction EOF )
+            // InternalSWEUIBK.g:583:2: iv_ruleObjectAction= ruleObjectAction EOF
             {
              newCompositeNode(grammarAccess.getObjectActionRule()); 
             pushFollow(FOLLOW_1);
@@ -1213,7 +1517,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleObjectAction"
-    // InternalSWEUIBK.g:481:1: ruleObjectAction returns [EObject current=null] : ( ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) ) | ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) ) | ( (lv_pageAction_2_0= rulePageObjectAction ) ) | ( (lv_modelAction_3_0= ruleModelAction ) ) ) ;
+    // InternalSWEUIBK.g:589:1: ruleObjectAction returns [EObject current=null] : ( ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) ) | ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) ) | ( (lv_pageAction_2_0= rulePageObjectAction ) ) | ( (lv_modelAction_3_0= ruleModelAction ) ) ) ;
     public final EObject ruleObjectAction() throws RecognitionException {
         EObject current = null;
 
@@ -1230,10 +1534,10 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:487:2: ( ( ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) ) | ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) ) | ( (lv_pageAction_2_0= rulePageObjectAction ) ) | ( (lv_modelAction_3_0= ruleModelAction ) ) ) )
-            // InternalSWEUIBK.g:488:2: ( ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) ) | ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) ) | ( (lv_pageAction_2_0= rulePageObjectAction ) ) | ( (lv_modelAction_3_0= ruleModelAction ) ) )
+            // InternalSWEUIBK.g:595:2: ( ( ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) ) | ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) ) | ( (lv_pageAction_2_0= rulePageObjectAction ) ) | ( (lv_modelAction_3_0= ruleModelAction ) ) ) )
+            // InternalSWEUIBK.g:596:2: ( ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) ) | ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) ) | ( (lv_pageAction_2_0= rulePageObjectAction ) ) | ( (lv_modelAction_3_0= ruleModelAction ) ) )
             {
-            // InternalSWEUIBK.g:488:2: ( ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) ) | ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) ) | ( (lv_pageAction_2_0= rulePageObjectAction ) ) | ( (lv_modelAction_3_0= ruleModelAction ) ) )
+            // InternalSWEUIBK.g:596:2: ( ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) ) | ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) ) | ( (lv_pageAction_2_0= rulePageObjectAction ) ) | ( (lv_modelAction_3_0= ruleModelAction ) ) )
             int alt4=4;
             int LA4_0 = input.LA(1);
 
@@ -1242,15 +1546,15 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
                 if ( (LA4_1==15) ) {
                     switch ( input.LA(3) ) {
-                    case 20:
                     case 21:
+                    case 22:
                         {
                         alt4=1;
                         }
                         break;
                     case 19:
+                    case 20:
                     case 26:
-                    case 27:
                         {
                         alt4=3;
                         }
@@ -1260,7 +1564,6 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                         alt4=4;
                         }
                         break;
-                    case 22:
                     case 23:
                     case 24:
                     case 25:
@@ -1291,13 +1594,13 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalSWEUIBK.g:489:3: ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) )
+                    // InternalSWEUIBK.g:597:3: ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) )
                     {
-                    // InternalSWEUIBK.g:489:3: ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) )
-                    // InternalSWEUIBK.g:490:4: (lv_monitorAction_0_0= ruleMonitorObjectAction )
+                    // InternalSWEUIBK.g:597:3: ( (lv_monitorAction_0_0= ruleMonitorObjectAction ) )
+                    // InternalSWEUIBK.g:598:4: (lv_monitorAction_0_0= ruleMonitorObjectAction )
                     {
-                    // InternalSWEUIBK.g:490:4: (lv_monitorAction_0_0= ruleMonitorObjectAction )
-                    // InternalSWEUIBK.g:491:5: lv_monitorAction_0_0= ruleMonitorObjectAction
+                    // InternalSWEUIBK.g:598:4: (lv_monitorAction_0_0= ruleMonitorObjectAction )
+                    // InternalSWEUIBK.g:599:5: lv_monitorAction_0_0= ruleMonitorObjectAction
                     {
 
                     					newCompositeNode(grammarAccess.getObjectActionAccess().getMonitorActionMonitorObjectActionParserRuleCall_0_0());
@@ -1328,13 +1631,13 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSWEUIBK.g:509:3: ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) )
+                    // InternalSWEUIBK.g:617:3: ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) )
                     {
-                    // InternalSWEUIBK.g:509:3: ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) )
-                    // InternalSWEUIBK.g:510:4: (lv_analyzerAction_1_0= ruleAnalyzerObjectAction )
+                    // InternalSWEUIBK.g:617:3: ( (lv_analyzerAction_1_0= ruleAnalyzerObjectAction ) )
+                    // InternalSWEUIBK.g:618:4: (lv_analyzerAction_1_0= ruleAnalyzerObjectAction )
                     {
-                    // InternalSWEUIBK.g:510:4: (lv_analyzerAction_1_0= ruleAnalyzerObjectAction )
-                    // InternalSWEUIBK.g:511:5: lv_analyzerAction_1_0= ruleAnalyzerObjectAction
+                    // InternalSWEUIBK.g:618:4: (lv_analyzerAction_1_0= ruleAnalyzerObjectAction )
+                    // InternalSWEUIBK.g:619:5: lv_analyzerAction_1_0= ruleAnalyzerObjectAction
                     {
 
                     					newCompositeNode(grammarAccess.getObjectActionAccess().getAnalyzerActionAnalyzerObjectActionParserRuleCall_1_0());
@@ -1365,13 +1668,13 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSWEUIBK.g:529:3: ( (lv_pageAction_2_0= rulePageObjectAction ) )
+                    // InternalSWEUIBK.g:637:3: ( (lv_pageAction_2_0= rulePageObjectAction ) )
                     {
-                    // InternalSWEUIBK.g:529:3: ( (lv_pageAction_2_0= rulePageObjectAction ) )
-                    // InternalSWEUIBK.g:530:4: (lv_pageAction_2_0= rulePageObjectAction )
+                    // InternalSWEUIBK.g:637:3: ( (lv_pageAction_2_0= rulePageObjectAction ) )
+                    // InternalSWEUIBK.g:638:4: (lv_pageAction_2_0= rulePageObjectAction )
                     {
-                    // InternalSWEUIBK.g:530:4: (lv_pageAction_2_0= rulePageObjectAction )
-                    // InternalSWEUIBK.g:531:5: lv_pageAction_2_0= rulePageObjectAction
+                    // InternalSWEUIBK.g:638:4: (lv_pageAction_2_0= rulePageObjectAction )
+                    // InternalSWEUIBK.g:639:5: lv_pageAction_2_0= rulePageObjectAction
                     {
 
                     					newCompositeNode(grammarAccess.getObjectActionAccess().getPageActionPageObjectActionParserRuleCall_2_0());
@@ -1402,13 +1705,13 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSWEUIBK.g:549:3: ( (lv_modelAction_3_0= ruleModelAction ) )
+                    // InternalSWEUIBK.g:657:3: ( (lv_modelAction_3_0= ruleModelAction ) )
                     {
-                    // InternalSWEUIBK.g:549:3: ( (lv_modelAction_3_0= ruleModelAction ) )
-                    // InternalSWEUIBK.g:550:4: (lv_modelAction_3_0= ruleModelAction )
+                    // InternalSWEUIBK.g:657:3: ( (lv_modelAction_3_0= ruleModelAction ) )
+                    // InternalSWEUIBK.g:658:4: (lv_modelAction_3_0= ruleModelAction )
                     {
-                    // InternalSWEUIBK.g:550:4: (lv_modelAction_3_0= ruleModelAction )
-                    // InternalSWEUIBK.g:551:5: lv_modelAction_3_0= ruleModelAction
+                    // InternalSWEUIBK.g:658:4: (lv_modelAction_3_0= ruleModelAction )
+                    // InternalSWEUIBK.g:659:5: lv_modelAction_3_0= ruleModelAction
                     {
 
                     					newCompositeNode(grammarAccess.getObjectActionAccess().getModelActionModelActionParserRuleCall_3_0());
@@ -1461,7 +1764,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleModelAction"
-    // InternalSWEUIBK.g:572:1: entryRuleModelAction returns [EObject current=null] : iv_ruleModelAction= ruleModelAction EOF ;
+    // InternalSWEUIBK.g:680:1: entryRuleModelAction returns [EObject current=null] : iv_ruleModelAction= ruleModelAction EOF ;
     public final EObject entryRuleModelAction() throws RecognitionException {
         EObject current = null;
 
@@ -1469,8 +1772,8 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSWEUIBK.g:572:52: (iv_ruleModelAction= ruleModelAction EOF )
-            // InternalSWEUIBK.g:573:2: iv_ruleModelAction= ruleModelAction EOF
+            // InternalSWEUIBK.g:680:52: (iv_ruleModelAction= ruleModelAction EOF )
+            // InternalSWEUIBK.g:681:2: iv_ruleModelAction= ruleModelAction EOF
             {
              newCompositeNode(grammarAccess.getModelActionRule()); 
             pushFollow(FOLLOW_1);
@@ -1497,7 +1800,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModelAction"
-    // InternalSWEUIBK.g:579:1: ruleModelAction returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' otherlv_2= 'loadStructure' otherlv_3= '(' ( (lv_modelStructure_4_0= ruleModelStructure ) )+ otherlv_5= ')' ) ;
+    // InternalSWEUIBK.g:687:1: ruleModelAction returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' otherlv_2= 'loadStructure' otherlv_3= '(' ( (lv_modelStructure_4_0= ruleModelStructure ) )+ otherlv_5= ')' ) ;
     public final EObject ruleModelAction() throws RecognitionException {
         EObject current = null;
 
@@ -1513,17 +1816,17 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:585:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' otherlv_2= 'loadStructure' otherlv_3= '(' ( (lv_modelStructure_4_0= ruleModelStructure ) )+ otherlv_5= ')' ) )
-            // InternalSWEUIBK.g:586:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' otherlv_2= 'loadStructure' otherlv_3= '(' ( (lv_modelStructure_4_0= ruleModelStructure ) )+ otherlv_5= ')' )
+            // InternalSWEUIBK.g:693:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' otherlv_2= 'loadStructure' otherlv_3= '(' ( (lv_modelStructure_4_0= ruleModelStructure ) )+ otherlv_5= ')' ) )
+            // InternalSWEUIBK.g:694:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' otherlv_2= 'loadStructure' otherlv_3= '(' ( (lv_modelStructure_4_0= ruleModelStructure ) )+ otherlv_5= ')' )
             {
-            // InternalSWEUIBK.g:586:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' otherlv_2= 'loadStructure' otherlv_3= '(' ( (lv_modelStructure_4_0= ruleModelStructure ) )+ otherlv_5= ')' )
-            // InternalSWEUIBK.g:587:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' otherlv_2= 'loadStructure' otherlv_3= '(' ( (lv_modelStructure_4_0= ruleModelStructure ) )+ otherlv_5= ')'
+            // InternalSWEUIBK.g:694:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' otherlv_2= 'loadStructure' otherlv_3= '(' ( (lv_modelStructure_4_0= ruleModelStructure ) )+ otherlv_5= ')' )
+            // InternalSWEUIBK.g:695:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' otherlv_2= 'loadStructure' otherlv_3= '(' ( (lv_modelStructure_4_0= ruleModelStructure ) )+ otherlv_5= ')'
             {
-            // InternalSWEUIBK.g:587:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalSWEUIBK.g:588:4: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:695:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSWEUIBK.g:696:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalSWEUIBK.g:588:4: (lv_name_0_0= RULE_ID )
-            // InternalSWEUIBK.g:589:5: lv_name_0_0= RULE_ID
+            // InternalSWEUIBK.g:696:4: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:697:5: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_7); 
 
@@ -1557,7 +1860,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getModelActionAccess().getLeftParenthesisKeyword_3());
             		
-            // InternalSWEUIBK.g:617:3: ( (lv_modelStructure_4_0= ruleModelStructure ) )+
+            // InternalSWEUIBK.g:725:3: ( (lv_modelStructure_4_0= ruleModelStructure ) )+
             int cnt5=0;
             loop5:
             do {
@@ -1571,10 +1874,10 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalSWEUIBK.g:618:4: (lv_modelStructure_4_0= ruleModelStructure )
+            	    // InternalSWEUIBK.g:726:4: (lv_modelStructure_4_0= ruleModelStructure )
             	    {
-            	    // InternalSWEUIBK.g:618:4: (lv_modelStructure_4_0= ruleModelStructure )
-            	    // InternalSWEUIBK.g:619:5: lv_modelStructure_4_0= ruleModelStructure
+            	    // InternalSWEUIBK.g:726:4: (lv_modelStructure_4_0= ruleModelStructure )
+            	    // InternalSWEUIBK.g:727:5: lv_modelStructure_4_0= ruleModelStructure
             	    {
 
             	    					newCompositeNode(grammarAccess.getModelActionAccess().getModelStructureModelStructureParserRuleCall_4_0());
@@ -1638,7 +1941,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleModelStructure"
-    // InternalSWEUIBK.g:644:1: entryRuleModelStructure returns [EObject current=null] : iv_ruleModelStructure= ruleModelStructure EOF ;
+    // InternalSWEUIBK.g:752:1: entryRuleModelStructure returns [EObject current=null] : iv_ruleModelStructure= ruleModelStructure EOF ;
     public final EObject entryRuleModelStructure() throws RecognitionException {
         EObject current = null;
 
@@ -1646,8 +1949,8 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSWEUIBK.g:644:55: (iv_ruleModelStructure= ruleModelStructure EOF )
-            // InternalSWEUIBK.g:645:2: iv_ruleModelStructure= ruleModelStructure EOF
+            // InternalSWEUIBK.g:752:55: (iv_ruleModelStructure= ruleModelStructure EOF )
+            // InternalSWEUIBK.g:753:2: iv_ruleModelStructure= ruleModelStructure EOF
             {
              newCompositeNode(grammarAccess.getModelStructureRule()); 
             pushFollow(FOLLOW_1);
@@ -1674,7 +1977,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModelStructure"
-    // InternalSWEUIBK.g:651:1: ruleModelStructure returns [EObject current=null] : ( (lv_source_0_0= RULE_STRING ) ) ;
+    // InternalSWEUIBK.g:759:1: ruleModelStructure returns [EObject current=null] : ( (lv_source_0_0= RULE_STRING ) ) ;
     public final EObject ruleModelStructure() throws RecognitionException {
         EObject current = null;
 
@@ -1684,14 +1987,14 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:657:2: ( ( (lv_source_0_0= RULE_STRING ) ) )
-            // InternalSWEUIBK.g:658:2: ( (lv_source_0_0= RULE_STRING ) )
+            // InternalSWEUIBK.g:765:2: ( ( (lv_source_0_0= RULE_STRING ) ) )
+            // InternalSWEUIBK.g:766:2: ( (lv_source_0_0= RULE_STRING ) )
             {
-            // InternalSWEUIBK.g:658:2: ( (lv_source_0_0= RULE_STRING ) )
-            // InternalSWEUIBK.g:659:3: (lv_source_0_0= RULE_STRING )
+            // InternalSWEUIBK.g:766:2: ( (lv_source_0_0= RULE_STRING ) )
+            // InternalSWEUIBK.g:767:3: (lv_source_0_0= RULE_STRING )
             {
-            // InternalSWEUIBK.g:659:3: (lv_source_0_0= RULE_STRING )
-            // InternalSWEUIBK.g:660:4: lv_source_0_0= RULE_STRING
+            // InternalSWEUIBK.g:767:3: (lv_source_0_0= RULE_STRING )
+            // InternalSWEUIBK.g:768:4: lv_source_0_0= RULE_STRING
             {
             lv_source_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1733,7 +2036,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMonitorObjectAction"
-    // InternalSWEUIBK.g:679:1: entryRuleMonitorObjectAction returns [EObject current=null] : iv_ruleMonitorObjectAction= ruleMonitorObjectAction EOF ;
+    // InternalSWEUIBK.g:787:1: entryRuleMonitorObjectAction returns [EObject current=null] : iv_ruleMonitorObjectAction= ruleMonitorObjectAction EOF ;
     public final EObject entryRuleMonitorObjectAction() throws RecognitionException {
         EObject current = null;
 
@@ -1741,8 +2044,8 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSWEUIBK.g:679:60: (iv_ruleMonitorObjectAction= ruleMonitorObjectAction EOF )
-            // InternalSWEUIBK.g:680:2: iv_ruleMonitorObjectAction= ruleMonitorObjectAction EOF
+            // InternalSWEUIBK.g:787:60: (iv_ruleMonitorObjectAction= ruleMonitorObjectAction EOF )
+            // InternalSWEUIBK.g:788:2: iv_ruleMonitorObjectAction= ruleMonitorObjectAction EOF
             {
              newCompositeNode(grammarAccess.getMonitorObjectActionRule()); 
             pushFollow(FOLLOW_1);
@@ -1769,34 +2072,33 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMonitorObjectAction"
-    // InternalSWEUIBK.g:686:1: ruleMonitorObjectAction returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleMonitorOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' ) ;
+    // InternalSWEUIBK.g:794:1: ruleMonitorObjectAction returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleMonitorOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_ID ) )? otherlv_5= ')' ) ;
     public final EObject ruleMonitorObjectAction() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
+        Token lv_method_4_0=null;
         Token otherlv_5=null;
         Enumerator lv_value_2_0 = null;
-
-        AntlrDatatypeRuleToken lv_method_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:692:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleMonitorOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' ) )
-            // InternalSWEUIBK.g:693:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleMonitorOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' )
+            // InternalSWEUIBK.g:800:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleMonitorOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_ID ) )? otherlv_5= ')' ) )
+            // InternalSWEUIBK.g:801:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleMonitorOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_ID ) )? otherlv_5= ')' )
             {
-            // InternalSWEUIBK.g:693:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleMonitorOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' )
-            // InternalSWEUIBK.g:694:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleMonitorOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')'
+            // InternalSWEUIBK.g:801:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleMonitorOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_ID ) )? otherlv_5= ')' )
+            // InternalSWEUIBK.g:802:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleMonitorOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_ID ) )? otherlv_5= ')'
             {
-            // InternalSWEUIBK.g:694:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalSWEUIBK.g:695:4: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:802:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSWEUIBK.g:803:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalSWEUIBK.g:695:4: (lv_name_0_0= RULE_ID )
-            // InternalSWEUIBK.g:696:5: lv_name_0_0= RULE_ID
+            // InternalSWEUIBK.g:803:4: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:804:5: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_7); 
 
@@ -1822,11 +2124,11 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getMonitorObjectActionAccess().getFullStopKeyword_1());
             		
-            // InternalSWEUIBK.g:716:3: ( (lv_value_2_0= ruleMonitorOperations ) )
-            // InternalSWEUIBK.g:717:4: (lv_value_2_0= ruleMonitorOperations )
+            // InternalSWEUIBK.g:824:3: ( (lv_value_2_0= ruleMonitorOperations ) )
+            // InternalSWEUIBK.g:825:4: (lv_value_2_0= ruleMonitorOperations )
             {
-            // InternalSWEUIBK.g:717:4: (lv_value_2_0= ruleMonitorOperations )
-            // InternalSWEUIBK.g:718:5: lv_value_2_0= ruleMonitorOperations
+            // InternalSWEUIBK.g:825:4: (lv_value_2_0= ruleMonitorOperations )
+            // InternalSWEUIBK.g:826:5: lv_value_2_0= ruleMonitorOperations
             {
 
             					newCompositeNode(grammarAccess.getMonitorObjectActionAccess().getValueMonitorOperationsEnumRuleCall_2_0());
@@ -1853,42 +2155,37 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,17,FOLLOW_10); 
+            otherlv_3=(Token)match(input,17,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getMonitorObjectActionAccess().getLeftParenthesisKeyword_3());
             		
-            // InternalSWEUIBK.g:739:3: ( (lv_method_4_0= ruleMethodParameter ) )?
+            // InternalSWEUIBK.g:847:3: ( (lv_method_4_0= RULE_ID ) )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==RULE_STRING) ) {
+            if ( (LA6_0==RULE_ID) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
-                    // InternalSWEUIBK.g:740:4: (lv_method_4_0= ruleMethodParameter )
+                    // InternalSWEUIBK.g:848:4: (lv_method_4_0= RULE_ID )
                     {
-                    // InternalSWEUIBK.g:740:4: (lv_method_4_0= ruleMethodParameter )
-                    // InternalSWEUIBK.g:741:5: lv_method_4_0= ruleMethodParameter
+                    // InternalSWEUIBK.g:848:4: (lv_method_4_0= RULE_ID )
+                    // InternalSWEUIBK.g:849:5: lv_method_4_0= RULE_ID
                     {
+                    lv_method_4_0=(Token)match(input,RULE_ID,FOLLOW_13); 
 
-                    					newCompositeNode(grammarAccess.getMonitorObjectActionAccess().getMethodMethodParameterParserRuleCall_4_0());
+                    					newLeafNode(lv_method_4_0, grammarAccess.getMonitorObjectActionAccess().getMethodIDTerminalRuleCall_4_0());
                     				
-                    pushFollow(FOLLOW_12);
-                    lv_method_4_0=ruleMethodParameter();
-
-                    state._fsp--;
-
 
                     					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getMonitorObjectActionRule());
+                    						current = createModelElement(grammarAccess.getMonitorObjectActionRule());
                     					}
-                    					set(
+                    					setWithLastConsumed(
                     						current,
                     						"method",
                     						lv_method_4_0,
-                    						"org.xtext.example.mydsl.SWEUIBK.MethodParameter");
-                    					afterParserOrEnumRuleCall();
+                    						"org.eclipse.xtext.common.Terminals.ID");
                     				
 
                     }
@@ -1926,7 +2223,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAnalyzerObjectAction"
-    // InternalSWEUIBK.g:766:1: entryRuleAnalyzerObjectAction returns [EObject current=null] : iv_ruleAnalyzerObjectAction= ruleAnalyzerObjectAction EOF ;
+    // InternalSWEUIBK.g:873:1: entryRuleAnalyzerObjectAction returns [EObject current=null] : iv_ruleAnalyzerObjectAction= ruleAnalyzerObjectAction EOF ;
     public final EObject entryRuleAnalyzerObjectAction() throws RecognitionException {
         EObject current = null;
 
@@ -1934,8 +2231,8 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSWEUIBK.g:766:61: (iv_ruleAnalyzerObjectAction= ruleAnalyzerObjectAction EOF )
-            // InternalSWEUIBK.g:767:2: iv_ruleAnalyzerObjectAction= ruleAnalyzerObjectAction EOF
+            // InternalSWEUIBK.g:873:61: (iv_ruleAnalyzerObjectAction= ruleAnalyzerObjectAction EOF )
+            // InternalSWEUIBK.g:874:2: iv_ruleAnalyzerObjectAction= ruleAnalyzerObjectAction EOF
             {
              newCompositeNode(grammarAccess.getAnalyzerObjectActionRule()); 
             pushFollow(FOLLOW_1);
@@ -1962,34 +2259,33 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnalyzerObjectAction"
-    // InternalSWEUIBK.g:773:1: ruleAnalyzerObjectAction returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleAnalyzerOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' ) ;
+    // InternalSWEUIBK.g:880:1: ruleAnalyzerObjectAction returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleAnalyzerOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_ID ) )? otherlv_5= ')' ) ;
     public final EObject ruleAnalyzerObjectAction() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
+        Token lv_method_4_0=null;
         Token otherlv_5=null;
         Enumerator lv_value_2_0 = null;
-
-        AntlrDatatypeRuleToken lv_method_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:779:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleAnalyzerOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' ) )
-            // InternalSWEUIBK.g:780:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleAnalyzerOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' )
+            // InternalSWEUIBK.g:886:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleAnalyzerOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_ID ) )? otherlv_5= ')' ) )
+            // InternalSWEUIBK.g:887:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleAnalyzerOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_ID ) )? otherlv_5= ')' )
             {
-            // InternalSWEUIBK.g:780:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleAnalyzerOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' )
-            // InternalSWEUIBK.g:781:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleAnalyzerOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')'
+            // InternalSWEUIBK.g:887:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleAnalyzerOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_ID ) )? otherlv_5= ')' )
+            // InternalSWEUIBK.g:888:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( (lv_value_2_0= ruleAnalyzerOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_ID ) )? otherlv_5= ')'
             {
-            // InternalSWEUIBK.g:781:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalSWEUIBK.g:782:4: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:888:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSWEUIBK.g:889:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalSWEUIBK.g:782:4: (lv_name_0_0= RULE_ID )
-            // InternalSWEUIBK.g:783:5: lv_name_0_0= RULE_ID
+            // InternalSWEUIBK.g:889:4: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:890:5: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_7); 
 
@@ -2011,15 +2307,15 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,15,FOLLOW_13); 
+            otherlv_1=(Token)match(input,15,FOLLOW_14); 
 
             			newLeafNode(otherlv_1, grammarAccess.getAnalyzerObjectActionAccess().getFullStopKeyword_1());
             		
-            // InternalSWEUIBK.g:803:3: ( (lv_value_2_0= ruleAnalyzerOperations ) )
-            // InternalSWEUIBK.g:804:4: (lv_value_2_0= ruleAnalyzerOperations )
+            // InternalSWEUIBK.g:910:3: ( (lv_value_2_0= ruleAnalyzerOperations ) )
+            // InternalSWEUIBK.g:911:4: (lv_value_2_0= ruleAnalyzerOperations )
             {
-            // InternalSWEUIBK.g:804:4: (lv_value_2_0= ruleAnalyzerOperations )
-            // InternalSWEUIBK.g:805:5: lv_value_2_0= ruleAnalyzerOperations
+            // InternalSWEUIBK.g:911:4: (lv_value_2_0= ruleAnalyzerOperations )
+            // InternalSWEUIBK.g:912:5: lv_value_2_0= ruleAnalyzerOperations
             {
 
             					newCompositeNode(grammarAccess.getAnalyzerObjectActionAccess().getValueAnalyzerOperationsEnumRuleCall_2_0());
@@ -2046,42 +2342,37 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,17,FOLLOW_10); 
+            otherlv_3=(Token)match(input,17,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAnalyzerObjectActionAccess().getLeftParenthesisKeyword_3());
             		
-            // InternalSWEUIBK.g:826:3: ( (lv_method_4_0= ruleMethodParameter ) )?
+            // InternalSWEUIBK.g:933:3: ( (lv_method_4_0= RULE_ID ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_STRING) ) {
+            if ( (LA7_0==RULE_ID) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // InternalSWEUIBK.g:827:4: (lv_method_4_0= ruleMethodParameter )
+                    // InternalSWEUIBK.g:934:4: (lv_method_4_0= RULE_ID )
                     {
-                    // InternalSWEUIBK.g:827:4: (lv_method_4_0= ruleMethodParameter )
-                    // InternalSWEUIBK.g:828:5: lv_method_4_0= ruleMethodParameter
+                    // InternalSWEUIBK.g:934:4: (lv_method_4_0= RULE_ID )
+                    // InternalSWEUIBK.g:935:5: lv_method_4_0= RULE_ID
                     {
+                    lv_method_4_0=(Token)match(input,RULE_ID,FOLLOW_13); 
 
-                    					newCompositeNode(grammarAccess.getAnalyzerObjectActionAccess().getMethodMethodParameterParserRuleCall_4_0());
+                    					newLeafNode(lv_method_4_0, grammarAccess.getAnalyzerObjectActionAccess().getMethodIDTerminalRuleCall_4_0());
                     				
-                    pushFollow(FOLLOW_12);
-                    lv_method_4_0=ruleMethodParameter();
-
-                    state._fsp--;
-
 
                     					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getAnalyzerObjectActionRule());
+                    						current = createModelElement(grammarAccess.getAnalyzerObjectActionRule());
                     					}
-                    					set(
+                    					setWithLastConsumed(
                     						current,
                     						"method",
                     						lv_method_4_0,
-                    						"org.xtext.example.mydsl.SWEUIBK.MethodParameter");
-                    					afterParserOrEnumRuleCall();
+                    						"org.eclipse.xtext.common.Terminals.ID");
                     				
 
                     }
@@ -2119,7 +2410,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePageObjectAction"
-    // InternalSWEUIBK.g:853:1: entryRulePageObjectAction returns [EObject current=null] : iv_rulePageObjectAction= rulePageObjectAction EOF ;
+    // InternalSWEUIBK.g:959:1: entryRulePageObjectAction returns [EObject current=null] : iv_rulePageObjectAction= rulePageObjectAction EOF ;
     public final EObject entryRulePageObjectAction() throws RecognitionException {
         EObject current = null;
 
@@ -2127,8 +2418,8 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSWEUIBK.g:853:57: (iv_rulePageObjectAction= rulePageObjectAction EOF )
-            // InternalSWEUIBK.g:854:2: iv_rulePageObjectAction= rulePageObjectAction EOF
+            // InternalSWEUIBK.g:959:57: (iv_rulePageObjectAction= rulePageObjectAction EOF )
+            // InternalSWEUIBK.g:960:2: iv_rulePageObjectAction= rulePageObjectAction EOF
             {
              newCompositeNode(grammarAccess.getPageObjectActionRule()); 
             pushFollow(FOLLOW_1);
@@ -2155,36 +2446,37 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePageObjectAction"
-    // InternalSWEUIBK.g:860:1: rulePageObjectAction returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) ) ) ;
+    // InternalSWEUIBK.g:966:1: rulePageObjectAction returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_STRING ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) | ( (lv_setConnectionType_7_0= ruleSetConnecttionType ) ) ) ) ;
     public final EObject rulePageObjectAction() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
+        Token lv_method_4_0=null;
         Token otherlv_5=null;
         Enumerator lv_value_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_method_4_0 = null;
+        EObject lv_headerList_6_0 = null;
 
-        AntlrDatatypeRuleToken lv_headerList_6_0 = null;
+        EObject lv_setConnectionType_7_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:866:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) ) ) )
-            // InternalSWEUIBK.g:867:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) ) )
+            // InternalSWEUIBK.g:972:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_STRING ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) | ( (lv_setConnectionType_7_0= ruleSetConnecttionType ) ) ) ) )
+            // InternalSWEUIBK.g:973:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_STRING ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) | ( (lv_setConnectionType_7_0= ruleSetConnecttionType ) ) ) )
             {
-            // InternalSWEUIBK.g:867:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) ) )
-            // InternalSWEUIBK.g:868:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) )
+            // InternalSWEUIBK.g:973:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_STRING ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) | ( (lv_setConnectionType_7_0= ruleSetConnecttionType ) ) ) )
+            // InternalSWEUIBK.g:974:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '.' ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_STRING ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) | ( (lv_setConnectionType_7_0= ruleSetConnecttionType ) ) )
             {
-            // InternalSWEUIBK.g:868:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalSWEUIBK.g:869:4: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:974:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSWEUIBK.g:975:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalSWEUIBK.g:869:4: (lv_name_0_0= RULE_ID )
-            // InternalSWEUIBK.g:870:5: lv_name_0_0= RULE_ID
+            // InternalSWEUIBK.g:975:4: (lv_name_0_0= RULE_ID )
+            // InternalSWEUIBK.g:976:5: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_7); 
 
@@ -2206,38 +2498,47 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,15,FOLLOW_14); 
+            otherlv_1=(Token)match(input,15,FOLLOW_15); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPageObjectActionAccess().getFullStopKeyword_1());
             		
-            // InternalSWEUIBK.g:890:3: ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( ((LA9_0>=26 && LA9_0<=27)) ) {
+            // InternalSWEUIBK.g:996:3: ( ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_STRING ) )? otherlv_5= ')' ) | ( (lv_headerList_6_0= ruleGenerateHeader ) ) | ( (lv_setConnectionType_7_0= ruleSetConnecttionType ) ) )
+            int alt9=3;
+            switch ( input.LA(1) ) {
+            case 26:
+                {
                 alt9=1;
-            }
-            else if ( (LA9_0==19) ) {
+                }
+                break;
+            case 19:
+                {
                 alt9=2;
-            }
-            else {
+                }
+                break;
+            case 20:
+                {
+                alt9=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
+
             switch (alt9) {
                 case 1 :
-                    // InternalSWEUIBK.g:891:4: ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' )
+                    // InternalSWEUIBK.g:997:4: ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_STRING ) )? otherlv_5= ')' )
                     {
-                    // InternalSWEUIBK.g:891:4: ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')' )
-                    // InternalSWEUIBK.g:892:5: ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= ruleMethodParameter ) )? otherlv_5= ')'
+                    // InternalSWEUIBK.g:997:4: ( ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_STRING ) )? otherlv_5= ')' )
+                    // InternalSWEUIBK.g:998:5: ( (lv_value_2_0= rulePageOperations ) ) otherlv_3= '(' ( (lv_method_4_0= RULE_STRING ) )? otherlv_5= ')'
                     {
-                    // InternalSWEUIBK.g:892:5: ( (lv_value_2_0= rulePageOperations ) )
-                    // InternalSWEUIBK.g:893:6: (lv_value_2_0= rulePageOperations )
+                    // InternalSWEUIBK.g:998:5: ( (lv_value_2_0= rulePageOperations ) )
+                    // InternalSWEUIBK.g:999:6: (lv_value_2_0= rulePageOperations )
                     {
-                    // InternalSWEUIBK.g:893:6: (lv_value_2_0= rulePageOperations )
-                    // InternalSWEUIBK.g:894:7: lv_value_2_0= rulePageOperations
+                    // InternalSWEUIBK.g:999:6: (lv_value_2_0= rulePageOperations )
+                    // InternalSWEUIBK.g:1000:7: lv_value_2_0= rulePageOperations
                     {
 
                     							newCompositeNode(grammarAccess.getPageObjectActionAccess().getValuePageOperationsEnumRuleCall_2_0_0_0());
@@ -2268,7 +2569,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
                     					newLeafNode(otherlv_3, grammarAccess.getPageObjectActionAccess().getLeftParenthesisKeyword_2_0_1());
                     				
-                    // InternalSWEUIBK.g:915:5: ( (lv_method_4_0= ruleMethodParameter ) )?
+                    // InternalSWEUIBK.g:1021:5: ( (lv_method_4_0= RULE_STRING ) )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -2277,29 +2578,24 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt8) {
                         case 1 :
-                            // InternalSWEUIBK.g:916:6: (lv_method_4_0= ruleMethodParameter )
+                            // InternalSWEUIBK.g:1022:6: (lv_method_4_0= RULE_STRING )
                             {
-                            // InternalSWEUIBK.g:916:6: (lv_method_4_0= ruleMethodParameter )
-                            // InternalSWEUIBK.g:917:7: lv_method_4_0= ruleMethodParameter
+                            // InternalSWEUIBK.g:1022:6: (lv_method_4_0= RULE_STRING )
+                            // InternalSWEUIBK.g:1023:7: lv_method_4_0= RULE_STRING
                             {
+                            lv_method_4_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
-                            							newCompositeNode(grammarAccess.getPageObjectActionAccess().getMethodMethodParameterParserRuleCall_2_0_2_0());
+                            							newLeafNode(lv_method_4_0, grammarAccess.getPageObjectActionAccess().getMethodSTRINGTerminalRuleCall_2_0_2_0());
                             						
-                            pushFollow(FOLLOW_12);
-                            lv_method_4_0=ruleMethodParameter();
-
-                            state._fsp--;
-
 
                             							if (current==null) {
-                            								current = createModelElementForParent(grammarAccess.getPageObjectActionRule());
+                            								current = createModelElement(grammarAccess.getPageObjectActionRule());
                             							}
-                            							set(
+                            							setWithLastConsumed(
                             								current,
                             								"method",
                             								lv_method_4_0,
-                            								"org.xtext.example.mydsl.SWEUIBK.MethodParameter");
-                            							afterParserOrEnumRuleCall();
+                            								"org.eclipse.xtext.common.Terminals.STRING");
                             						
 
                             }
@@ -2321,13 +2617,13 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSWEUIBK.g:940:4: ( (lv_headerList_6_0= ruleGenerateHeader ) )
+                    // InternalSWEUIBK.g:1045:4: ( (lv_headerList_6_0= ruleGenerateHeader ) )
                     {
-                    // InternalSWEUIBK.g:940:4: ( (lv_headerList_6_0= ruleGenerateHeader ) )
-                    // InternalSWEUIBK.g:941:5: (lv_headerList_6_0= ruleGenerateHeader )
+                    // InternalSWEUIBK.g:1045:4: ( (lv_headerList_6_0= ruleGenerateHeader ) )
+                    // InternalSWEUIBK.g:1046:5: (lv_headerList_6_0= ruleGenerateHeader )
                     {
-                    // InternalSWEUIBK.g:941:5: (lv_headerList_6_0= ruleGenerateHeader )
-                    // InternalSWEUIBK.g:942:6: lv_headerList_6_0= ruleGenerateHeader
+                    // InternalSWEUIBK.g:1046:5: (lv_headerList_6_0= ruleGenerateHeader )
+                    // InternalSWEUIBK.g:1047:6: lv_headerList_6_0= ruleGenerateHeader
                     {
 
                     						newCompositeNode(grammarAccess.getPageObjectActionAccess().getHeaderListGenerateHeaderParserRuleCall_2_1_0());
@@ -2346,6 +2642,43 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                     							"headerList",
                     							lv_headerList_6_0,
                     							"org.xtext.example.mydsl.SWEUIBK.GenerateHeader");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSWEUIBK.g:1065:4: ( (lv_setConnectionType_7_0= ruleSetConnecttionType ) )
+                    {
+                    // InternalSWEUIBK.g:1065:4: ( (lv_setConnectionType_7_0= ruleSetConnecttionType ) )
+                    // InternalSWEUIBK.g:1066:5: (lv_setConnectionType_7_0= ruleSetConnecttionType )
+                    {
+                    // InternalSWEUIBK.g:1066:5: (lv_setConnectionType_7_0= ruleSetConnecttionType )
+                    // InternalSWEUIBK.g:1067:6: lv_setConnectionType_7_0= ruleSetConnecttionType
+                    {
+
+                    						newCompositeNode(grammarAccess.getPageObjectActionAccess().getSetConnectionTypeSetConnecttionTypeParserRuleCall_2_2_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_setConnectionType_7_0=ruleSetConnecttionType();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getPageObjectActionRule());
+                    						}
+                    						set(
+                    							current,
+                    							"setConnectionType",
+                    							lv_setConnectionType_7_0,
+                    							"org.xtext.example.mydsl.SWEUIBK.SetConnecttionType");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -2383,16 +2716,16 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGenerateHeader"
-    // InternalSWEUIBK.g:964:1: entryRuleGenerateHeader returns [String current=null] : iv_ruleGenerateHeader= ruleGenerateHeader EOF ;
-    public final String entryRuleGenerateHeader() throws RecognitionException {
-        String current = null;
+    // InternalSWEUIBK.g:1089:1: entryRuleGenerateHeader returns [EObject current=null] : iv_ruleGenerateHeader= ruleGenerateHeader EOF ;
+    public final EObject entryRuleGenerateHeader() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleGenerateHeader = null;
+        EObject iv_ruleGenerateHeader = null;
 
 
         try {
-            // InternalSWEUIBK.g:964:54: (iv_ruleGenerateHeader= ruleGenerateHeader EOF )
-            // InternalSWEUIBK.g:965:2: iv_ruleGenerateHeader= ruleGenerateHeader EOF
+            // InternalSWEUIBK.g:1089:55: (iv_ruleGenerateHeader= ruleGenerateHeader EOF )
+            // InternalSWEUIBK.g:1090:2: iv_ruleGenerateHeader= ruleGenerateHeader EOF
             {
              newCompositeNode(grammarAccess.getGenerateHeaderRule()); 
             pushFollow(FOLLOW_1);
@@ -2400,7 +2733,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleGenerateHeader.getText(); 
+             current =iv_ruleGenerateHeader; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -2419,35 +2752,35 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGenerateHeader"
-    // InternalSWEUIBK.g:971:1: ruleGenerateHeader returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'generateHeaderList' kw= '(' (this_Header_2= ruleHeader )* kw= ')' ) ;
-    public final AntlrDatatypeRuleToken ruleGenerateHeader() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalSWEUIBK.g:1096:1: ruleGenerateHeader returns [EObject current=null] : (otherlv_0= 'generateHeaderList' otherlv_1= '(' ( (lv_header_2_0= ruleHeader ) )* otherlv_3= ')' ) ;
+    public final EObject ruleGenerateHeader() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
-        AntlrDatatypeRuleToken this_Header_2 = null;
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject lv_header_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:977:2: ( (kw= 'generateHeaderList' kw= '(' (this_Header_2= ruleHeader )* kw= ')' ) )
-            // InternalSWEUIBK.g:978:2: (kw= 'generateHeaderList' kw= '(' (this_Header_2= ruleHeader )* kw= ')' )
+            // InternalSWEUIBK.g:1102:2: ( (otherlv_0= 'generateHeaderList' otherlv_1= '(' ( (lv_header_2_0= ruleHeader ) )* otherlv_3= ')' ) )
+            // InternalSWEUIBK.g:1103:2: (otherlv_0= 'generateHeaderList' otherlv_1= '(' ( (lv_header_2_0= ruleHeader ) )* otherlv_3= ')' )
             {
-            // InternalSWEUIBK.g:978:2: (kw= 'generateHeaderList' kw= '(' (this_Header_2= ruleHeader )* kw= ')' )
-            // InternalSWEUIBK.g:979:3: kw= 'generateHeaderList' kw= '(' (this_Header_2= ruleHeader )* kw= ')'
+            // InternalSWEUIBK.g:1103:2: (otherlv_0= 'generateHeaderList' otherlv_1= '(' ( (lv_header_2_0= ruleHeader ) )* otherlv_3= ')' )
+            // InternalSWEUIBK.g:1104:3: otherlv_0= 'generateHeaderList' otherlv_1= '(' ( (lv_header_2_0= ruleHeader ) )* otherlv_3= ')'
             {
-            kw=(Token)match(input,19,FOLLOW_9); 
+            otherlv_0=(Token)match(input,19,FOLLOW_9); 
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getGenerateHeaderAccess().getGenerateHeaderListKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getGenerateHeaderAccess().getGenerateHeaderListKeyword_0());
             		
-            kw=(Token)match(input,17,FOLLOW_10); 
+            otherlv_1=(Token)match(input,17,FOLLOW_10); 
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getGenerateHeaderAccess().getLeftParenthesisKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getGenerateHeaderAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalSWEUIBK.g:989:3: (this_Header_2= ruleHeader )*
+            // InternalSWEUIBK.g:1112:3: ( (lv_header_2_0= ruleHeader ) )*
             loop10:
             do {
                 int alt10=2;
@@ -2460,22 +2793,33 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalSWEUIBK.g:990:4: this_Header_2= ruleHeader
+            	    // InternalSWEUIBK.g:1113:4: (lv_header_2_0= ruleHeader )
+            	    {
+            	    // InternalSWEUIBK.g:1113:4: (lv_header_2_0= ruleHeader )
+            	    // InternalSWEUIBK.g:1114:5: lv_header_2_0= ruleHeader
             	    {
 
-            	    				newCompositeNode(grammarAccess.getGenerateHeaderAccess().getHeaderParserRuleCall_2());
-            	    			
+            	    					newCompositeNode(grammarAccess.getGenerateHeaderAccess().getHeaderHeaderParserRuleCall_2_0());
+            	    				
             	    pushFollow(FOLLOW_10);
-            	    this_Header_2=ruleHeader();
+            	    lv_header_2_0=ruleHeader();
 
             	    state._fsp--;
 
 
-            	    				current.merge(this_Header_2);
-            	    			
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getGenerateHeaderRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"header",
+            	    						lv_header_2_0,
+            	    						"org.xtext.example.mydsl.SWEUIBK.Header");
+            	    					afterParserOrEnumRuleCall();
+            	    				
 
-            	    				afterParserOrEnumRuleCall();
-            	    			
+            	    }
+
 
             	    }
             	    break;
@@ -2485,10 +2829,9 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            kw=(Token)match(input,18,FOLLOW_2); 
+            otherlv_3=(Token)match(input,18,FOLLOW_2); 
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getGenerateHeaderAccess().getRightParenthesisKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getGenerateHeaderAccess().getRightParenthesisKeyword_3());
             		
 
             }
@@ -2512,17 +2855,139 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleGenerateHeader"
 
 
-    // $ANTLR start "entryRuleHeader"
-    // InternalSWEUIBK.g:1010:1: entryRuleHeader returns [String current=null] : iv_ruleHeader= ruleHeader EOF ;
-    public final String entryRuleHeader() throws RecognitionException {
-        String current = null;
+    // $ANTLR start "entryRuleSetConnecttionType"
+    // InternalSWEUIBK.g:1139:1: entryRuleSetConnecttionType returns [EObject current=null] : iv_ruleSetConnecttionType= ruleSetConnecttionType EOF ;
+    public final EObject entryRuleSetConnecttionType() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleHeader = null;
+        EObject iv_ruleSetConnecttionType = null;
 
 
         try {
-            // InternalSWEUIBK.g:1010:46: (iv_ruleHeader= ruleHeader EOF )
-            // InternalSWEUIBK.g:1011:2: iv_ruleHeader= ruleHeader EOF
+            // InternalSWEUIBK.g:1139:59: (iv_ruleSetConnecttionType= ruleSetConnecttionType EOF )
+            // InternalSWEUIBK.g:1140:2: iv_ruleSetConnecttionType= ruleSetConnecttionType EOF
+            {
+             newCompositeNode(grammarAccess.getSetConnecttionTypeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleSetConnecttionType=ruleSetConnecttionType();
+
+            state._fsp--;
+
+             current =iv_ruleSetConnecttionType; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSetConnecttionType"
+
+
+    // $ANTLR start "ruleSetConnecttionType"
+    // InternalSWEUIBK.g:1146:1: ruleSetConnecttionType returns [EObject current=null] : (otherlv_0= 'connectType' otherlv_1= '(' ( (lv_type_2_0= ruleConnectionType ) ) otherlv_3= ')' ) ;
+    public final EObject ruleSetConnecttionType() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Enumerator lv_type_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSWEUIBK.g:1152:2: ( (otherlv_0= 'connectType' otherlv_1= '(' ( (lv_type_2_0= ruleConnectionType ) ) otherlv_3= ')' ) )
+            // InternalSWEUIBK.g:1153:2: (otherlv_0= 'connectType' otherlv_1= '(' ( (lv_type_2_0= ruleConnectionType ) ) otherlv_3= ')' )
+            {
+            // InternalSWEUIBK.g:1153:2: (otherlv_0= 'connectType' otherlv_1= '(' ( (lv_type_2_0= ruleConnectionType ) ) otherlv_3= ')' )
+            // InternalSWEUIBK.g:1154:3: otherlv_0= 'connectType' otherlv_1= '(' ( (lv_type_2_0= ruleConnectionType ) ) otherlv_3= ')'
+            {
+            otherlv_0=(Token)match(input,20,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getSetConnecttionTypeAccess().getConnectTypeKeyword_0());
+            		
+            otherlv_1=(Token)match(input,17,FOLLOW_16); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSetConnecttionTypeAccess().getLeftParenthesisKeyword_1());
+            		
+            // InternalSWEUIBK.g:1162:3: ( (lv_type_2_0= ruleConnectionType ) )
+            // InternalSWEUIBK.g:1163:4: (lv_type_2_0= ruleConnectionType )
+            {
+            // InternalSWEUIBK.g:1163:4: (lv_type_2_0= ruleConnectionType )
+            // InternalSWEUIBK.g:1164:5: lv_type_2_0= ruleConnectionType
+            {
+
+            					newCompositeNode(grammarAccess.getSetConnecttionTypeAccess().getTypeConnectionTypeEnumRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_13);
+            lv_type_2_0=ruleConnectionType();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getSetConnecttionTypeRule());
+            					}
+            					set(
+            						current,
+            						"type",
+            						lv_type_2_0,
+            						"org.xtext.example.mydsl.SWEUIBK.ConnectionType");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,18,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getSetConnecttionTypeAccess().getRightParenthesisKeyword_3());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSetConnecttionType"
+
+
+    // $ANTLR start "entryRuleHeader"
+    // InternalSWEUIBK.g:1189:1: entryRuleHeader returns [EObject current=null] : iv_ruleHeader= ruleHeader EOF ;
+    public final EObject entryRuleHeader() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleHeader = null;
+
+
+        try {
+            // InternalSWEUIBK.g:1189:47: (iv_ruleHeader= ruleHeader EOF )
+            // InternalSWEUIBK.g:1190:2: iv_ruleHeader= ruleHeader EOF
             {
              newCompositeNode(grammarAccess.getHeaderRule()); 
             pushFollow(FOLLOW_1);
@@ -2530,7 +2995,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleHeader.getText(); 
+             current =iv_ruleHeader; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -2549,47 +3014,84 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeader"
-    // InternalSWEUIBK.g:1017:1: ruleHeader returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING kw= '(' this_STRING_2= RULE_STRING kw= ')' ) ;
-    public final AntlrDatatypeRuleToken ruleHeader() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalSWEUIBK.g:1196:1: ruleHeader returns [EObject current=null] : ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '(' ( (lv_headerValue_2_0= RULE_STRING ) ) otherlv_3= ')' ) ;
+    public final EObject ruleHeader() throws RecognitionException {
+        EObject current = null;
 
-        Token this_STRING_0=null;
-        Token kw=null;
-        Token this_STRING_2=null;
+        Token lv_key_0_0=null;
+        Token otherlv_1=null;
+        Token lv_headerValue_2_0=null;
+        Token otherlv_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:1023:2: ( (this_STRING_0= RULE_STRING kw= '(' this_STRING_2= RULE_STRING kw= ')' ) )
-            // InternalSWEUIBK.g:1024:2: (this_STRING_0= RULE_STRING kw= '(' this_STRING_2= RULE_STRING kw= ')' )
+            // InternalSWEUIBK.g:1202:2: ( ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '(' ( (lv_headerValue_2_0= RULE_STRING ) ) otherlv_3= ')' ) )
+            // InternalSWEUIBK.g:1203:2: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '(' ( (lv_headerValue_2_0= RULE_STRING ) ) otherlv_3= ')' )
             {
-            // InternalSWEUIBK.g:1024:2: (this_STRING_0= RULE_STRING kw= '(' this_STRING_2= RULE_STRING kw= ')' )
-            // InternalSWEUIBK.g:1025:3: this_STRING_0= RULE_STRING kw= '(' this_STRING_2= RULE_STRING kw= ')'
+            // InternalSWEUIBK.g:1203:2: ( ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '(' ( (lv_headerValue_2_0= RULE_STRING ) ) otherlv_3= ')' )
+            // InternalSWEUIBK.g:1204:3: ( (lv_key_0_0= RULE_STRING ) ) otherlv_1= '(' ( (lv_headerValue_2_0= RULE_STRING ) ) otherlv_3= ')'
             {
-            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+            // InternalSWEUIBK.g:1204:3: ( (lv_key_0_0= RULE_STRING ) )
+            // InternalSWEUIBK.g:1205:4: (lv_key_0_0= RULE_STRING )
+            {
+            // InternalSWEUIBK.g:1205:4: (lv_key_0_0= RULE_STRING )
+            // InternalSWEUIBK.g:1206:5: lv_key_0_0= RULE_STRING
+            {
+            lv_key_0_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
 
-            			current.merge(this_STRING_0);
+            					newLeafNode(lv_key_0_0, grammarAccess.getHeaderAccess().getKeySTRINGTerminalRuleCall_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getHeaderRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"key",
+            						lv_key_0_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,17,FOLLOW_6); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getHeaderAccess().getLeftParenthesisKeyword_1());
             		
+            // InternalSWEUIBK.g:1226:3: ( (lv_headerValue_2_0= RULE_STRING ) )
+            // InternalSWEUIBK.g:1227:4: (lv_headerValue_2_0= RULE_STRING )
+            {
+            // InternalSWEUIBK.g:1227:4: (lv_headerValue_2_0= RULE_STRING )
+            // InternalSWEUIBK.g:1228:5: lv_headerValue_2_0= RULE_STRING
+            {
+            lv_headerValue_2_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
-            			newLeafNode(this_STRING_0, grammarAccess.getHeaderAccess().getSTRINGTerminalRuleCall_0());
-            		
-            kw=(Token)match(input,17,FOLLOW_6); 
+            					newLeafNode(lv_headerValue_2_0, grammarAccess.getHeaderAccess().getHeaderValueSTRINGTerminalRuleCall_2_0());
+            				
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getHeaderAccess().getLeftParenthesisKeyword_1());
-            		
-            this_STRING_2=(Token)match(input,RULE_STRING,FOLLOW_12); 
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getHeaderRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"headerValue",
+            						lv_headerValue_2_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
 
-            			current.merge(this_STRING_2);
-            		
+            }
 
-            			newLeafNode(this_STRING_2, grammarAccess.getHeaderAccess().getSTRINGTerminalRuleCall_2());
-            		
-            kw=(Token)match(input,18,FOLLOW_2); 
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getHeaderAccess().getRightParenthesisKeyword_3());
+            }
+
+            otherlv_3=(Token)match(input,18,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getHeaderAccess().getRightParenthesisKeyword_3());
             		
 
             }
@@ -2613,84 +3115,8 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleHeader"
 
 
-    // $ANTLR start "entryRuleMethodParameter"
-    // InternalSWEUIBK.g:1053:1: entryRuleMethodParameter returns [String current=null] : iv_ruleMethodParameter= ruleMethodParameter EOF ;
-    public final String entryRuleMethodParameter() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleMethodParameter = null;
-
-
-        try {
-            // InternalSWEUIBK.g:1053:55: (iv_ruleMethodParameter= ruleMethodParameter EOF )
-            // InternalSWEUIBK.g:1054:2: iv_ruleMethodParameter= ruleMethodParameter EOF
-            {
-             newCompositeNode(grammarAccess.getMethodParameterRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleMethodParameter=ruleMethodParameter();
-
-            state._fsp--;
-
-             current =iv_ruleMethodParameter.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleMethodParameter"
-
-
-    // $ANTLR start "ruleMethodParameter"
-    // InternalSWEUIBK.g:1060:1: ruleMethodParameter returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
-    public final AntlrDatatypeRuleToken ruleMethodParameter() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token this_STRING_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalSWEUIBK.g:1066:2: (this_STRING_0= RULE_STRING )
-            // InternalSWEUIBK.g:1067:2: this_STRING_0= RULE_STRING
-            {
-            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
-
-            		current.merge(this_STRING_0);
-            	
-
-            		newLeafNode(this_STRING_0, grammarAccess.getMethodParameterAccess().getSTRINGTerminalRuleCall());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleMethodParameter"
-
-
     // $ANTLR start "ruleMonitorOperations"
-    // InternalSWEUIBK.g:1077:1: ruleMonitorOperations returns [Enumerator current=null] : ( (enumLiteral_0= 'AddAnalyzer' ) | (enumLiteral_1= 'RemoveAnalyzer' ) ) ;
+    // InternalSWEUIBK.g:1252:1: ruleMonitorOperations returns [Enumerator current=null] : ( (enumLiteral_0= 'AddAnalyzer' ) | (enumLiteral_1= 'RemoveAnalyzer' ) ) ;
     public final Enumerator ruleMonitorOperations() throws RecognitionException {
         Enumerator current = null;
 
@@ -2701,17 +3127,17 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:1083:2: ( ( (enumLiteral_0= 'AddAnalyzer' ) | (enumLiteral_1= 'RemoveAnalyzer' ) ) )
-            // InternalSWEUIBK.g:1084:2: ( (enumLiteral_0= 'AddAnalyzer' ) | (enumLiteral_1= 'RemoveAnalyzer' ) )
+            // InternalSWEUIBK.g:1258:2: ( ( (enumLiteral_0= 'AddAnalyzer' ) | (enumLiteral_1= 'RemoveAnalyzer' ) ) )
+            // InternalSWEUIBK.g:1259:2: ( (enumLiteral_0= 'AddAnalyzer' ) | (enumLiteral_1= 'RemoveAnalyzer' ) )
             {
-            // InternalSWEUIBK.g:1084:2: ( (enumLiteral_0= 'AddAnalyzer' ) | (enumLiteral_1= 'RemoveAnalyzer' ) )
+            // InternalSWEUIBK.g:1259:2: ( (enumLiteral_0= 'AddAnalyzer' ) | (enumLiteral_1= 'RemoveAnalyzer' ) )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==20) ) {
+            if ( (LA11_0==21) ) {
                 alt11=1;
             }
-            else if ( (LA11_0==21) ) {
+            else if ( (LA11_0==22) ) {
                 alt11=2;
             }
             else {
@@ -2722,12 +3148,12 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalSWEUIBK.g:1085:3: (enumLiteral_0= 'AddAnalyzer' )
+                    // InternalSWEUIBK.g:1260:3: (enumLiteral_0= 'AddAnalyzer' )
                     {
-                    // InternalSWEUIBK.g:1085:3: (enumLiteral_0= 'AddAnalyzer' )
-                    // InternalSWEUIBK.g:1086:4: enumLiteral_0= 'AddAnalyzer'
+                    // InternalSWEUIBK.g:1260:3: (enumLiteral_0= 'AddAnalyzer' )
+                    // InternalSWEUIBK.g:1261:4: enumLiteral_0= 'AddAnalyzer'
                     {
-                    enumLiteral_0=(Token)match(input,20,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,21,FOLLOW_2); 
 
                     				current = grammarAccess.getMonitorOperationsAccess().getADDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getMonitorOperationsAccess().getADDEnumLiteralDeclaration_0());
@@ -2739,12 +3165,12 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSWEUIBK.g:1093:3: (enumLiteral_1= 'RemoveAnalyzer' )
+                    // InternalSWEUIBK.g:1268:3: (enumLiteral_1= 'RemoveAnalyzer' )
                     {
-                    // InternalSWEUIBK.g:1093:3: (enumLiteral_1= 'RemoveAnalyzer' )
-                    // InternalSWEUIBK.g:1094:4: enumLiteral_1= 'RemoveAnalyzer'
+                    // InternalSWEUIBK.g:1268:3: (enumLiteral_1= 'RemoveAnalyzer' )
+                    // InternalSWEUIBK.g:1269:4: enumLiteral_1= 'RemoveAnalyzer'
                     {
-                    enumLiteral_1=(Token)match(input,21,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,22,FOLLOW_2); 
 
                     				current = grammarAccess.getMonitorOperationsAccess().getREMOVEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getMonitorOperationsAccess().getREMOVEEnumLiteralDeclaration_1());
@@ -2778,43 +3204,37 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnalyzerOperations"
-    // InternalSWEUIBK.g:1104:1: ruleAnalyzerOperations returns [Enumerator current=null] : ( (enumLiteral_0= 'LoadPage' ) | (enumLiteral_1= 'Execute' ) | (enumLiteral_2= 'RemovePage' ) | (enumLiteral_3= 'LoadModel' ) ) ;
+    // InternalSWEUIBK.g:1279:1: ruleAnalyzerOperations returns [Enumerator current=null] : ( (enumLiteral_0= 'Execute' ) | (enumLiteral_1= 'LoadPage' ) | (enumLiteral_2= 'LoadModel' ) ) ;
     public final Enumerator ruleAnalyzerOperations() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
         Token enumLiteral_2=null;
-        Token enumLiteral_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:1110:2: ( ( (enumLiteral_0= 'LoadPage' ) | (enumLiteral_1= 'Execute' ) | (enumLiteral_2= 'RemovePage' ) | (enumLiteral_3= 'LoadModel' ) ) )
-            // InternalSWEUIBK.g:1111:2: ( (enumLiteral_0= 'LoadPage' ) | (enumLiteral_1= 'Execute' ) | (enumLiteral_2= 'RemovePage' ) | (enumLiteral_3= 'LoadModel' ) )
+            // InternalSWEUIBK.g:1285:2: ( ( (enumLiteral_0= 'Execute' ) | (enumLiteral_1= 'LoadPage' ) | (enumLiteral_2= 'LoadModel' ) ) )
+            // InternalSWEUIBK.g:1286:2: ( (enumLiteral_0= 'Execute' ) | (enumLiteral_1= 'LoadPage' ) | (enumLiteral_2= 'LoadModel' ) )
             {
-            // InternalSWEUIBK.g:1111:2: ( (enumLiteral_0= 'LoadPage' ) | (enumLiteral_1= 'Execute' ) | (enumLiteral_2= 'RemovePage' ) | (enumLiteral_3= 'LoadModel' ) )
-            int alt12=4;
+            // InternalSWEUIBK.g:1286:2: ( (enumLiteral_0= 'Execute' ) | (enumLiteral_1= 'LoadPage' ) | (enumLiteral_2= 'LoadModel' ) )
+            int alt12=3;
             switch ( input.LA(1) ) {
-            case 22:
+            case 23:
                 {
                 alt12=1;
                 }
                 break;
-            case 23:
+            case 24:
                 {
                 alt12=2;
                 }
                 break;
-            case 24:
-                {
-                alt12=3;
-                }
-                break;
             case 25:
                 {
-                alt12=4;
+                alt12=3;
                 }
                 break;
             default:
@@ -2826,15 +3246,15 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
             switch (alt12) {
                 case 1 :
-                    // InternalSWEUIBK.g:1112:3: (enumLiteral_0= 'LoadPage' )
+                    // InternalSWEUIBK.g:1287:3: (enumLiteral_0= 'Execute' )
                     {
-                    // InternalSWEUIBK.g:1112:3: (enumLiteral_0= 'LoadPage' )
-                    // InternalSWEUIBK.g:1113:4: enumLiteral_0= 'LoadPage'
+                    // InternalSWEUIBK.g:1287:3: (enumLiteral_0= 'Execute' )
+                    // InternalSWEUIBK.g:1288:4: enumLiteral_0= 'Execute'
                     {
-                    enumLiteral_0=(Token)match(input,22,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,23,FOLLOW_2); 
 
-                    				current = grammarAccess.getAnalyzerOperationsAccess().getLOADPAGEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getAnalyzerOperationsAccess().getLOADPAGEEnumLiteralDeclaration_0());
+                    				current = grammarAccess.getAnalyzerOperationsAccess().getEXECUTEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getAnalyzerOperationsAccess().getEXECUTEEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -2843,15 +3263,15 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSWEUIBK.g:1120:3: (enumLiteral_1= 'Execute' )
+                    // InternalSWEUIBK.g:1295:3: (enumLiteral_1= 'LoadPage' )
                     {
-                    // InternalSWEUIBK.g:1120:3: (enumLiteral_1= 'Execute' )
-                    // InternalSWEUIBK.g:1121:4: enumLiteral_1= 'Execute'
+                    // InternalSWEUIBK.g:1295:3: (enumLiteral_1= 'LoadPage' )
+                    // InternalSWEUIBK.g:1296:4: enumLiteral_1= 'LoadPage'
                     {
-                    enumLiteral_1=(Token)match(input,23,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,24,FOLLOW_2); 
 
-                    				current = grammarAccess.getAnalyzerOperationsAccess().getEXECUTEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getAnalyzerOperationsAccess().getEXECUTEEnumLiteralDeclaration_1());
+                    				current = grammarAccess.getAnalyzerOperationsAccess().getLOADPAGEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getAnalyzerOperationsAccess().getLOADPAGEEnumLiteralDeclaration_1());
                     			
 
                     }
@@ -2860,32 +3280,15 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSWEUIBK.g:1128:3: (enumLiteral_2= 'RemovePage' )
+                    // InternalSWEUIBK.g:1303:3: (enumLiteral_2= 'LoadModel' )
                     {
-                    // InternalSWEUIBK.g:1128:3: (enumLiteral_2= 'RemovePage' )
-                    // InternalSWEUIBK.g:1129:4: enumLiteral_2= 'RemovePage'
+                    // InternalSWEUIBK.g:1303:3: (enumLiteral_2= 'LoadModel' )
+                    // InternalSWEUIBK.g:1304:4: enumLiteral_2= 'LoadModel'
                     {
-                    enumLiteral_2=(Token)match(input,24,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,25,FOLLOW_2); 
 
-                    				current = grammarAccess.getAnalyzerOperationsAccess().getREMOVEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getAnalyzerOperationsAccess().getREMOVEEnumLiteralDeclaration_2());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalSWEUIBK.g:1136:3: (enumLiteral_3= 'LoadModel' )
-                    {
-                    // InternalSWEUIBK.g:1136:3: (enumLiteral_3= 'LoadModel' )
-                    // InternalSWEUIBK.g:1137:4: enumLiteral_3= 'LoadModel'
-                    {
-                    enumLiteral_3=(Token)match(input,25,FOLLOW_2); 
-
-                    				current = grammarAccess.getAnalyzerOperationsAccess().getLOADMODELEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_3, grammarAccess.getAnalyzerOperationsAccess().getLOADMODELEnumLiteralDeclaration_3());
+                    				current = grammarAccess.getAnalyzerOperationsAccess().getLOADMODELEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getAnalyzerOperationsAccess().getLOADMODELEnumLiteralDeclaration_2());
                     			
 
                     }
@@ -2916,8 +3319,52 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePageOperations"
-    // InternalSWEUIBK.g:1147:1: rulePageOperations returns [Enumerator current=null] : ( (enumLiteral_0= 'url' ) | (enumLiteral_1= 'connectType' ) ) ;
+    // InternalSWEUIBK.g:1314:1: rulePageOperations returns [Enumerator current=null] : (enumLiteral_0= 'url' ) ;
     public final Enumerator rulePageOperations() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSWEUIBK.g:1320:2: ( (enumLiteral_0= 'url' ) )
+            // InternalSWEUIBK.g:1321:2: (enumLiteral_0= 'url' )
+            {
+            // InternalSWEUIBK.g:1321:2: (enumLiteral_0= 'url' )
+            // InternalSWEUIBK.g:1322:3: enumLiteral_0= 'url'
+            {
+            enumLiteral_0=(Token)match(input,26,FOLLOW_2); 
+
+            			current = grammarAccess.getPageOperationsAccess().getURLEnumLiteralDeclaration().getEnumLiteral().getInstance();
+            			newLeafNode(enumLiteral_0, grammarAccess.getPageOperationsAccess().getURLEnumLiteralDeclaration());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePageOperations"
+
+
+    // $ANTLR start "ruleConnectionType"
+    // InternalSWEUIBK.g:1331:1: ruleConnectionType returns [Enumerator current=null] : ( (enumLiteral_0= 'post' ) | (enumLiteral_1= 'get' ) ) ;
+    public final Enumerator ruleConnectionType() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
@@ -2927,17 +3374,17 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSWEUIBK.g:1153:2: ( ( (enumLiteral_0= 'url' ) | (enumLiteral_1= 'connectType' ) ) )
-            // InternalSWEUIBK.g:1154:2: ( (enumLiteral_0= 'url' ) | (enumLiteral_1= 'connectType' ) )
+            // InternalSWEUIBK.g:1337:2: ( ( (enumLiteral_0= 'post' ) | (enumLiteral_1= 'get' ) ) )
+            // InternalSWEUIBK.g:1338:2: ( (enumLiteral_0= 'post' ) | (enumLiteral_1= 'get' ) )
             {
-            // InternalSWEUIBK.g:1154:2: ( (enumLiteral_0= 'url' ) | (enumLiteral_1= 'connectType' ) )
+            // InternalSWEUIBK.g:1338:2: ( (enumLiteral_0= 'post' ) | (enumLiteral_1= 'get' ) )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==26) ) {
+            if ( (LA13_0==27) ) {
                 alt13=1;
             }
-            else if ( (LA13_0==27) ) {
+            else if ( (LA13_0==28) ) {
                 alt13=2;
             }
             else {
@@ -2948,15 +3395,15 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalSWEUIBK.g:1155:3: (enumLiteral_0= 'url' )
+                    // InternalSWEUIBK.g:1339:3: (enumLiteral_0= 'post' )
                     {
-                    // InternalSWEUIBK.g:1155:3: (enumLiteral_0= 'url' )
-                    // InternalSWEUIBK.g:1156:4: enumLiteral_0= 'url'
+                    // InternalSWEUIBK.g:1339:3: (enumLiteral_0= 'post' )
+                    // InternalSWEUIBK.g:1340:4: enumLiteral_0= 'post'
                     {
-                    enumLiteral_0=(Token)match(input,26,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,27,FOLLOW_2); 
 
-                    				current = grammarAccess.getPageOperationsAccess().getURLEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getPageOperationsAccess().getURLEnumLiteralDeclaration_0());
+                    				current = grammarAccess.getConnectionTypeAccess().getPOSTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getConnectionTypeAccess().getPOSTEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -2965,15 +3412,15 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSWEUIBK.g:1163:3: (enumLiteral_1= 'connectType' )
+                    // InternalSWEUIBK.g:1347:3: (enumLiteral_1= 'get' )
                     {
-                    // InternalSWEUIBK.g:1163:3: (enumLiteral_1= 'connectType' )
-                    // InternalSWEUIBK.g:1164:4: enumLiteral_1= 'connectType'
+                    // InternalSWEUIBK.g:1347:3: (enumLiteral_1= 'get' )
+                    // InternalSWEUIBK.g:1348:4: enumLiteral_1= 'get'
                     {
-                    enumLiteral_1=(Token)match(input,27,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,28,FOLLOW_2); 
 
-                    				current = grammarAccess.getPageOperationsAccess().getCONNECTIONTYPEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getPageOperationsAccess().getCONNECTIONTYPEEnumLiteralDeclaration_1());
+                    				current = grammarAccess.getConnectionTypeAccess().getGETEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getConnectionTypeAccess().getGETEnumLiteralDeclaration_1());
                     			
 
                     }
@@ -3000,7 +3447,7 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "rulePageOperations"
+    // $ANTLR end "ruleConnectionType"
 
     // Delegated rules
 
@@ -3017,9 +3464,11 @@ public class InternalSWEUIBKParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040020L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000003C00000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000000C080000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040010L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000003800000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000004180000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000018000000L});
 
 }

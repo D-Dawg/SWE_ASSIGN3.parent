@@ -69,17 +69,24 @@ public class SWEUIBKFactoryImpl extends EFactoryImpl implements SWEUIBKFactory
       case SWEUIBKPackage.DOMAINMODEL: return createDomainmodel();
       case SWEUIBKPackage.OBJECT_DECLARATION: return createObjectDeclaration();
       case SWEUIBKPackage.MODEL_DECLARATION: return createModelDeclaration();
-      case SWEUIBKPackage.MONITOR_DECLARATION: return createMonitorDeclaration();
-      case SWEUIBKPackage.MONITOR_INITIALIZATION: return createMonitorInitialization();
       case SWEUIBKPackage.ANALYZER_DECLARATION: return createAnalyzerDeclaration();
-      case SWEUIBKPackage.ANALYZER: return createAnalyzer();
+      case SWEUIBKPackage.MONITOR_DECLARATION: return createMonitorDeclaration();
       case SWEUIBKPackage.PAGE_DECLARATION: return createPageDeclaration();
+      case SWEUIBKPackage.ANALYZER: return createAnalyzer();
+      case SWEUIBKPackage.MODEL: return createModel();
+      case SWEUIBKPackage.MONITOR: return createMonitor();
+      case SWEUIBKPackage.PAGE: return createPage();
+      case SWEUIBKPackage.MONITOR_INITIALIZATION: return createMonitorInitialization();
       case SWEUIBKPackage.OBJECT_ACTION: return createObjectAction();
       case SWEUIBKPackage.MODEL_ACTION: return createModelAction();
       case SWEUIBKPackage.MODEL_STRUCTURE: return createModelStructure();
       case SWEUIBKPackage.MONITOR_OBJECT_ACTION: return createMonitorObjectAction();
       case SWEUIBKPackage.ANALYZER_OBJECT_ACTION: return createAnalyzerObjectAction();
       case SWEUIBKPackage.PAGE_OBJECT_ACTION: return createPageObjectAction();
+      case SWEUIBKPackage.GENERATE_HEADER: return createGenerateHeader();
+      case SWEUIBKPackage.SET_CONNECTTION_TYPE: return createSetConnecttionType();
+      case SWEUIBKPackage.HEADER: return createHeader();
+      case SWEUIBKPackage.METHOD_PARAMETER: return createMethodParameter();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -169,6 +176,17 @@ public class SWEUIBKFactoryImpl extends EFactoryImpl implements SWEUIBKFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public AnalyzerDeclaration createAnalyzerDeclaration()
+  {
+    AnalyzerDeclarationImpl analyzerDeclaration = new AnalyzerDeclarationImpl();
+    return analyzerDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public MonitorDeclaration createMonitorDeclaration()
   {
     MonitorDeclarationImpl monitorDeclaration = new MonitorDeclarationImpl();
@@ -180,21 +198,10 @@ public class SWEUIBKFactoryImpl extends EFactoryImpl implements SWEUIBKFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public MonitorInitialization createMonitorInitialization()
+  public PageDeclaration createPageDeclaration()
   {
-    MonitorInitializationImpl monitorInitialization = new MonitorInitializationImpl();
-    return monitorInitialization;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AnalyzerDeclaration createAnalyzerDeclaration()
-  {
-    AnalyzerDeclarationImpl analyzerDeclaration = new AnalyzerDeclarationImpl();
-    return analyzerDeclaration;
+    PageDeclarationImpl pageDeclaration = new PageDeclarationImpl();
+    return pageDeclaration;
   }
 
   /**
@@ -213,10 +220,43 @@ public class SWEUIBKFactoryImpl extends EFactoryImpl implements SWEUIBKFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public PageDeclaration createPageDeclaration()
+  public Model createModel()
   {
-    PageDeclarationImpl pageDeclaration = new PageDeclarationImpl();
-    return pageDeclaration;
+    ModelImpl model = new ModelImpl();
+    return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Monitor createMonitor()
+  {
+    MonitorImpl monitor = new MonitorImpl();
+    return monitor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Page createPage()
+  {
+    PageImpl page = new PageImpl();
+    return page;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MonitorInitialization createMonitorInitialization()
+  {
+    MonitorInitializationImpl monitorInitialization = new MonitorInitializationImpl();
+    return monitorInitialization;
   }
 
   /**
@@ -283,6 +323,50 @@ public class SWEUIBKFactoryImpl extends EFactoryImpl implements SWEUIBKFactory
   {
     PageObjectActionImpl pageObjectAction = new PageObjectActionImpl();
     return pageObjectAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GenerateHeader createGenerateHeader()
+  {
+    GenerateHeaderImpl generateHeader = new GenerateHeaderImpl();
+    return generateHeader;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SetConnecttionType createSetConnecttionType()
+  {
+    SetConnecttionTypeImpl setConnecttionType = new SetConnecttionTypeImpl();
+    return setConnecttionType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Header createHeader()
+  {
+    HeaderImpl header = new HeaderImpl();
+    return header;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MethodParameter createMethodParameter()
+  {
+    MethodParameterImpl methodParameter = new MethodParameterImpl();
+    return methodParameter;
   }
 
   /**

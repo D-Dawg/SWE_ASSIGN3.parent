@@ -18,17 +18,24 @@ import org.xtext.example.mydsl.sWEUIBK.Analyzer;
 import org.xtext.example.mydsl.sWEUIBK.AnalyzerDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.AnalyzerObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.Domainmodel;
+import org.xtext.example.mydsl.sWEUIBK.GenerateHeader;
+import org.xtext.example.mydsl.sWEUIBK.Header;
+import org.xtext.example.mydsl.sWEUIBK.MethodParameter;
+import org.xtext.example.mydsl.sWEUIBK.Model;
 import org.xtext.example.mydsl.sWEUIBK.ModelAction;
 import org.xtext.example.mydsl.sWEUIBK.ModelDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.ModelStructure;
+import org.xtext.example.mydsl.sWEUIBK.Monitor;
 import org.xtext.example.mydsl.sWEUIBK.MonitorDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.MonitorInitialization;
 import org.xtext.example.mydsl.sWEUIBK.MonitorObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.ObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.ObjectDeclaration;
+import org.xtext.example.mydsl.sWEUIBK.Page;
 import org.xtext.example.mydsl.sWEUIBK.PageDeclaration;
 import org.xtext.example.mydsl.sWEUIBK.PageObjectAction;
 import org.xtext.example.mydsl.sWEUIBK.SWEUIBKPackage;
+import org.xtext.example.mydsl.sWEUIBK.SetConnecttionType;
 import org.xtext.example.mydsl.services.SWEUIBKGrammarAccess;
 
 @SuppressWarnings("all")
@@ -57,6 +64,18 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SWEUIBKPackage.DOMAINMODEL:
 				sequence_Domainmodel(context, (Domainmodel) semanticObject); 
 				return; 
+			case SWEUIBKPackage.GENERATE_HEADER:
+				sequence_GenerateHeader(context, (GenerateHeader) semanticObject); 
+				return; 
+			case SWEUIBKPackage.HEADER:
+				sequence_Header(context, (Header) semanticObject); 
+				return; 
+			case SWEUIBKPackage.METHOD_PARAMETER:
+				sequence_MethodParameter(context, (MethodParameter) semanticObject); 
+				return; 
+			case SWEUIBKPackage.MODEL:
+				sequence_Model(context, (Model) semanticObject); 
+				return; 
 			case SWEUIBKPackage.MODEL_ACTION:
 				sequence_ModelAction(context, (ModelAction) semanticObject); 
 				return; 
@@ -65,6 +84,9 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SWEUIBKPackage.MODEL_STRUCTURE:
 				sequence_ModelStructure(context, (ModelStructure) semanticObject); 
+				return; 
+			case SWEUIBKPackage.MONITOR:
+				sequence_Monitor(context, (Monitor) semanticObject); 
 				return; 
 			case SWEUIBKPackage.MONITOR_DECLARATION:
 				sequence_MonitorDeclaration(context, (MonitorDeclaration) semanticObject); 
@@ -81,11 +103,17 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SWEUIBKPackage.OBJECT_DECLARATION:
 				sequence_ObjectDeclaration(context, (ObjectDeclaration) semanticObject); 
 				return; 
+			case SWEUIBKPackage.PAGE:
+				sequence_Page(context, (Page) semanticObject); 
+				return; 
 			case SWEUIBKPackage.PAGE_DECLARATION:
 				sequence_PageDeclaration(context, (PageDeclaration) semanticObject); 
 				return; 
 			case SWEUIBKPackage.PAGE_OBJECT_ACTION:
 				sequence_PageObjectAction(context, (PageObjectAction) semanticObject); 
+				return; 
+			case SWEUIBKPackage.SET_CONNECTTION_TYPE:
+				sequence_SetConnecttionType(context, (SetConnecttionType) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -115,7 +143,7 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     AnalyzerObjectAction returns AnalyzerObjectAction
 	 *
 	 * Constraint:
-	 *     (name=ID value=AnalyzerOperations method=MethodParameter?)
+	 *     (name=ID value=AnalyzerOperations method=ID?)
 	 */
 	protected void sequence_AnalyzerObjectAction(ISerializationContext context, AnalyzerObjectAction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -154,6 +182,57 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     GenerateHeader returns GenerateHeader
+	 *
+	 * Constraint:
+	 *     header+=Header+
+	 */
+	protected void sequence_GenerateHeader(ISerializationContext context, GenerateHeader semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Header returns Header
+	 *
+	 * Constraint:
+	 *     (key=STRING headerValue=STRING)
+	 */
+	protected void sequence_Header(ISerializationContext context, Header semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SWEUIBKPackage.Literals.HEADER__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SWEUIBKPackage.Literals.HEADER__KEY));
+			if (transientValues.isValueTransient(semanticObject, SWEUIBKPackage.Literals.HEADER__HEADER_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SWEUIBKPackage.Literals.HEADER__HEADER_VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getHeaderAccess().getKeySTRINGTerminalRuleCall_0_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getHeaderAccess().getHeaderValueSTRINGTerminalRuleCall_2_0(), semanticObject.getHeaderValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MethodParameter returns MethodParameter
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_MethodParameter(ISerializationContext context, MethodParameter semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SWEUIBKPackage.Literals.METHOD_PARAMETER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SWEUIBKPackage.Literals.METHOD_PARAMETER__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMethodParameterAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ModelAction returns ModelAction
 	 *
 	 * Constraint:
@@ -169,7 +248,7 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ModelDeclaration returns ModelDeclaration
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     name=Model
 	 */
 	protected void sequence_ModelDeclaration(ISerializationContext context, ModelDeclaration semanticObject) {
 		if (errorAcceptor != null) {
@@ -177,7 +256,7 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SWEUIBKPackage.Literals.MODEL_DECLARATION__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModelDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getModelDeclarationAccess().getNameModelParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -202,10 +281,28 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Model returns Model
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SWEUIBKPackage.Literals.MODEL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SWEUIBKPackage.Literals.MODEL__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModelAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     MonitorDeclaration returns MonitorDeclaration
 	 *
 	 * Constraint:
-	 *     (name=ID url=MonitorInitialization)
+	 *     (name=Monitor url=MonitorInitialization)
 	 */
 	protected void sequence_MonitorDeclaration(ISerializationContext context, MonitorDeclaration semanticObject) {
 		if (errorAcceptor != null) {
@@ -215,7 +312,7 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SWEUIBKPackage.Literals.MONITOR_DECLARATION__URL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMonitorDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getMonitorDeclarationAccess().getNameMonitorParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getMonitorDeclarationAccess().getUrlMonitorInitializationParserRuleCall_2_0(), semanticObject.getUrl());
 		feeder.finish();
 	}
@@ -244,10 +341,28 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     MonitorObjectAction returns MonitorObjectAction
 	 *
 	 * Constraint:
-	 *     (name=ID value=MonitorOperations method=MethodParameter?)
+	 *     (name=ID value=MonitorOperations method=ID?)
 	 */
 	protected void sequence_MonitorObjectAction(ISerializationContext context, MonitorObjectAction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Monitor returns Monitor
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_Monitor(ISerializationContext context, Monitor semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SWEUIBKPackage.Literals.MONITOR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SWEUIBKPackage.Literals.MONITOR__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMonitorAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -280,7 +395,7 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PageDeclaration returns PageDeclaration
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     name=Page
 	 */
 	protected void sequence_PageDeclaration(ISerializationContext context, PageDeclaration semanticObject) {
 		if (errorAcceptor != null) {
@@ -288,7 +403,7 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SWEUIBKPackage.Literals.PAGE_DECLARATION__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPageDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getPageDeclarationAccess().getNamePageParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -298,10 +413,46 @@ public class SWEUIBKSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PageObjectAction returns PageObjectAction
 	 *
 	 * Constraint:
-	 *     (name=ID ((value=PageOperations method=MethodParameter?) | headerList=GenerateHeader))
+	 *     (name=ID ((value=PageOperations method=STRING?) | headerList=GenerateHeader | setConnectionType=SetConnecttionType))
 	 */
 	protected void sequence_PageObjectAction(ISerializationContext context, PageObjectAction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Page returns Page
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_Page(ISerializationContext context, Page semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SWEUIBKPackage.Literals.PAGE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SWEUIBKPackage.Literals.PAGE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPageAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SetConnecttionType returns SetConnecttionType
+	 *
+	 * Constraint:
+	 *     type=ConnectionType
+	 */
+	protected void sequence_SetConnecttionType(ISerializationContext context, SetConnecttionType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SWEUIBKPackage.Literals.SET_CONNECTTION_TYPE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SWEUIBKPackage.Literals.SET_CONNECTTION_TYPE__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSetConnecttionTypeAccess().getTypeConnectionTypeEnumRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
 	}
 	
 	
